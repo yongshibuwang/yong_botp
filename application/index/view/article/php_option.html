@@ -1,0 +1,110 @@
+{extend name="Father:father"/}
+{block name="article"}
+<div class="container">
+    <!-- <div class="introBanner">
+         <h3>Reedo</h3>
+         <p>有意义的想法，值得全情兑现！</p>
+     </div>-->
+    <div class="banner introBanner" style="background: url(__PUBLIC__/static/index/images/banner_top.jpg) top center;width: 100%;background-size:cover;">
+        <section class="box">
+            <ul class="texts">
+                <p>好想给你打一辈子辅助</p>
+                <p>人头是你的、兵线是你的、buff是你的、塔是你的</p>
+                <p>所有经济都是你的，我什么都不要，只要你活着。</p>
+            </ul>
+            <div class="avatar"><a href="#"><span>勇☆贳&卟☆莣</span></a> </div>
+        </section>
+    </div>
+    <div class="content-wrap">
+        <div class="sidebar">
+            <div class="widget widget_category">
+                <h3>文章分类</h3>
+                <ul>
+                    <li><a href="{:url('Article/htmlOption')}"><span class="text"><i class="glyphicon glyphicon-triangle-right"></i>Web文章</span><span class="count">{$w_article}篇</span></a></li>
+                    <li><a href="{:url('Article/phpOption')}"><span class="text"><i class="glyphicon glyphicon-triangle-right"></i>后端文章</span><span class="count">{$p_article}篇</span></a></li>
+                    <li><a href="{:url('Article/gossip')}"><span class="text"><i class="glyphicon glyphicon-triangle-right"></i>随笔</span><span class="count">{$s_article}篇</span></a></li>
+                    <li><a href="{:url('Article/ling')}"><span class="text"><i class="glyphicon glyphicon-triangle-right"></i>捧腹笑话</span><span class="count">{$w_web}篇</span></a></li>
+
+                </ul>
+            </div>
+            <!--<div class="widget">
+                <h3>归档</h3>
+                <ul>
+                    <li><a><span class="text"><i class="glyphicon glyphicon-play-circle"></i> 2018年3月</span></a></li>
+                    <li><a><span class="text"><i class="glyphicon glyphicon-play-circle"></i> 2018年3月</span></a></li>
+                    <li><a><span class="text"><i class="glyphicon glyphicon-play-circle"></i> 2018年3月</span></a></li>
+                </ul>
+            </div>-->
+            <div class="widget widget_sentence">
+                <h3>标签云</h3>
+                <ul>
+                    {if condition="$label"}
+                        {volist name="$label" id="loo"}
+                        <li><a href="{:url('Article/phpOption',['pid'=>$loo.id])}">{$loo.name} </a></li>
+                        {/volist}
+                    {/if}
+                </ul>
+            </div>
+            <div class="widget widget_hot">
+                <h3>最新文章</h3>
+                <ul>
+                    {volist name="new_article" id="lo"}
+                    <li>
+                        <a title="" href="{:url('Index/detail',['id'=>$lo.id])}">
+                            <span class="text">{$lo.title}</span>
+                            <span class="muted">
+                                            <i class="glyphicon glyphicon-time"></i>
+                                <?php echo date('Y-m-d',$lo['add_time'])?>
+                                        </span>
+                            <span class="muted">
+                                            <i class="glyphicon glyphicon-eye-open"></i> {$lo.read_num}</span>
+                        </a>
+                    </li>
+                    {/volist}
+                </ul>
+            </div>
+        </div>
+        <div class="content">
+            <!--<div class="title">
+                <h3>最新发布</h3>
+                <div class="more">
+                    <a href="#">产品</a>
+                    <a href="#">技术</a>
+                    <a href="#">生活笔记</a>
+                </div>
+            </div>-->
+            {volist name="list" id="vo"}
+            <div class="excerpt">
+                <header>
+                    <a class="cat" href="#">{$vo.laname}<i></i></a>
+                    <h2><a href="{:url('Index/detail',['id'=>$vo.id])}">{$vo.title}</a></h2>
+                </header>
+                <p>{$vo.describe}</p>
+                <p class="meta">
+                    <a class="category" href="#"><i class="glyphicon glyphicon-folder-open"></i> {$vo.kind}</a>
+                    <a class="time" href="#"><i class="glyphicon glyphicon-time"></i> <?php echo date('Y-m-d',$vo['add_time'])?></a>
+                    <a class="views" href="#"><i class="glyphicon glyphicon-eye-open"></i> {$vo.read_num}</a>
+                    <!--<a class="comment" href="#"><i class="glyphicon glyphicon-comment"></i> 10</a>-->
+                </p>
+            </div>
+            {/volist}
+            <style>
+                #page div span a {
+                    border: 1px solid #000;
+                    border-radius: 4px;
+                    height: 25px;
+                    line-height: 26px;
+                    margin: 0 3px;
+                    padding: 8px 12px;
+                    font-size: 12px;
+                    color: #000;
+                }
+            </style>
+            <nav aria-label="Page navigation" id="page" style="margin-top: 10px;text-align: center;">
+                {$page}
+            </nav>
+        </div>
+
+    </div>
+</div>
+{/block}

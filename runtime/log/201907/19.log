@@ -1,0 +1,2222 @@
+---------------------------------------------------------------
+[ 2019-07-19T10:16:37+08:00 ] 127.0.0.1 GET www.yong.com/
+[运行时间：1.779102s] [吞吐率：0.56req/s] [内存消耗：4,791.99kb] [文件加载：129]
+[ info ] [ LANG ] F:\plant\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think_admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ F:\plant\application\index\controller\Index.php ]
+[ info ] [ VIEW ] F:\plant\public/../application/index\view\index\index.html [ array (
+  0 => 'accessNum',
+  1 => 'access',
+  2 => 'selfWebInfo',
+  3 => 'list',
+  4 => 'page',
+  5 => 'new_article',
+  6 => 'p_article',
+  7 => 'w_article',
+  8 => 's_article',
+  9 => 'w_web',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.054003s ] mysql:host=127.0.0.1;port=3306;dbname=yong;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `access` [ RunTime:0.072005s ]
+[ sql ] [ SQL ] SELECT * FROM `access` WHERE  `ip` = '127.0.0.1' LIMIT 1 [ RunTime:0.008000s ]
+[ sql ] [ SQL ] UPDATE `access`  SET `access_num`=`access_num`+1  WHERE  `id` = 5 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] UPDATE `access`  SET `access_time`=1563502596  WHERE  `id` = 5 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `access` WHERE  `access_date` = 20190719 ORDER BY `access_num` DESC,`access_time` DESC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_info` [ RunTime:0.069003s ]
+[ sql ] [ SQL ] SELECT * FROM `web_info` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.002001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `copy_web` [ RunTime:0.067004s ]
+[ sql ] [ SQL ] SELECT * FROM `copy_web` WHERE  (  kind=4 ) ORDER BY `add_time` DESC [ RunTime:0.021001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `copy_web` WHERE  `title` = '7月16日全服不停机更新公告' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `copy_web` WHERE  `title` = '心愿单升级完毕 104个小区开放功能体验' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `copy_web` WHERE  `title` = '高级梦境暂时无法开启说明公告(高级梦境将于7月17日开启)' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `copy_web` WHERE  `title` = '小乔皮肤肤色异常问题说明公告' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `copy_web` WHERE  `title` = '夏日盛典明日开启 惊喜福利拿到手软' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `copy_web` WHERE  `title` = '【稷下的神秘档案】活动已全面开启' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] INSERT INTO `copy_web` (`pid` , `time` , `add_time` , `title` , `describe` , `link` , `type` , `author` , `kind`) VALUES (18 , 1563379200 , 1563502597 , '【稷下的神秘档案】活动已全面开启' , '【稷下的神秘档案】活动已全面开启' , 'https://pvp.qq.com/webplat/info/news_version3/15592/24091/24092/24096/m15241/201907/820282.shtml' , 2 , '腾讯官网' , 4) [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `copy_web` WHERE  `title` = '抢鲲模式房间邀请异常问题说明' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `copy_web` WHERE  `title` = '世冠课代表：小组赛第二周第三日' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] INSERT INTO `copy_web` (`pid` , `time` , `add_time` , `title` , `describe` , `link` , `type` , `author` , `kind`) VALUES (18 , 1563465600 , 1563502597 , '世冠课代表：小组赛第二周第三日' , '世冠课代表：小组赛第二周第三日' , 'https://pvp.qq.com/webplat/info/news_version3/15592/24091/24092/24097/m15241/201907/820343.shtml' , 2 , '腾讯官网' , 4) [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `copy_web` WHERE  `title` = '你是赛评师：RW侠让二追三RNG.M，决胜局谁是关键先生？' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] INSERT INTO `copy_web` (`pid` , `time` , `add_time` , `title` , `describe` , `link` , `type` , `author` , `kind`) VALUES (18 , 1563465600 , 1563502597 , '你是赛评师：RW侠让二追三RNG.M，决胜局谁是关键先生？' , '你是赛评师：RW侠让二追三RNG.M，决胜局谁是关键先生？' , 'https://pvp.qq.com/webplat/info/news_version3/15592/24091/24092/24097/m15241/201907/820361.shtml' , 2 , '腾讯官网' , 4) [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `copy_web` WHERE  `title` = 'KCC小组赛快讯：让二追三 RW侠击败RNG.M用实力为自己正名' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] INSERT INTO `copy_web` (`pid` , `time` , `add_time` , `title` , `describe` , `link` , `type` , `author` , `kind`) VALUES (18 , 1563379200 , 1563502597 , 'KCC小组赛快讯：让二追三 RW侠击败RNG.M用实力为自己正名' , 'KCC小组赛快讯：让二追三 RW侠击败RNG.M用实力为自己正名' , 'https://pvp.qq.com/webplat/info/news_version3/15592/24091/24092/24097/m15241/201907/820346.shtml' , 2 , '腾讯官网' , 4) [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `copy_web` WHERE  `title` = 'KCC小组赛快讯：首尾之争 NOVA鏖战五局艰难击败GOG' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] INSERT INTO `copy_web` (`pid` , `time` , `add_time` , `title` , `describe` , `link` , `type` , `author` , `kind`) VALUES (18 , 1563379200 , 1563502597 , 'KCC小组赛快讯：首尾之争 NOVA鏖战五局艰难击败GOG' , 'KCC小组赛快讯：首尾之争 NOVA鏖战五局艰难击败GOG' , 'https://pvp.qq.com/webplat/info/news_version3/15592/24091/24092/24097/m15241/201907/820335.shtml' , 2 , '腾讯官网' , 4) [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `copy_web` WHERE  `title` = 'KCC小组赛快讯：虽死犹生 ROX携新英雄曜登陆世冠打出压制力' LIMIT 1 [ RunTime:0.001001s ]
+[ sql ] [ SQL ] INSERT INTO `copy_web` (`pid` , `time` , `add_time` , `title` , `describe` , `link` , `type` , `author` , `kind`) VALUES (18 , 1563379200 , 1563502597 , 'KCC小组赛快讯：虽死犹生 ROX携新英雄曜登陆世冠打出压制力' , 'KCC小组赛快讯：虽死犹生 ROX携新英雄曜登陆世冠打出压制力' , 'https://pvp.qq.com/webplat/info/news_version3/15592/24091/24092/24097/m15241/201907/820243.shtml' , 2 , '腾讯官网' , 4) [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `copy_web` WHERE  `title` = '【昨日回顾】7月17日赛场瞬间，那些为梦呼喊的少年最帅！' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] INSERT INTO `copy_web` (`pid` , `time` , `add_time` , `title` , `describe` , `link` , `type` , `author` , `kind`) VALUES (18 , 1563379200 , 1563502597 , '【昨日回顾】7月17日赛场瞬间，那些为梦呼喊的少年最帅！' , '【昨日回顾】7月17日赛场瞬间，那些为梦呼喊的少年最帅！' , 'https://pvp.qq.com/webplat/info/news_version3/15592/24091/24092/24097/m15241/201907/820212.shtml' , 2 , '腾讯官网' , 4) [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `copy_web` WHERE  `title` = '世冠课代表：小组赛第二周第二日' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] INSERT INTO `copy_web` (`pid` , `time` , `add_time` , `title` , `describe` , `link` , `type` , `author` , `kind`) VALUES (18 , 1563379200 , 1563502597 , '世冠课代表：小组赛第二周第二日' , '世冠课代表：小组赛第二周第二日' , 'https://pvp.qq.com/webplat/info/news_version3/15592/24091/24092/24097/m15241/201907/820192.shtml' , 2 , '腾讯官网' , 4) [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `copy_web` WHERE  `title` = 'KCC小组赛快讯：稳定发挥 EDG.M零封GOG领跑B组' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] INSERT INTO `copy_web` (`pid` , `time` , `add_time` , `title` , `describe` , `link` , `type` , `author` , `kind`) VALUES (18 , 1563292800 , 1563502597 , 'KCC小组赛快讯：稳定发挥 EDG.M零封GOG领跑B组' , 'KCC小组赛快讯：稳定发挥 EDG.M零封GOG领跑B组' , 'https://pvp.qq.com/webplat/info/news_version3/15592/24091/24092/24097/m15241/201907/820177.shtml' , 2 , '腾讯官网' , 4) [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `copy_web` WHERE  `title` = '你是赛评师：RW渡难吕布强势拿下世冠首个五杀，他们能否击败eStarPro？' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] INSERT INTO `copy_web` (`pid` , `time` , `add_time` , `title` , `describe` , `link` , `type` , `author` , `kind`) VALUES (18 , 1563292800 , 1563502597 , '你是赛评师：RW渡难吕布强势拿下世冠首个五杀，他们能否击败eStarPro？' , '你是赛评师：RW渡难吕布强势拿下世冠首个五杀，他们能否击败eStarPro？' , 'https://pvp.qq.com/webplat/info/news_version3/15592/24091/24092/24097/m15241/201907/820167.shtml' , 2 , '腾讯官网' , 4) [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `copy_web` WHERE  `title` = 'KCC小组赛快讯：绝世高手 渡难吕布横扫千军拿下本届世冠首个五杀' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] INSERT INTO `copy_web` (`pid` , `time` , `add_time` , `title` , `describe` , `link` , `type` , `author` , `kind`) VALUES (18 , 1563292800 , 1563502597 , 'KCC小组赛快讯：绝世高手 渡难吕布横扫千军拿下本届世冠首个五杀' , 'KCC小组赛快讯：绝世高手 渡难吕布横扫千军拿下本届世冠首个五杀' , 'https://pvp.qq.com/webplat/info/news_version3/15592/24091/24092/24097/m15241/201907/820159.shtml' , 2 , '腾讯官网' , 4) [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `copy_web` WHERE  `title` = 'KCC小组赛快讯：绝地反击，QGhappy率先锁定淘汰赛进军吉隆坡' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] INSERT INTO `copy_web` (`pid` , `time` , `add_time` , `title` , `describe` , `link` , `type` , `author` , `kind`) VALUES (18 , 1563292800 , 1563502597 , 'KCC小组赛快讯：绝地反击，QGhappy率先锁定淘汰赛进军吉隆坡' , 'KCC小组赛快讯：绝地反击，QGhappy率先锁定淘汰赛进军吉隆坡' , 'https://pvp.qq.com/webplat/info/news_version3/15592/24091/24092/24097/m15241/201907/820079.shtml' , 2 , '腾讯官网' , 4) [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `copy_web` WHERE  `title` = '嘴强王者：eStarPro三连胜晋级八强，你最想吹爆谁？' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] select id from copy_web where kind=4 AND add_time < 1560910597 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] select id from ling where add_time < 1560910597 [ RunTime:0.056003s ]
+[ sql ] [ SQL ] SELECT * FROM `access` WHERE  `ip` = '127.0.0.1' ORDER BY `access_time` DESC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] UPDATE `access`  SET `access_num`=`access_num`+1  WHERE  `id` = 5 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] UPDATE `access`  SET `access_time`=1563502597,`access_web`='访问首页'  WHERE  `id` = 5 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `article` [ RunTime:0.048003s ]
+[ sql ] [ SQL ] SELECT * FROM `article` WHERE  (  status=1 AND type=2 AND kind=1 )  AND (  is_hot=1 ) OR (  status=1 AND type=2 AND kind=2 ) ORDER BY `add_time` DESC LIMIT 0,6 [ RunTime:0.020001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `article` WHERE  (  status=1 AND type=2 AND kind=1 )  AND (  is_hot=1 ) OR (  status=1 AND type=2 AND kind=2 ) ORDER BY `add_time` DESC LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `article` WHERE  (  status=1 AND type=2 AND kind=1 ) OR (  status=1 AND type=2 AND kind=2 ) ORDER BY `add_time` DESC LIMIT 8 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `article` WHERE  (  type=2 AND kind=1 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `article` WHERE  (  type=2 AND kind=2 ) LIMIT 1 [ RunTime:0.001001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `article` WHERE  (  type=2 AND kind=3 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web` [ RunTime:0.032001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web` LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `web_info` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ error ] [2]DOMDocument::loadHTML(): Input is not proper UTF-8, indicate encoding ! in Entity, line: 7[F:\plant\vendor\jaeger\phpquery-single\phpQuery.php:328]
+[ error ] [2]DOMDocument::loadHTML(): htmlParseEntityRef: expecting ';' in Entity, line: 142[F:\plant\vendor\jaeger\phpquery-single\phpQuery.php:328]
+[ error ] [2]DOMDocument::loadHTML(): htmlParseEntityRef: expecting ';' in Entity, line: 142[F:\plant\vendor\jaeger\phpquery-single\phpQuery.php:328]
+[ error ] [2]DOMDocument::loadHTML(): htmlParseEntityRef: expecting ';' in Entity, line: 142[F:\plant\vendor\jaeger\phpquery-single\phpQuery.php:328]
+[ error ] [2]DOMDocument::loadHTML(): htmlParseEntityRef: expecting ';' in Entity, line: 142[F:\plant\vendor\jaeger\phpquery-single\phpQuery.php:328]
+---------------------------------------------------------------
+[ 2019-07-19T10:16:37+08:00 ] 127.0.0.1 GET www.yong.com/static/index/images/2.gif
+[运行时间：0.064004s] [吞吐率：15.62req/s] [内存消耗：1,850.72kb] [文件加载：61]
+[ info ] [ LANG ] F:\plant\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'index',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7o2kmc6g0uddp12i7m1hb0ujo3',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.yong.com/',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-07-19T10:28:08+08:00 ] 127.0.0.1 GET www.yong.com/index/index/detail/id/10.html
+[运行时间：0.728092s] [吞吐率：1.37req/s] [内存消耗：3,368.24kb] [文件加载：81]
+[ info ] [ LANG ] F:\plant\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'detail',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7o2kmc6g0uddp12i7m1hb0ujo3',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.yong.com/',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+  'id' => '10',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think_admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\index\controller\Index->detail[ F:\plant\application\index\controller\Index.php ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ VIEW ] F:\plant\public/../application/index\view\index\detail.html [ array (
+  0 => 'accessNum',
+  1 => 'access',
+  2 => 'selfWebInfo',
+  3 => 'info',
+  4 => 'new_article',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010501s ] mysql:host=127.0.0.1;port=3306;dbname=yong;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `access` [ RunTime:0.012502s ]
+[ sql ] [ SQL ] SELECT * FROM `access` WHERE  `ip` = '127.0.0.1' LIMIT 1 [ RunTime:0.000500s ]
+[ sql ] [ SQL ] SELECT * FROM `access` WHERE  `access_date` = 20190719 ORDER BY `access_num` DESC,`access_time` DESC [ RunTime:0.000500s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_info` [ RunTime:0.009501s ]
+[ sql ] [ SQL ] SELECT * FROM `web_info` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000500s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `copy_web` [ RunTime:0.013001s ]
+[ sql ] [ SQL ] SELECT * FROM `copy_web` WHERE  (  kind=4 ) ORDER BY `add_time` DESC [ RunTime:0.001500s ]
+[ sql ] [ SQL ] select id from copy_web where kind=4 AND add_time < 1560911288 [ RunTime:0.000500s ]
+[ sql ] [ SQL ] select id from ling where add_time < 1560911288 [ RunTime:0.000500s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `article` [ RunTime:0.010501s ]
+[ sql ] [ SQL ] SELECT * FROM `article` WHERE  `id` = 10 LIMIT 1 [ RunTime:0.000500s ]
+[ sql ] [ SQL ] SELECT * FROM `access` WHERE  `ip` = '127.0.0.1' ORDER BY `access_time` DESC [ RunTime:0.000500s ]
+[ sql ] [ SQL ] UPDATE `access`  SET `access_num`=`access_num`+1  WHERE  `id` = 5 [ RunTime:0.000500s ]
+[ sql ] [ SQL ] UPDATE `access`  SET `access_time`=1563503288,`access_web`='本机如何访问vmware虚拟机中配置的域名'  WHERE  `id` = 5 [ RunTime:0.000500s ]
+[ sql ] [ SQL ] UPDATE `article`  SET `read_num`=`read_num`+1  WHERE  `id` = 10 [ RunTime:0.000500s ]
+[ sql ] [ SQL ] SELECT * FROM `article` WHERE  (  status=1 AND type=2 AND kind=1 ) OR (  status=1 AND type=2 AND kind=2 ) ORDER BY `add_time` DESC LIMIT 10 [ RunTime:0.002000s ]
+---------------------------------------------------------------
+[ 2019-07-19T10:28:09+08:00 ] 127.0.0.1 GET www.yong.com/static/index/images/2.gif
+[运行时间：0.065008s] [吞吐率：15.38req/s] [内存消耗：1,850.84kb] [文件加载：61]
+[ info ] [ LANG ] F:\plant\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'index',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7o2kmc6g0uddp12i7m1hb0ujo3',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.yong.com/index/index/detail/id/10.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-07-19T10:28:10+08:00 ] 127.0.0.1 GET www.yong.com/index/index/detail/id/10.html
+[运行时间：0.112514s] [吞吐率：8.89req/s] [内存消耗：3,362.95kb] [文件加载：81]
+[ info ] [ LANG ] F:\plant\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'detail',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7o2kmc6g0uddp12i7m1hb0ujo3',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.yong.com/index/index/detail/id/10.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+  'id' => '10',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think_admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\index\controller\Index->detail[ F:\plant\application\index\controller\Index.php ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ VIEW ] F:\plant\public/../application/index\view\index\detail.html [ array (
+  0 => 'accessNum',
+  1 => 'access',
+  2 => 'selfWebInfo',
+  3 => 'info',
+  4 => 'new_article',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=yong;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `access` [ RunTime:0.012502s ]
+[ sql ] [ SQL ] SELECT * FROM `access` WHERE  `ip` = '127.0.0.1' LIMIT 1 [ RunTime:0.000500s ]
+[ sql ] [ SQL ] SELECT * FROM `access` WHERE  `access_date` = 20190719 ORDER BY `access_num` DESC,`access_time` DESC [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_info` [ RunTime:0.013002s ]
+[ sql ] [ SQL ] SELECT * FROM `web_info` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000500s ]
+[ sql ] [ SQL ] select id from copy_web where kind=4 AND add_time < 1560911290 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] select id from ling where add_time < 1560911290 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `article` [ RunTime:0.013502s ]
+[ sql ] [ SQL ] SELECT * FROM `article` WHERE  `id` = 10 LIMIT 1 [ RunTime:0.000500s ]
+[ sql ] [ SQL ] SELECT * FROM `access` WHERE  `ip` = '127.0.0.1' ORDER BY `access_time` DESC [ RunTime:0.000500s ]
+[ sql ] [ SQL ] UPDATE `access`  SET `access_num`=`access_num`+1  WHERE  `id` = 5 [ RunTime:0.000500s ]
+[ sql ] [ SQL ] UPDATE `access`  SET `access_time`=1563503290,`access_web`='本机如何访问vmware虚拟机中配置的域名'  WHERE  `id` = 5 [ RunTime:0.000500s ]
+[ sql ] [ SQL ] UPDATE `article`  SET `read_num`=`read_num`+1  WHERE  `id` = 10 [ RunTime:0.000500s ]
+[ sql ] [ SQL ] SELECT * FROM `article` WHERE  (  status=1 AND type=2 AND kind=1 ) OR (  status=1 AND type=2 AND kind=2 ) ORDER BY `add_time` DESC LIMIT 10 [ RunTime:0.002000s ]
+---------------------------------------------------------------
+[ 2019-07-19T10:28:29+08:00 ] 127.0.0.1 GET www.yong.com/index/index/index.html
+[运行时间：0.176010s] [吞吐率：5.68req/s] [内存消耗：3,310.34kb] [文件加载：81]
+[ info ] [ LANG ] F:\plant\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7o2kmc6g0uddp12i7m1hb0ujo3',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.yong.com/index/index/detail/id/10.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think_admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ F:\plant\application\index\controller\Index.php ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ VIEW ] F:\plant\public/../application/index\view\index\index.html [ array (
+  0 => 'accessNum',
+  1 => 'access',
+  2 => 'selfWebInfo',
+  3 => 'list',
+  4 => 'page',
+  5 => 'new_article',
+  6 => 'p_article',
+  7 => 'w_article',
+  8 => 's_article',
+  9 => 'w_web',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:host=127.0.0.1;port=3306;dbname=yong;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `access` [ RunTime:0.029001s ]
+[ sql ] [ SQL ] SELECT * FROM `access` WHERE  `ip` = '127.0.0.1' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `access` WHERE  `access_date` = 20190719 ORDER BY `access_num` DESC,`access_time` DESC [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_info` [ RunTime:0.012001s ]
+[ sql ] [ SQL ] SELECT * FROM `web_info` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] select id from copy_web where kind=4 AND add_time < 1560911309 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] select id from ling where add_time < 1560911309 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `access` WHERE  `ip` = '127.0.0.1' ORDER BY `access_time` DESC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] UPDATE `access`  SET `access_num`=`access_num`+1  WHERE  `id` = 5 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] UPDATE `access`  SET `access_time`=1563503309,`access_web`='访问首页'  WHERE  `id` = 5 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `article` [ RunTime:0.011001s ]
+[ sql ] [ SQL ] SELECT * FROM `article` WHERE  (  status=1 AND type=2 AND kind=1 )  AND (  is_hot=1 ) OR (  status=1 AND type=2 AND kind=2 ) ORDER BY `add_time` DESC LIMIT 0,6 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `article` WHERE  (  status=1 AND type=2 AND kind=1 )  AND (  is_hot=1 ) OR (  status=1 AND type=2 AND kind=2 ) ORDER BY `add_time` DESC LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `article` WHERE  (  status=1 AND type=2 AND kind=1 ) OR (  status=1 AND type=2 AND kind=2 ) ORDER BY `add_time` DESC LIMIT 8 [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `article` WHERE  (  type=2 AND kind=1 ) LIMIT 1 [ RunTime:0.001001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `article` WHERE  (  type=2 AND kind=2 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `article` WHERE  (  type=2 AND kind=3 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web` [ RunTime:0.012000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web` LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `web_info` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2019-07-19T10:28:29+08:00 ] 127.0.0.1 GET www.yong.com/static/index/images/2.gif
+[运行时间：0.037002s] [吞吐率：27.03req/s] [内存消耗：1,850.79kb] [文件加载：61]
+[ info ] [ LANG ] F:\plant\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'index',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7o2kmc6g0uddp12i7m1hb0ujo3',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.yong.com/index/index/index.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-07-19T10:28:32+08:00 ] 127.0.0.1 GET www.yong.com/index/index/detail/id/9.html
+[运行时间：0.135007s] [吞吐率：7.41req/s] [内存消耗：3,343.84kb] [文件加载：81]
+[ info ] [ LANG ] F:\plant\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'detail',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7o2kmc6g0uddp12i7m1hb0ujo3',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.yong.com/index/index/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+  'id' => '9',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think_admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\index\controller\Index->detail[ F:\plant\application\index\controller\Index.php ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ VIEW ] F:\plant\public/../application/index\view\index\detail.html [ array (
+  0 => 'accessNum',
+  1 => 'access',
+  2 => 'selfWebInfo',
+  3 => 'info',
+  4 => 'new_article',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=yong;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `access` [ RunTime:0.019001s ]
+[ sql ] [ SQL ] SELECT * FROM `access` WHERE  `ip` = '127.0.0.1' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `access` WHERE  `access_date` = 20190719 ORDER BY `access_num` DESC,`access_time` DESC [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_info` [ RunTime:0.010001s ]
+[ sql ] [ SQL ] SELECT * FROM `web_info` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] select id from copy_web where kind=4 AND add_time < 1560911312 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] select id from ling where add_time < 1560911312 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `article` [ RunTime:0.012001s ]
+[ sql ] [ SQL ] SELECT * FROM `article` WHERE  `id` = 9 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `access` WHERE  `ip` = '127.0.0.1' ORDER BY `access_time` DESC [ RunTime:0.000000s ]
+[ sql ] [ SQL ] UPDATE `access`  SET `access_num`=`access_num`+1  WHERE  `id` = 5 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] UPDATE `access`  SET `access_time`=1563503312,`access_web`='Linux 搭建centos7.2 版 lamp 详细教程'  WHERE  `id` = 5 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] UPDATE `article`  SET `read_num`=`read_num`+1  WHERE  `id` = 9 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `article` WHERE  (  status=1 AND type=2 AND kind=1 ) OR (  status=1 AND type=2 AND kind=2 ) ORDER BY `add_time` DESC LIMIT 10 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2019-07-19T10:28:32+08:00 ] 127.0.0.1 GET www.yong.com/static/index/images/2.gif
+[运行时间：0.047003s] [吞吐率：21.28req/s] [内存消耗：1,850.84kb] [文件加载：61]
+[ info ] [ LANG ] F:\plant\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'index',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7o2kmc6g0uddp12i7m1hb0ujo3',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.yong.com/index/index/detail/id/9.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-07-19T10:30:09+08:00 ] 127.0.0.1 GET www.yong.com/zhyong/index/welcome.html
+[运行时间：0.124007s] [吞吐率：8.06req/s] [内存消耗：2,037.78kb] [文件加载：67]
+[ info ] [ LANG ] F:\plant\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'zhyong',
+    1 => 'index',
+    2 => 'welcome',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7o2kmc6g0uddp12i7m1hb0ujo3',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think_admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-07-19T10:30:09+08:00 ] 127.0.0.1 GET www.yong.com/Zhyong/Login/login
+[运行时间：0.081005s] [吞吐率：12.34req/s] [内存消耗：2,098.32kb] [文件加载：70]
+[ info ] [ LANG ] F:\plant\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'Zhyong',
+    1 => 'Login',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7o2kmc6g0uddp12i7m1hb0ujo3',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\zhyong\controller\Login->login[ F:\plant\application\zhyong\controller\Login.php ]
+[ info ] [ VIEW ] F:\plant\public/../application/zhyong\view\login\login.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-07-19T10:30:11+08:00 ] 127.0.0.1 POST www.yong.com/zhyong/login/login.html
+[运行时间：0.143008s] [吞吐率：6.99req/s] [内存消耗：2,721.08kb] [文件加载：78]
+[ info ] [ LANG ] F:\plant\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'zhyong',
+    1 => 'login',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7o2kmc6g0uddp12i7m1hb0ujo3',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.yong.com/Zhyong/Login/login',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://www.yong.com',
+  'accept' => '*/*',
+  'content-length' => '42',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+  'name' => '大叔',
+  'password' => '123456789',
+)
+[ info ] [ RUN ] app\zhyong\controller\Login->login[ F:\plant\application\zhyong\controller\Login.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think_admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000000s ] mysql:host=127.0.0.1;port=3306;dbname=yong;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin` [ RunTime:0.048003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin` WHERE  `name` = '大叔' LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2019-07-19T10:30:12+08:00 ] 127.0.0.1 GET www.yong.com/zhyong/index/index.html
+[运行时间：0.192011s] [吞吐率：5.21req/s] [内存消耗：2,751.66kb] [文件加载：78]
+[ info ] [ LANG ] F:\plant\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'zhyong',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7o2kmc6g0uddp12i7m1hb0ujo3',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.yong.com/Zhyong/Login/login',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think_admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\zhyong\controller\Index->index[ F:\plant\application\zhyong\controller\Index.php ]
+[ info ] [ VIEW ] F:\plant\public/../application/zhyong\view\index\index.html [ array (
+  0 => 'menu',
+  1 => 'http',
+  2 => 'admin_user_info',
+  3 => 'img',
+  4 => 'gl',
+  5 => 'admin_info',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.013001s ] mysql:host=127.0.0.1;port=3306;dbname=yong;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin` [ RunTime:0.016001s ]
+[ sql ] [ SQL ] SELECT `role` FROM `admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_menu` [ RunTime:0.047003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  (  id in (1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.022001s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 1  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 6  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 14  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 16  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 18  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id` FROM `admin_menu` WHERE  `controller` = 'Index'  AND `function` = 'index' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2019-07-19T10:30:12+08:00 ] 127.0.0.1 GET www.yong.com/zhyong/index/welcome.html
+[运行时间：0.132008s] [吞吐率：7.58req/s] [内存消耗：2,997.22kb] [文件加载：78]
+[ info ] [ LANG ] F:\plant\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'zhyong',
+    1 => 'index',
+    2 => 'welcome',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7o2kmc6g0uddp12i7m1hb0ujo3',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.yong.com/zhyong/index/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think_admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\zhyong\controller\Index->welcome[ F:\plant\application\zhyong\controller\Index.php ]
+[ info ] [ VIEW ] F:\plant\public/../application/zhyong\view\index\welcome.html [ array (
+  0 => 'menu',
+  1 => 'http',
+  2 => 'admin_user_info',
+  3 => 'img',
+  4 => 'gl',
+  5 => 'admin_info',
+  6 => 'accessNum',
+  7 => 'accessChart',
+  8 => 'new_article',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=yong;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin` [ RunTime:0.013001s ]
+[ sql ] [ SQL ] SELECT `role` FROM `admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_menu` [ RunTime:0.013001s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  (  id in (1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 1  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 6  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 14  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 16  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 18  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id` FROM `admin_menu` WHERE  `controller` = 'Index'  AND `function` = 'welcome' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `access` [ RunTime:0.015001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `access` WHERE  `access_date` = 20190719 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] select access_date,count('id') as 'num' from access group by access_date order by access_time desc limit 7 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `article` [ RunTime:0.009001s ]
+[ sql ] [ SQL ] SELECT * FROM `article` WHERE  (  status=1 AND type=2 ) ORDER BY `add_time` DESC LIMIT 6 [ RunTime:0.002000s ]
+---------------------------------------------------------------
+[ 2019-07-19T10:31:52+08:00 ] 127.0.0.1 GET www.yong.com/zhyong/Tables/index
+[运行时间：0.184011s] [吞吐率：5.43req/s] [内存消耗：3,059.12kb] [文件加载：78]
+[ info ] [ LANG ] F:\plant\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'zhyong',
+    1 => 'Tables',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7o2kmc6g0uddp12i7m1hb0ujo3',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.yong.com/zhyong/index/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think_admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\zhyong\controller\Tables->index[ F:\plant\application\zhyong\controller\Tables.php ]
+[ info ] [ VIEW ] F:\plant\public/../application/zhyong\view\tables\index.html [ array (
+  0 => 'menu',
+  1 => 'http',
+  2 => 'admin_user_info',
+  3 => 'img',
+  4 => 'gl',
+  5 => 'type',
+  6 => 'article',
+  7 => 'page',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=yong;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin` [ RunTime:0.011001s ]
+[ sql ] [ SQL ] SELECT `role` FROM `admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_menu` [ RunTime:0.011000s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  (  id in (1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 1  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.001001s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 6  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 14  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 16  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 18  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id` FROM `admin_menu` WHERE  `controller` = 'Tables'  AND `function` = 'index' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `article` [ RunTime:0.008000s ]
+[ sql ] [ SQL ] SELECT * FROM `article` WHERE  (  status=1 AND kind=1 )  AND `type` = 2 ORDER BY `add_time` DESC [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `article` WHERE  (  status=1 AND kind=1 )  AND `type` = 2 LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2019-07-19T10:31:55+08:00 ] 127.0.0.1 GET www.yong.com/zhyong/tables/save/type/1.html
+[运行时间：0.200012s] [吞吐率：5.00req/s] [内存消耗：2,860.05kb] [文件加载：78]
+[ info ] [ LANG ] F:\plant\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'zhyong',
+    1 => 'tables',
+    2 => 'save',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7o2kmc6g0uddp12i7m1hb0ujo3',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.yong.com/zhyong/Tables/index',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+  'type' => '1',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think_admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\zhyong\controller\Tables->save[ F:\plant\application\zhyong\controller\Tables.php ]
+[ info ] [ VIEW ] F:\plant\public/../application/zhyong\view\tables\save.html [ array (
+  0 => 'menu',
+  1 => 'http',
+  2 => 'admin_user_info',
+  3 => 'img',
+  4 => 'gl',
+  5 => 'label',
+  6 => 'kind',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000000s ] mysql:host=127.0.0.1;port=3306;dbname=yong;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin` [ RunTime:0.011000s ]
+[ sql ] [ SQL ] SELECT `role` FROM `admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_menu` [ RunTime:0.009001s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  (  id in (1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 1  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 6  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 14  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 16  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 18  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id` FROM `admin_menu` WHERE  `controller` = 'Tables'  AND `function` = 'save' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `label` [ RunTime:0.072004s ]
+[ sql ] [ SQL ] SELECT * FROM `label` WHERE  `kid` = 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2019-07-19T10:32:58+08:00 ] 127.0.0.1 POST www.yong.com/zhyong/tables/save.html
+[运行时间：0.096006s] [吞吐率：10.42req/s] [内存消耗：2,798.59kb] [文件加载：78]
+[ info ] [ LANG ] F:\plant\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'zhyong',
+    1 => 'tables',
+    2 => 'save',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7o2kmc6g0uddp12i7m1hb0ujo3',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.yong.com/zhyong/tables/save/type/1.html',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://www.yong.com',
+  'accept' => '*/*',
+  'content-length' => '4213',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+  'data' => 
+  array (
+    'kind' => '1',
+    'title' => 'Linux的基本操作',
+    'author' => '大叔',
+    'content' => '<p class="_tgt transPara" style="font-size:14px;color:#333333;font-family:Arial, &quot;background-color:#F7F8FA;">
+	<span class="transSent">Another program may be editing the same file.&nbsp; If this is the case,<br />
+be careful not to end up with two different instances of the same<br />
+file when making changes.&nbsp; Quit, or continue with caution.<br />
+(2) An edit session for this file crashed.<br />
+If this is the case, use ":recover" or "vim -r httpd-ssl.conf"<br />
+to recover the changes (see ":help recovery").<br />
+If you did this already, delete the swap file ".httpd-ssl.conf.swp"<br />
+to avoid this message.<br />
+<br />
+</span>
+</p>
+<p class="_tgt transPara" style="font-size:14px;color:#333333;font-family:Arial, &quot;background-color:#F7F8FA;">
+	<span class="transSent">另一个程序可能正在编辑相同的文件。</span><span class="transSent">如果是这样的话，</span>
+</p>
+<p class="_tgt transPara" style="font-size:14px;color:#333333;font-family:Arial, &quot;background-color:#F7F8FA;">
+	<span class="transSent">注意不要以相同的两个不同实例结束</span>
+</p>
+<p class="_tgt transPara" style="font-size:14px;color:#333333;font-family:Arial, &quot;background-color:#F7F8FA;">
+	<span class="transSent">更改时归档。</span><span class="transSent">退出，或继续谨慎。</span>
+</p>
+<p class="_tgt transPara" style="font-size:14px;color:#333333;font-family:Arial, &quot;background-color:#F7F8FA;">
+	<span class="transSent">(2)此文件的编辑会话崩溃。</span>
+</p>
+<p class="_tgt transPara" style="font-size:14px;color:#333333;font-family:Arial, &quot;background-color:#F7F8FA;">
+	<span class="transSent">如果是这种情况，请使用“:recovery”或“vim -r httpd-ssl.conf”</span>
+</p>
+<p class="_tgt transPara" style="font-size:14px;color:#333333;font-family:Arial, &quot;background-color:#F7F8FA;">
+	<span class="transSent">恢复更改(参见“:帮助恢复”)。</span>
+</p>
+<p class="_tgt transPara" style="font-size:14px;color:#333333;font-family:Arial, &quot;background-color:#F7F8FA;">
+	<span class="transSent">如果您已经这样做了，请删除交换文件“.httpd-ssl.conf.swp”</span>
+</p>
+<p class="_tgt transPara" style="font-size:14px;color:#333333;font-family:Arial, &quot;background-color:#F7F8FA;">
+	<span class="transSent">为了避免这个信息。</span>
+</p>',
+    'describe' => '使用Linux基本的操作，及错误处理',
+    'pid' => '2',
+    'is_hot' => '1',
+    'img' => '',
+  ),
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think_admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\zhyong\controller\Tables->save[ F:\plant\application\zhyong\controller\Tables.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010001s ] mysql:host=127.0.0.1;port=3306;dbname=yong;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin` [ RunTime:0.008000s ]
+[ sql ] [ SQL ] SELECT `role` FROM `admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_menu` [ RunTime:0.010001s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  (  id in (1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 1  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 6  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 14  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 16  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 18  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id` FROM `admin_menu` WHERE  `controller` = 'Tables'  AND `function` = 'save' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `article` [ RunTime:0.010001s ]
+[ sql ] [ SQL ] INSERT INTO `article` (`kind` , `title` , `author` , `content` , `describe` , `pid` , `is_hot` , `add_time` , `type` , `status`) VALUES (1 , 'Linux的基本操作' , '大叔' , '<p class=\"_tgt transPara\" style=\"font-size:14px;color:#333333;font-family:Arial, &quot;background-color:#F7F8FA;\">\n	<span class=\"transSent\">Another program may be editing the same file.&nbsp; If this is the case,<br />\nbe careful not to end up with two different instances of the same<br />\nfile when making changes.&nbsp; Quit, or continue with caution.<br />\n(2) An edit session for this file crashed.<br />\nIf this is the case, use \":recover\" or \"vim -r httpd-ssl.conf\"<br />\nto recover the changes (see \":help recovery\").<br />\nIf you did this already, delete the swap file \".httpd-ssl.conf.swp\"<br />\nto avoid this message.<br />\n<br />\n</span>\n</p>\n<p class=\"_tgt transPara\" style=\"font-size:14px;color:#333333;font-family:Arial, &quot;background-color:#F7F8FA;\">\n	<span class=\"transSent\">另一个程序可能正在编辑相同的文件。</span><span class=\"transSent\">如果是这样的话，</span>\n</p>\n<p class=\"_tgt transPara\" style=\"font-size:14px;color:#333333;font-family:Arial, &quot;background-color:#F7F8FA;\">\n	<span class=\"transSent\">注意不要以相同的两个不同实例结束</span>\n</p>\n<p class=\"_tgt transPara\" style=\"font-size:14px;color:#333333;font-family:Arial, &quot;background-color:#F7F8FA;\">\n	<span class=\"transSent\">更改时归档。</span><span class=\"transSent\">退出，或继续谨慎。</span>\n</p>\n<p class=\"_tgt transPara\" style=\"font-size:14px;color:#333333;font-family:Arial, &quot;background-color:#F7F8FA;\">\n	<span class=\"transSent\">(2)此文件的编辑会话崩溃。</span>\n</p>\n<p class=\"_tgt transPara\" style=\"font-size:14px;color:#333333;font-family:Arial, &quot;background-color:#F7F8FA;\">\n	<span class=\"transSent\">如果是这种情况，请使用“:recovery”或“vim -r httpd-ssl.conf”</span>\n</p>\n<p class=\"_tgt transPara\" style=\"font-size:14px;color:#333333;font-family:Arial, &quot;background-color:#F7F8FA;\">\n	<span class=\"transSent\">恢复更改(参见“:帮助恢复”)。</span>\n</p>\n<p class=\"_tgt transPara\" style=\"font-size:14px;color:#333333;font-family:Arial, &quot;background-color:#F7F8FA;\">\n	<span class=\"transSent\">如果您已经这样做了，请删除交换文件“.httpd-ssl.conf.swp”</span>\n</p>\n<p class=\"_tgt transPara\" style=\"font-size:14px;color:#333333;font-family:Arial, &quot;background-color:#F7F8FA;\">\n	<span class=\"transSent\">为了避免这个信息。</span>\n</p>' , '使用Linux基本的操作，及错误处理' , 2 , 1 , 1563503578 , 2 , 1) [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2019-07-19T10:32:59+08:00 ] 127.0.0.1 GET www.yong.com/zhyong/Tables/index
+[运行时间：0.112007s] [吞吐率：8.93req/s] [内存消耗：3,066.27kb] [文件加载：78]
+[ info ] [ LANG ] F:\plant\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'zhyong',
+    1 => 'Tables',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7o2kmc6g0uddp12i7m1hb0ujo3',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.yong.com/zhyong/tables/save/type/1.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think_admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\zhyong\controller\Tables->index[ F:\plant\application\zhyong\controller\Tables.php ]
+[ info ] [ VIEW ] F:\plant\public/../application/zhyong\view\tables\index.html [ array (
+  0 => 'menu',
+  1 => 'http',
+  2 => 'admin_user_info',
+  3 => 'img',
+  4 => 'gl',
+  5 => 'type',
+  6 => 'article',
+  7 => 'page',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010001s ] mysql:host=127.0.0.1;port=3306;dbname=yong;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin` [ RunTime:0.009000s ]
+[ sql ] [ SQL ] SELECT `role` FROM `admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_menu` [ RunTime:0.008001s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  (  id in (1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 1  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 6  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 14  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 16  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 18  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id` FROM `admin_menu` WHERE  `controller` = 'Tables'  AND `function` = 'index' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `article` [ RunTime:0.009000s ]
+[ sql ] [ SQL ] SELECT * FROM `article` WHERE  (  status=1 AND kind=1 )  AND `type` = 2 ORDER BY `add_time` DESC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `article` WHERE  (  status=1 AND kind=1 )  AND `type` = 2 LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2019-07-19T10:33:17+08:00 ] 127.0.0.1 GET www.yong.com/
+[运行时间：0.153520s] [吞吐率：6.51req/s] [内存消耗：3,263.73kb] [文件加载：81]
+[ info ] [ LANG ] F:\plant\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7o2kmc6g0uddp12i7m1hb0ujo3',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think_admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ F:\plant\application\index\controller\Index.php ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ VIEW ] F:\plant\public/../application/index\view\index\index.html [ array (
+  0 => 'accessNum',
+  1 => 'access',
+  2 => 'selfWebInfo',
+  3 => 'list',
+  4 => 'page',
+  5 => 'new_article',
+  6 => 'p_article',
+  7 => 'w_article',
+  8 => 's_article',
+  9 => 'w_web',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=yong;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `access` [ RunTime:0.014002s ]
+[ sql ] [ SQL ] SELECT * FROM `access` WHERE  `ip` = '127.0.0.1' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `access` WHERE  `access_date` = 20190719 ORDER BY `access_num` DESC,`access_time` DESC [ RunTime:0.000500s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_info` [ RunTime:0.015002s ]
+[ sql ] [ SQL ] SELECT * FROM `web_info` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000500s ]
+[ sql ] [ SQL ] select id from copy_web where kind=4 AND add_time < 1560911597 [ RunTime:0.000500s ]
+[ sql ] [ SQL ] select id from ling where add_time < 1560911597 [ RunTime:0.000500s ]
+[ sql ] [ SQL ] SELECT * FROM `access` WHERE  `ip` = '127.0.0.1' ORDER BY `access_time` DESC [ RunTime:0.000500s ]
+[ sql ] [ SQL ] UPDATE `access`  SET `access_num`=`access_num`+1  WHERE  `id` = 5 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] UPDATE `access`  SET `access_time`=1563503597,`access_web`='访问首页'  WHERE  `id` = 5 [ RunTime:0.000500s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `article` [ RunTime:0.011502s ]
+[ sql ] [ SQL ] SELECT * FROM `article` WHERE  (  status=1 AND type=2 AND kind=1 )  AND (  is_hot=1 ) OR (  status=1 AND type=2 AND kind=2 ) ORDER BY `add_time` DESC LIMIT 0,6 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `article` WHERE  (  status=1 AND type=2 AND kind=1 )  AND (  is_hot=1 ) OR (  status=1 AND type=2 AND kind=2 ) ORDER BY `add_time` DESC LIMIT 1 [ RunTime:0.000500s ]
+[ sql ] [ SQL ] SELECT * FROM `article` WHERE  (  status=1 AND type=2 AND kind=1 ) OR (  status=1 AND type=2 AND kind=2 ) ORDER BY `add_time` DESC LIMIT 8 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `article` WHERE  (  type=2 AND kind=1 ) LIMIT 1 [ RunTime:0.000501s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `article` WHERE  (  type=2 AND kind=2 ) LIMIT 1 [ RunTime:0.000500s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `article` WHERE  (  type=2 AND kind=3 ) LIMIT 1 [ RunTime:0.000500s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web` [ RunTime:0.012501s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web` LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `web_info` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2019-07-19T10:33:17+08:00 ] 127.0.0.1 GET www.yong.com/static/index/images/2.gif
+[运行时间：0.043506s] [吞吐率：22.99req/s] [内存消耗：1,850.72kb] [文件加载：61]
+[ info ] [ LANG ] F:\plant\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'index',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7o2kmc6g0uddp12i7m1hb0ujo3',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.yong.com/',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-07-19T10:33:20+08:00 ] 127.0.0.1 GET www.yong.com/index/index/detail/id/12.html
+[运行时间：0.130017s] [吞吐率：7.69req/s] [内存消耗：3,360.68kb] [文件加载：81]
+[ info ] [ LANG ] F:\plant\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'detail',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7o2kmc6g0uddp12i7m1hb0ujo3',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.yong.com/',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+  'id' => '12',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think_admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\index\controller\Index->detail[ F:\plant\application\index\controller\Index.php ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ VIEW ] F:\plant\public/../application/index\view\index\detail.html [ array (
+  0 => 'accessNum',
+  1 => 'access',
+  2 => 'selfWebInfo',
+  3 => 'info',
+  4 => 'new_article',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=yong;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `access` [ RunTime:0.018503s ]
+[ sql ] [ SQL ] SELECT * FROM `access` WHERE  `ip` = '127.0.0.1' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `access` WHERE  `access_date` = 20190719 ORDER BY `access_num` DESC,`access_time` DESC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_info` [ RunTime:0.018002s ]
+[ sql ] [ SQL ] SELECT * FROM `web_info` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] select id from copy_web where kind=4 AND add_time < 1560911600 [ RunTime:0.000501s ]
+[ sql ] [ SQL ] select id from ling where add_time < 1560911600 [ RunTime:0.000500s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `article` [ RunTime:0.016002s ]
+[ sql ] [ SQL ] SELECT * FROM `article` WHERE  `id` = 12 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `access` WHERE  `ip` = '127.0.0.1' ORDER BY `access_time` DESC [ RunTime:0.000500s ]
+[ sql ] [ SQL ] UPDATE `access`  SET `access_num`=`access_num`+1  WHERE  `id` = 5 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] UPDATE `access`  SET `access_time`=1563503600,`access_web`='Linux的基本操作'  WHERE  `id` = 5 [ RunTime:0.000500s ]
+[ sql ] [ SQL ] UPDATE `article`  SET `read_num`=`read_num`+1  WHERE  `id` = 12 [ RunTime:0.000501s ]
+[ sql ] [ SQL ] SELECT * FROM `article` WHERE  (  status=1 AND type=2 AND kind=1 ) OR (  status=1 AND type=2 AND kind=2 ) ORDER BY `add_time` DESC LIMIT 10 [ RunTime:0.001500s ]
+---------------------------------------------------------------
+[ 2019-07-19T10:33:20+08:00 ] 127.0.0.1 GET www.yong.com/static/index/images/2.gif
+[运行时间：0.045006s] [吞吐率：22.22req/s] [内存消耗：1,850.84kb] [文件加载：61]
+[ info ] [ LANG ] F:\plant\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'index',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7o2kmc6g0uddp12i7m1hb0ujo3',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.yong.com/index/index/detail/id/12.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-07-19T10:33:27+08:00 ] 127.0.0.1 GET www.yong.com/index/article/phpoption/mobile/1.html
+[运行时间：0.242531s] [吞吐率：4.12req/s] [内存消耗：3,271.46kb] [文件加载：81]
+[ info ] [ LANG ] F:\plant\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'article',
+    2 => 'phpoption',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7o2kmc6g0uddp12i7m1hb0ujo3',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.yong.com/index/index/detail/id/12.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+  'mobile' => '1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think_admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\index\controller\Article->phpOption[ F:\plant\application\index\controller\Article.php ]
+[ info ] [ VIEW ] F:\plant\public/../application/index\view\article\php_option.html [ array (
+  0 => 'accessNum',
+  1 => 'access',
+  2 => 'selfWebInfo',
+  3 => 'gl',
+  4 => 'list',
+  5 => 'page',
+  6 => 'new_article',
+  7 => 'p_article',
+  8 => 'w_article',
+  9 => 's_article',
+  10 => 'w_web',
+  11 => 'label',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010502s ] mysql:host=127.0.0.1;port=3306;dbname=yong;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `access` [ RunTime:0.010501s ]
+[ sql ] [ SQL ] SELECT * FROM `access` WHERE  `ip` = '127.0.0.1' LIMIT 1 [ RunTime:0.000500s ]
+[ sql ] [ SQL ] SELECT * FROM `access` WHERE  `access_date` = 20190719 ORDER BY `access_num` DESC,`access_time` DESC [ RunTime:0.000500s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_info` [ RunTime:0.009501s ]
+[ sql ] [ SQL ] SELECT * FROM `web_info` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000500s ]
+[ sql ] [ SQL ] select id from copy_web where kind=4 AND add_time < 1560911607 [ RunTime:0.000500s ]
+[ sql ] [ SQL ] select id from ling where add_time < 1560911607 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `article` [ RunTime:0.012001s ]
+[ sql ] [ SQL ] SELECT `co`.*,la.name as laname FROM `article` `co` INNER JOIN `label` `la` ON `co`.`pid`=`la`.`id` WHERE  (  status=1 AND type=2 AND kind=1 )  AND (  is_hot=1 ) ORDER BY `co`.`add_time` DESC LIMIT 0,6 [ RunTime:0.001001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `article` `co` INNER JOIN `label` `la` ON `co`.`pid`=`la`.`id` WHERE  (  status=1 AND type=2 AND kind=1 )  AND (  is_hot=1 ) ORDER BY `co`.`add_time` DESC LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `article` WHERE  (  status=1 AND type=2 AND kind=1 ) OR (  status=1 AND type=2 AND kind=2 ) ORDER BY `add_time` DESC LIMIT 8 [ RunTime:0.001500s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `article` WHERE  (  type=2 AND kind=1 ) LIMIT 1 [ RunTime:0.000500s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `article` WHERE  (  type=2 AND kind=2 ) LIMIT 1 [ RunTime:0.000500s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `article` WHERE  (  type=2 AND kind=3 ) LIMIT 1 [ RunTime:0.000500s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web` [ RunTime:0.011502s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web` LIMIT 1 [ RunTime:0.000500s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `label` [ RunTime:0.009001s ]
+[ sql ] [ SQL ] SELECT * FROM `label` WHERE  (  kid=1 ) [ RunTime:0.000500s ]
+---------------------------------------------------------------
+[ 2019-07-19T10:33:27+08:00 ] 127.0.0.1 GET www.yong.com/static/index/images/2.gif
+[运行时间：0.041005s] [吞吐率：24.39req/s] [内存消耗：1,850.84kb] [文件加载：61]
+[ info ] [ LANG ] F:\plant\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'index',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7o2kmc6g0uddp12i7m1hb0ujo3',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.yong.com/index/article/phpoption/mobile/1.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-07-19T10:33:30+08:00 ] 127.0.0.1 GET www.yong.com/index/article/phpoption/pid/2.html
+[运行时间：0.168021s] [吞吐率：5.95req/s] [内存消耗：3,234.46kb] [文件加载：81]
+[ info ] [ LANG ] F:\plant\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'article',
+    2 => 'phpoption',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7o2kmc6g0uddp12i7m1hb0ujo3',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.yong.com/index/article/phpoption/mobile/1.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+  'pid' => '2',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think_admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\index\controller\Article->phpOption[ F:\plant\application\index\controller\Article.php ]
+[ info ] [ VIEW ] F:\plant\public/../application/index\view\article\php_option.html [ array (
+  0 => 'accessNum',
+  1 => 'access',
+  2 => 'selfWebInfo',
+  3 => 'gl',
+  4 => 'list',
+  5 => 'page',
+  6 => 'new_article',
+  7 => 'p_article',
+  8 => 'w_article',
+  9 => 's_article',
+  10 => 'w_web',
+  11 => 'label',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003501s ] mysql:host=127.0.0.1;port=3306;dbname=yong;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `access` [ RunTime:0.013501s ]
+[ sql ] [ SQL ] SELECT * FROM `access` WHERE  `ip` = '127.0.0.1' LIMIT 1 [ RunTime:0.001501s ]
+[ sql ] [ SQL ] SELECT * FROM `access` WHERE  `access_date` = 20190719 ORDER BY `access_num` DESC,`access_time` DESC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_info` [ RunTime:0.017502s ]
+[ sql ] [ SQL ] SELECT * FROM `web_info` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000500s ]
+[ sql ] [ SQL ] select id from copy_web where kind=4 AND add_time < 1560911609 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] select id from ling where add_time < 1560911609 [ RunTime:0.000501s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `article` [ RunTime:0.009501s ]
+[ sql ] [ SQL ] SELECT `co`.*,la.name as laname FROM `article` `co` INNER JOIN `label` `la` ON `co`.`pid`=`la`.`id` WHERE  (  status=1 AND type=2 AND kind=1 )  AND (  is_hot=1 )  AND `pid` = 2 ORDER BY `co`.`add_time` DESC LIMIT 0,6 [ RunTime:0.000500s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `article` `co` INNER JOIN `label` `la` ON `co`.`pid`=`la`.`id` WHERE  (  status=1 AND type=2 AND kind=1 )  AND (  is_hot=1 )  AND `pid` = 2 ORDER BY `co`.`add_time` DESC LIMIT 1 [ RunTime:0.000500s ]
+[ sql ] [ SQL ] SELECT * FROM `article` WHERE  (  status=1 AND type=2 AND kind=1 ) OR (  status=1 AND type=2 AND kind=2 ) ORDER BY `add_time` DESC LIMIT 8 [ RunTime:0.003501s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `article` WHERE  (  type=2 AND kind=1 ) LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `article` WHERE  (  type=2 AND kind=2 ) LIMIT 1 [ RunTime:0.001500s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `article` WHERE  (  type=2 AND kind=3 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web` [ RunTime:0.027504s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web` LIMIT 1 [ RunTime:0.000500s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `label` [ RunTime:0.010501s ]
+[ sql ] [ SQL ] SELECT * FROM `label` WHERE  (  kid=1 ) [ RunTime:0.000500s ]
+---------------------------------------------------------------
+[ 2019-07-19T10:33:30+08:00 ] 127.0.0.1 GET www.yong.com/static/index/images/2.gif
+[运行时间：0.039505s] [吞吐率：25.31req/s] [内存消耗：1,850.84kb] [文件加载：61]
+[ info ] [ LANG ] F:\plant\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'index',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7o2kmc6g0uddp12i7m1hb0ujo3',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.yong.com/index/article/phpoption/pid/2.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-07-19T10:33:31+08:00 ] 127.0.0.1 GET www.yong.com/index/article/phpoption/pid/6.html
+[运行时间：0.144019s] [吞吐率：6.94req/s] [内存消耗：3,230.26kb] [文件加载：81]
+[ info ] [ LANG ] F:\plant\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'article',
+    2 => 'phpoption',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7o2kmc6g0uddp12i7m1hb0ujo3',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.yong.com/index/article/phpoption/pid/2.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+  'pid' => '6',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think_admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\index\controller\Article->phpOption[ F:\plant\application\index\controller\Article.php ]
+[ info ] [ VIEW ] F:\plant\public/../application/index\view\article\php_option.html [ array (
+  0 => 'accessNum',
+  1 => 'access',
+  2 => 'selfWebInfo',
+  3 => 'gl',
+  4 => 'list',
+  5 => 'page',
+  6 => 'new_article',
+  7 => 'p_article',
+  8 => 'w_article',
+  9 => 's_article',
+  10 => 'w_web',
+  11 => 'label',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001500s ] mysql:host=127.0.0.1;port=3306;dbname=yong;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `access` [ RunTime:0.012502s ]
+[ sql ] [ SQL ] SELECT * FROM `access` WHERE  `ip` = '127.0.0.1' LIMIT 1 [ RunTime:0.000500s ]
+[ sql ] [ SQL ] SELECT * FROM `access` WHERE  `access_date` = 20190719 ORDER BY `access_num` DESC,`access_time` DESC [ RunTime:0.000500s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_info` [ RunTime:0.013501s ]
+[ sql ] [ SQL ] SELECT * FROM `web_info` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000500s ]
+[ sql ] [ SQL ] select id from copy_web where kind=4 AND add_time < 1560911611 [ RunTime:0.002500s ]
+[ sql ] [ SQL ] select id from ling where add_time < 1560911611 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `article` [ RunTime:0.011002s ]
+[ sql ] [ SQL ] SELECT `co`.*,la.name as laname FROM `article` `co` INNER JOIN `label` `la` ON `co`.`pid`=`la`.`id` WHERE  (  status=1 AND type=2 AND kind=1 )  AND (  is_hot=1 )  AND `pid` = 6 ORDER BY `co`.`add_time` DESC LIMIT 0,6 [ RunTime:0.000500s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `article` `co` INNER JOIN `label` `la` ON `co`.`pid`=`la`.`id` WHERE  (  status=1 AND type=2 AND kind=1 )  AND (  is_hot=1 )  AND `pid` = 6 ORDER BY `co`.`add_time` DESC LIMIT 1 [ RunTime:0.000500s ]
+[ sql ] [ SQL ] SELECT * FROM `article` WHERE  (  status=1 AND type=2 AND kind=1 ) OR (  status=1 AND type=2 AND kind=2 ) ORDER BY `add_time` DESC LIMIT 8 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `article` WHERE  (  type=2 AND kind=1 ) LIMIT 1 [ RunTime:0.000500s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `article` WHERE  (  type=2 AND kind=2 ) LIMIT 1 [ RunTime:0.000500s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `article` WHERE  (  type=2 AND kind=3 ) LIMIT 1 [ RunTime:0.000500s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web` [ RunTime:0.012002s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web` LIMIT 1 [ RunTime:0.000500s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `label` [ RunTime:0.016502s ]
+[ sql ] [ SQL ] SELECT * FROM `label` WHERE  (  kid=1 ) [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2019-07-19T10:33:31+08:00 ] 127.0.0.1 GET www.yong.com/static/index/images/2.gif
+[运行时间：0.042505s] [吞吐率：23.53req/s] [内存消耗：1,850.84kb] [文件加载：61]
+[ info ] [ LANG ] F:\plant\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'index',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7o2kmc6g0uddp12i7m1hb0ujo3',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.yong.com/index/article/phpoption/pid/6.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-07-19T10:33:32+08:00 ] 127.0.0.1 GET www.yong.com/index/article/phpoption/pid/9.html
+[运行时间：0.159520s] [吞吐率：6.27req/s] [内存消耗：3,230.26kb] [文件加载：81]
+[ info ] [ LANG ] F:\plant\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'article',
+    2 => 'phpoption',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7o2kmc6g0uddp12i7m1hb0ujo3',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.yong.com/index/article/phpoption/pid/6.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+  'pid' => '9',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think_admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\index\controller\Article->phpOption[ F:\plant\application\index\controller\Article.php ]
+[ info ] [ VIEW ] F:\plant\public/../application/index\view\article\php_option.html [ array (
+  0 => 'accessNum',
+  1 => 'access',
+  2 => 'selfWebInfo',
+  3 => 'gl',
+  4 => 'list',
+  5 => 'page',
+  6 => 'new_article',
+  7 => 'p_article',
+  8 => 'w_article',
+  9 => 's_article',
+  10 => 'w_web',
+  11 => 'label',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001500s ] mysql:host=127.0.0.1;port=3306;dbname=yong;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `access` [ RunTime:0.009501s ]
+[ sql ] [ SQL ] SELECT * FROM `access` WHERE  `ip` = '127.0.0.1' LIMIT 1 [ RunTime:0.000501s ]
+[ sql ] [ SQL ] SELECT * FROM `access` WHERE  `access_date` = 20190719 ORDER BY `access_num` DESC,`access_time` DESC [ RunTime:0.000500s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_info` [ RunTime:0.012001s ]
+[ sql ] [ SQL ] SELECT * FROM `web_info` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000500s ]
+[ sql ] [ SQL ] select id from copy_web where kind=4 AND add_time < 1560911612 [ RunTime:0.000500s ]
+[ sql ] [ SQL ] select id from ling where add_time < 1560911612 [ RunTime:0.000500s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `article` [ RunTime:0.015502s ]
+[ sql ] [ SQL ] SELECT `co`.*,la.name as laname FROM `article` `co` INNER JOIN `label` `la` ON `co`.`pid`=`la`.`id` WHERE  (  status=1 AND type=2 AND kind=1 )  AND (  is_hot=1 )  AND `pid` = 9 ORDER BY `co`.`add_time` DESC LIMIT 0,6 [ RunTime:0.000500s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `article` `co` INNER JOIN `label` `la` ON `co`.`pid`=`la`.`id` WHERE  (  status=1 AND type=2 AND kind=1 )  AND (  is_hot=1 )  AND `pid` = 9 ORDER BY `co`.`add_time` DESC LIMIT 1 [ RunTime:0.000500s ]
+[ sql ] [ SQL ] SELECT * FROM `article` WHERE  (  status=1 AND type=2 AND kind=1 ) OR (  status=1 AND type=2 AND kind=2 ) ORDER BY `add_time` DESC LIMIT 8 [ RunTime:0.002500s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `article` WHERE  (  type=2 AND kind=1 ) LIMIT 1 [ RunTime:0.000500s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `article` WHERE  (  type=2 AND kind=2 ) LIMIT 1 [ RunTime:0.000500s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `article` WHERE  (  type=2 AND kind=3 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web` [ RunTime:0.013502s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web` LIMIT 1 [ RunTime:0.000500s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `label` [ RunTime:0.011502s ]
+[ sql ] [ SQL ] SELECT * FROM `label` WHERE  (  kid=1 ) [ RunTime:0.000500s ]
+---------------------------------------------------------------
+[ 2019-07-19T10:33:32+08:00 ] 127.0.0.1 GET www.yong.com/static/index/images/2.gif
+[运行时间：0.038505s] [吞吐率：25.97req/s] [内存消耗：1,850.84kb] [文件加载：61]
+[ info ] [ LANG ] F:\plant\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'index',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7o2kmc6g0uddp12i7m1hb0ujo3',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.yong.com/index/article/phpoption/pid/9.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-07-19T10:33:33+08:00 ] 127.0.0.1 GET www.yong.com/index/article/phpoption/pid/8.html
+[运行时间：0.164521s] [吞吐率：6.08req/s] [内存消耗：3,233.11kb] [文件加载：81]
+[ info ] [ LANG ] F:\plant\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'article',
+    2 => 'phpoption',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7o2kmc6g0uddp12i7m1hb0ujo3',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.yong.com/index/article/phpoption/pid/9.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+  'pid' => '8',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think_admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\index\controller\Article->phpOption[ F:\plant\application\index\controller\Article.php ]
+[ info ] [ VIEW ] F:\plant\public/../application/index\view\article\php_option.html [ array (
+  0 => 'accessNum',
+  1 => 'access',
+  2 => 'selfWebInfo',
+  3 => 'gl',
+  4 => 'list',
+  5 => 'page',
+  6 => 'new_article',
+  7 => 'p_article',
+  8 => 'w_article',
+  9 => 's_article',
+  10 => 'w_web',
+  11 => 'label',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001500s ] mysql:host=127.0.0.1;port=3306;dbname=yong;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `access` [ RunTime:0.014502s ]
+[ sql ] [ SQL ] SELECT * FROM `access` WHERE  `ip` = '127.0.0.1' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `access` WHERE  `access_date` = 20190719 ORDER BY `access_num` DESC,`access_time` DESC [ RunTime:0.000500s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_info` [ RunTime:0.020003s ]
+[ sql ] [ SQL ] SELECT * FROM `web_info` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] select id from copy_web where kind=4 AND add_time < 1560911613 [ RunTime:0.000500s ]
+[ sql ] [ SQL ] select id from ling where add_time < 1560911613 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `article` [ RunTime:0.013002s ]
+[ sql ] [ SQL ] SELECT `co`.*,la.name as laname FROM `article` `co` INNER JOIN `label` `la` ON `co`.`pid`=`la`.`id` WHERE  (  status=1 AND type=2 AND kind=1 )  AND (  is_hot=1 )  AND `pid` = 8 ORDER BY `co`.`add_time` DESC LIMIT 0,6 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `article` `co` INNER JOIN `label` `la` ON `co`.`pid`=`la`.`id` WHERE  (  status=1 AND type=2 AND kind=1 )  AND (  is_hot=1 )  AND `pid` = 8 ORDER BY `co`.`add_time` DESC LIMIT 1 [ RunTime:0.000500s ]
+[ sql ] [ SQL ] SELECT * FROM `article` WHERE  (  status=1 AND type=2 AND kind=1 ) OR (  status=1 AND type=2 AND kind=2 ) ORDER BY `add_time` DESC LIMIT 8 [ RunTime:0.002500s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `article` WHERE  (  type=2 AND kind=1 ) LIMIT 1 [ RunTime:0.000500s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `article` WHERE  (  type=2 AND kind=2 ) LIMIT 1 [ RunTime:0.000500s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `article` WHERE  (  type=2 AND kind=3 ) LIMIT 1 [ RunTime:0.000500s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web` [ RunTime:0.014002s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web` LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `label` [ RunTime:0.013502s ]
+[ sql ] [ SQL ] SELECT * FROM `label` WHERE  (  kid=1 ) [ RunTime:0.000500s ]
+---------------------------------------------------------------
+[ 2019-07-19T10:33:33+08:00 ] 127.0.0.1 GET www.yong.com/static/index/images/2.gif
+[运行时间：0.036005s] [吞吐率：27.77req/s] [内存消耗：1,850.84kb] [文件加载：61]
+[ info ] [ LANG ] F:\plant\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'index',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7o2kmc6g0uddp12i7m1hb0ujo3',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.yong.com/index/article/phpoption/pid/8.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-07-19T10:33:36+08:00 ] 127.0.0.1 GET www.yong.com/index/article/phpoption/pid/6.html
+[运行时间：0.172015s] [吞吐率：5.81req/s] [内存消耗：3,230.26kb] [文件加载：81]
+[ info ] [ LANG ] F:\plant\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'article',
+    2 => 'phpoption',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7o2kmc6g0uddp12i7m1hb0ujo3',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.yong.com/index/article/phpoption/pid/8.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+  'pid' => '6',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think_admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\index\controller\Article->phpOption[ F:\plant\application\index\controller\Article.php ]
+[ info ] [ VIEW ] F:\plant\public/../application/index\view\article\php_option.html [ array (
+  0 => 'accessNum',
+  1 => 'access',
+  2 => 'selfWebInfo',
+  3 => 'gl',
+  4 => 'list',
+  5 => 'page',
+  6 => 'new_article',
+  7 => 'p_article',
+  8 => 'w_article',
+  9 => 's_article',
+  10 => 'w_web',
+  11 => 'label',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=yong;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `access` [ RunTime:0.011001s ]
+[ sql ] [ SQL ] SELECT * FROM `access` WHERE  `ip` = '127.0.0.1' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `access` WHERE  `access_date` = 20190719 ORDER BY `access_num` DESC,`access_time` DESC [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_info` [ RunTime:0.010001s ]
+[ sql ] [ SQL ] SELECT * FROM `web_info` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] select id from copy_web where kind=4 AND add_time < 1560911616 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] select id from ling where add_time < 1560911616 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `article` [ RunTime:0.011000s ]
+[ sql ] [ SQL ] SELECT `co`.*,la.name as laname FROM `article` `co` INNER JOIN `label` `la` ON `co`.`pid`=`la`.`id` WHERE  (  status=1 AND type=2 AND kind=1 )  AND (  is_hot=1 )  AND `pid` = 6 ORDER BY `co`.`add_time` DESC LIMIT 0,6 [ RunTime:0.001001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `article` `co` INNER JOIN `label` `la` ON `co`.`pid`=`la`.`id` WHERE  (  status=1 AND type=2 AND kind=1 )  AND (  is_hot=1 )  AND `pid` = 6 ORDER BY `co`.`add_time` DESC LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `article` WHERE  (  status=1 AND type=2 AND kind=1 ) OR (  status=1 AND type=2 AND kind=2 ) ORDER BY `add_time` DESC LIMIT 8 [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `article` WHERE  (  type=2 AND kind=1 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `article` WHERE  (  type=2 AND kind=2 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `article` WHERE  (  type=2 AND kind=3 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web` [ RunTime:0.011000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web` LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `label` [ RunTime:0.010001s ]
+[ sql ] [ SQL ] SELECT * FROM `label` WHERE  (  kid=1 ) [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2019-07-19T10:33:36+08:00 ] 127.0.0.1 GET www.yong.com/static/index/images/2.gif
+[运行时间：0.037002s] [吞吐率：27.03req/s] [内存消耗：1,850.84kb] [文件加载：61]
+[ info ] [ LANG ] F:\plant\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'index',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7o2kmc6g0uddp12i7m1hb0ujo3',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.yong.com/index/article/phpoption/pid/6.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-07-19T10:42:15+08:00 ] 127.0.0.1 GET www.yong.com/index/article/phpoption/mobile/1.html
+[运行时间：0.166010s] [吞吐率：6.02req/s] [内存消耗：3,271.46kb] [文件加载：81]
+[ info ] [ LANG ] F:\plant\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'article',
+    2 => 'phpoption',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7o2kmc6g0uddp12i7m1hb0ujo3',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.yong.com/index/article/phpoption/pid/6.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+  'mobile' => '1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think_admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\index\controller\Article->phpOption[ F:\plant\application\index\controller\Article.php ]
+[ info ] [ VIEW ] F:\plant\public/../application/index\view\article\php_option.html [ array (
+  0 => 'accessNum',
+  1 => 'access',
+  2 => 'selfWebInfo',
+  3 => 'gl',
+  4 => 'list',
+  5 => 'page',
+  6 => 'new_article',
+  7 => 'p_article',
+  8 => 'w_article',
+  9 => 's_article',
+  10 => 'w_web',
+  11 => 'label',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=yong;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `access` [ RunTime:0.013000s ]
+[ sql ] [ SQL ] SELECT * FROM `access` WHERE  `ip` = '127.0.0.1' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `access` WHERE  `access_date` = 20190719 ORDER BY `access_num` DESC,`access_time` DESC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_info` [ RunTime:0.012001s ]
+[ sql ] [ SQL ] SELECT * FROM `web_info` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] select id from copy_web where kind=4 AND add_time < 1560912135 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] select id from ling where add_time < 1560912135 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `article` [ RunTime:0.011001s ]
+[ sql ] [ SQL ] SELECT `co`.*,la.name as laname FROM `article` `co` INNER JOIN `label` `la` ON `co`.`pid`=`la`.`id` WHERE  (  status=1 AND type=2 AND kind=1 )  AND (  is_hot=1 ) ORDER BY `co`.`add_time` DESC LIMIT 0,6 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `article` `co` INNER JOIN `label` `la` ON `co`.`pid`=`la`.`id` WHERE  (  status=1 AND type=2 AND kind=1 )  AND (  is_hot=1 ) ORDER BY `co`.`add_time` DESC LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `article` WHERE  (  status=1 AND type=2 AND kind=1 ) OR (  status=1 AND type=2 AND kind=2 ) ORDER BY `add_time` DESC LIMIT 8 [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `article` WHERE  (  type=2 AND kind=1 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `article` WHERE  (  type=2 AND kind=2 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `article` WHERE  (  type=2 AND kind=3 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web` [ RunTime:0.012001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web` LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `label` [ RunTime:0.009001s ]
+[ sql ] [ SQL ] SELECT * FROM `label` WHERE  (  kid=1 ) [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2019-07-19T10:42:15+08:00 ] 127.0.0.1 GET www.yong.com/static/index/images/2.gif
+[运行时间：0.040002s] [吞吐率：25.00req/s] [内存消耗：1,850.84kb] [文件加载：61]
+[ info ] [ LANG ] F:\plant\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'index',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7o2kmc6g0uddp12i7m1hb0ujo3',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.yong.com/index/article/phpoption/mobile/1.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-07-19T10:42:19+08:00 ] 127.0.0.1 GET www.yong.com/index/index/detail/id/9.html
+[运行时间：0.127007s] [吞吐率：7.87req/s] [内存消耗：3,358.49kb] [文件加载：81]
+[ info ] [ LANG ] F:\plant\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'detail',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7o2kmc6g0uddp12i7m1hb0ujo3',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.yong.com/index/article/phpoption/mobile/1.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+  'id' => '9',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think_admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\index\controller\Index->detail[ F:\plant\application\index\controller\Index.php ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ VIEW ] F:\plant\public/../application/index\view\index\detail.html [ array (
+  0 => 'accessNum',
+  1 => 'access',
+  2 => 'selfWebInfo',
+  3 => 'info',
+  4 => 'new_article',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:host=127.0.0.1;port=3306;dbname=yong;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `access` [ RunTime:0.019001s ]
+[ sql ] [ SQL ] SELECT * FROM `access` WHERE  `ip` = '127.0.0.1' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `access` WHERE  `access_date` = 20190719 ORDER BY `access_num` DESC,`access_time` DESC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_info` [ RunTime:0.009001s ]
+[ sql ] [ SQL ] SELECT * FROM `web_info` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] select id from copy_web where kind=4 AND add_time < 1560912139 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] select id from ling where add_time < 1560912139 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `article` [ RunTime:0.012001s ]
+[ sql ] [ SQL ] SELECT * FROM `article` WHERE  `id` = 9 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `access` WHERE  `ip` = '127.0.0.1' ORDER BY `access_time` DESC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] UPDATE `access`  SET `access_num`=`access_num`+1  WHERE  `id` = 5 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] UPDATE `access`  SET `access_time`=1563504139,`access_web`='Linux 搭建centos7.2 版 lamp 详细教程'  WHERE  `id` = 5 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] UPDATE `article`  SET `read_num`=`read_num`+1  WHERE  `id` = 9 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `article` WHERE  (  status=1 AND type=2 AND kind=1 ) OR (  status=1 AND type=2 AND kind=2 ) ORDER BY `add_time` DESC LIMIT 10 [ RunTime:0.002001s ]
+---------------------------------------------------------------
+[ 2019-07-19T10:42:19+08:00 ] 127.0.0.1 GET www.yong.com/static/index/images/2.gif
+[运行时间：0.043003s] [吞吐率：23.25req/s] [内存消耗：1,850.84kb] [文件加载：61]
+[ info ] [ LANG ] F:\plant\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'index',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7o2kmc6g0uddp12i7m1hb0ujo3',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.yong.com/index/index/detail/id/9.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-07-19T11:10:42+08:00 ] 127.0.0.1 GET www.yong.com/index/index/detail/id/10.html
+[运行时间：0.174010s] [吞吐率：5.75req/s] [内存消耗：3,374.65kb] [文件加载：81]
+[ info ] [ LANG ] F:\plant\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'detail',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7o2kmc6g0uddp12i7m1hb0ujo3',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.yong.com/index/index/detail/id/9.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+  'id' => '10',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think_admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\index\controller\Index->detail[ F:\plant\application\index\controller\Index.php ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ VIEW ] F:\plant\public/../application/index\view\index\detail.html [ array (
+  0 => 'accessNum',
+  1 => 'access',
+  2 => 'selfWebInfo',
+  3 => 'info',
+  4 => 'new_article',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:host=127.0.0.1;port=3306;dbname=yong;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `access` [ RunTime:0.012001s ]
+[ sql ] [ SQL ] SELECT * FROM `access` WHERE  `ip` = '127.0.0.1' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `access` WHERE  `access_date` = 20190719 ORDER BY `access_num` DESC,`access_time` DESC [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_info` [ RunTime:0.012001s ]
+[ sql ] [ SQL ] SELECT * FROM `web_info` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] select id from copy_web where kind=4 AND add_time < 1560913842 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] select id from ling where add_time < 1560913842 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `article` [ RunTime:0.019001s ]
+[ sql ] [ SQL ] SELECT * FROM `article` WHERE  `id` = 10 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `access` WHERE  `ip` = '127.0.0.1' ORDER BY `access_time` DESC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] UPDATE `access`  SET `access_num`=`access_num`+1  WHERE  `id` = 5 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] UPDATE `access`  SET `access_time`=1563505842,`access_web`='本机如何访问vmware虚拟机中配置的域名'  WHERE  `id` = 5 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] UPDATE `article`  SET `read_num`=`read_num`+1  WHERE  `id` = 10 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `article` WHERE  (  status=1 AND type=2 AND kind=1 ) OR (  status=1 AND type=2 AND kind=2 ) ORDER BY `add_time` DESC LIMIT 10 [ RunTime:0.004000s ]
+---------------------------------------------------------------
+[ 2019-07-19T11:10:42+08:00 ] 127.0.0.1 GET www.yong.com/static/index/images/2.gif
+[运行时间：0.044002s] [吞吐率：22.73req/s] [内存消耗：1,850.84kb] [文件加载：61]
+[ info ] [ LANG ] F:\plant\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'index',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7o2kmc6g0uddp12i7m1hb0ujo3',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.yong.com/index/index/detail/id/10.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-07-19T11:10:42+08:00 ] 127.0.0.1 GET www.yong.com/index/index/detail/id/10.html
+[运行时间：0.102006s] [吞吐率：9.80req/s] [内存消耗：3,373.55kb] [文件加载：81]
+[ info ] [ LANG ] F:\plant\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'detail',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7o2kmc6g0uddp12i7m1hb0ujo3',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.yong.com/index/index/detail/id/10.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+  'id' => '10',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think_admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\index\controller\Index->detail[ F:\plant\application\index\controller\Index.php ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ VIEW ] F:\plant\public/../application/index\view\index\detail.html [ array (
+  0 => 'accessNum',
+  1 => 'access',
+  2 => 'selfWebInfo',
+  3 => 'info',
+  4 => 'new_article',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=yong;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `access` [ RunTime:0.011001s ]
+[ sql ] [ SQL ] SELECT * FROM `access` WHERE  `ip` = '127.0.0.1' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `access` WHERE  `access_date` = 20190719 ORDER BY `access_num` DESC,`access_time` DESC [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_info` [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SELECT * FROM `web_info` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] select id from copy_web where kind=4 AND add_time < 1560913842 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] select id from ling where add_time < 1560913842 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `article` [ RunTime:0.009001s ]
+[ sql ] [ SQL ] SELECT * FROM `article` WHERE  `id` = 10 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `access` WHERE  `ip` = '127.0.0.1' ORDER BY `access_time` DESC [ RunTime:0.000000s ]
+[ sql ] [ SQL ] UPDATE `access`  SET `access_num`=`access_num`+1  WHERE  `id` = 5 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] UPDATE `access`  SET `access_time`=1563505842,`access_web`='本机如何访问vmware虚拟机中配置的域名'  WHERE  `id` = 5 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] UPDATE `article`  SET `read_num`=`read_num`+1  WHERE  `id` = 10 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `article` WHERE  (  status=1 AND type=2 AND kind=1 ) OR (  status=1 AND type=2 AND kind=2 ) ORDER BY `add_time` DESC LIMIT 10 [ RunTime:0.002000s ]
+---------------------------------------------------------------
+[ 2019-07-19T11:14:43+08:00 ] 127.0.0.1 GET www.yong.com/index/index/detail/id/9.html
+[运行时间：0.108514s] [吞吐率：9.22req/s] [内存消耗：3,358.49kb] [文件加载：81]
+[ info ] [ LANG ] F:\plant\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'detail',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7o2kmc6g0uddp12i7m1hb0ujo3',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.yong.com/index/index/detail/id/10.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+  'id' => '9',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think_admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\index\controller\Index->detail[ F:\plant\application\index\controller\Index.php ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ VIEW ] F:\plant\public/../application/index\view\index\detail.html [ array (
+  0 => 'accessNum',
+  1 => 'access',
+  2 => 'selfWebInfo',
+  3 => 'info',
+  4 => 'new_article',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:host=127.0.0.1;port=3306;dbname=yong;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `access` [ RunTime:0.013002s ]
+[ sql ] [ SQL ] SELECT * FROM `access` WHERE  `ip` = '127.0.0.1' LIMIT 1 [ RunTime:0.000500s ]
+[ sql ] [ SQL ] SELECT * FROM `access` WHERE  `access_date` = 20190719 ORDER BY `access_num` DESC,`access_time` DESC [ RunTime:0.000500s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_info` [ RunTime:0.010001s ]
+[ sql ] [ SQL ] SELECT * FROM `web_info` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] select id from copy_web where kind=4 AND add_time < 1560914083 [ RunTime:0.001501s ]
+[ sql ] [ SQL ] select id from ling where add_time < 1560914083 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `article` [ RunTime:0.009501s ]
+[ sql ] [ SQL ] SELECT * FROM `article` WHERE  `id` = 9 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `access` WHERE  `ip` = '127.0.0.1' ORDER BY `access_time` DESC [ RunTime:0.000000s ]
+[ sql ] [ SQL ] UPDATE `access`  SET `access_num`=`access_num`+1  WHERE  `id` = 5 [ RunTime:0.000500s ]
+[ sql ] [ SQL ] UPDATE `access`  SET `access_time`=1563506083,`access_web`='Linux 搭建centos7.2 版 lamp 详细教程'  WHERE  `id` = 5 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] UPDATE `article`  SET `read_num`=`read_num`+1  WHERE  `id` = 9 [ RunTime:0.000500s ]
+[ sql ] [ SQL ] SELECT * FROM `article` WHERE  (  status=1 AND type=2 AND kind=1 ) OR (  status=1 AND type=2 AND kind=2 ) ORDER BY `add_time` DESC LIMIT 10 [ RunTime:0.001500s ]
+---------------------------------------------------------------
+[ 2019-07-19T11:14:43+08:00 ] 127.0.0.1 GET www.yong.com/static/index/images/2.gif
+[运行时间：0.042005s] [吞吐率：23.81req/s] [内存消耗：1,850.84kb] [文件加载：61]
+[ info ] [ LANG ] F:\plant\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'index',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7o2kmc6g0uddp12i7m1hb0ujo3',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.yong.com/index/index/detail/id/9.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-07-19T17:23:07+08:00 ] 127.0.0.1 GET www.yong.com/index/index/detail/id/9.html
+[运行时间：1.195068s] [吞吐率：0.84req/s] [内存消耗：3,358.49kb] [文件加载：81]
+[ info ] [ LANG ] F:\plant\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'detail',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7o2kmc6g0uddp12i7m1hb0ujo3',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.yong.com/index/index/detail/id/10.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+  'id' => '9',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think_admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\index\controller\Index->detail[ F:\plant\application\index\controller\Index.php ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ VIEW ] F:\plant\public/../application/index\view\index\detail.html [ array (
+  0 => 'accessNum',
+  1 => 'access',
+  2 => 'selfWebInfo',
+  3 => 'info',
+  4 => 'new_article',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.020001s ] mysql:host=127.0.0.1;port=3306;dbname=yong;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `access` [ RunTime:0.040003s ]
+[ sql ] [ SQL ] SELECT * FROM `access` WHERE  `ip` = '127.0.0.1' LIMIT 1 [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT * FROM `access` WHERE  `access_date` = 20190719 ORDER BY `access_num` DESC,`access_time` DESC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_info` [ RunTime:0.039002s ]
+[ sql ] [ SQL ] SELECT * FROM `web_info` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] select id from copy_web where kind=4 AND add_time < 1560936187 [ RunTime:0.039002s ]
+[ sql ] [ SQL ] select id from ling where add_time < 1560936187 [ RunTime:0.024002s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `article` [ RunTime:0.035002s ]
+[ sql ] [ SQL ] SELECT * FROM `article` WHERE  `id` = 9 LIMIT 1 [ RunTime:0.011000s ]
+[ sql ] [ SQL ] SELECT * FROM `access` WHERE  `ip` = '127.0.0.1' ORDER BY `access_time` DESC [ RunTime:0.000000s ]
+[ sql ] [ SQL ] UPDATE `access`  SET `access_num`=`access_num`+1  WHERE  `id` = 5 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] UPDATE `access`  SET `access_time`=1563528187,`access_web`='Linux 搭建centos7.2 版 lamp 详细教程'  WHERE  `id` = 5 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] UPDATE `article`  SET `read_num`=`read_num`+1  WHERE  `id` = 9 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `article` WHERE  (  status=1 AND type=2 AND kind=1 ) OR (  status=1 AND type=2 AND kind=2 ) ORDER BY `add_time` DESC LIMIT 10 [ RunTime:0.036002s ]
+---------------------------------------------------------------
+[ 2019-07-19T17:23:07+08:00 ] 127.0.0.1 GET www.yong.com/static/index/images/2.gif
+[运行时间：0.064003s] [吞吐率：15.62req/s] [内存消耗：1,850.84kb] [文件加载：61]
+[ info ] [ LANG ] F:\plant\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'index',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7o2kmc6g0uddp12i7m1hb0ujo3',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.yong.com/index/index/detail/id/9.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File

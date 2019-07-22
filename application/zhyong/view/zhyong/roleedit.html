@@ -1,0 +1,97 @@
+{extend name="Father:index"/}
+{block name="tpl-content-wrapper"}
+<script>
+    KindEditor.ready(function(K) {
+        window.editor = K.create('#editor');
+    });
+</script>
+<!-- 内容区域 -->
+<div class="tpl-content-wrapper">
+    <div class="row-content am-cf">
+        <div class="row">
+            <div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
+                <div class="widget am-cf">
+                    <div class="widget-head am-cf">
+                        <div class="widget-title am-fl" style="width: 30%;">
+                            <a href="javascript:history.go(-1)" style="margin-right: 4%;">
+                                <img src="__PUBLIC__/static/admin/assets/img/back_i1.png" alt=""/></a>
+                            系统管理->管理员->添加</div>
+                        <div class="widget-function am-fr" style="margin-right: 3%;">
+                            <a href="javascript:;" class="click_back">刷新</a>
+                        </div>
+                    </div>
+                    <div class="widget-body am-fr">
+                        <form class="am-form tpl-form-border-form tpl-form-border-br" id="form1">
+                            <div class="am-form-group">
+                                <label for="name" class="am-u-sm-3 am-form-label">角色名称 <span class="tpl-form-line-small-title">Name</span></label>
+                                <div class="am-u-sm-9">
+                                    <input type="text" name="name" style="width: 40%;" class="tpl-form-input" id="name" value="{$role.name}">
+                                    <input type="hidden" name="id" value="{$role.id}">
+                                </div>
+                            </div>
+                            <div class="am-form-group">
+                                <label for="password" class="am-u-sm-3 am-form-label">管理权限 <span class="tpl-form-line-small-title">Password</span></label>
+                                <div class="am-u-sm-9" style="margin-top: 3%;" id="right_item">
+                                    {volist name='menu_all' id="v"}
+                                    <div class="" style="">
+                                        <span style="font-size: 16px;color: #888;">{$v.menu_name}</span>
+                                        <div style="margin-left: 3%;">
+                                            {volist name='v.child_menu' id="voo"}
+                                            <label style="font-size: 14px;color: #888;margin-left: 1%;"><input class="choes_dan" type="checkbox"  name="ChkTrue[]" data-id="{$voo.id}" value="{$v.id}_{$voo.id}">{$voo.menu_name}</label>
+                                            {/volist}
+                                        </div>
+                                    </div>
+                                    {/volist}
+
+                                </div>
+                            </div>
+                            <div class="am-form-group">
+                                <div class="am-u-sm-9 am-u-sm-push-3">
+                                    <button type="button" class="am-btn am-btn-primary tpl-btn-bg-color-success submit_up">提交</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function(){
+        <!--登陆用户已有的权限 -->
+        var role ="{$admin_info}";
+        role=role.split(',');
+        console.log(role);
+        <!--循环取出checkbox 的值  如果role 中有就 追加 选中-->
+        $("#right_item .choes_dan").each(function(){
+            var l=$(this).attr('data-id');
+            var res=$.inArray( l, role);
+            if(res>=0){
+                $(this).attr('checked','checked');
+            }
+        });
+    });
+    //提交
+    $('.submit_up').click(function(){
+        if(!$('[name=name]').val()){layer.msg('请输入角色名称',{time:800});$('[name=name]').focus();return false;};
+
+        var form = new FormData(document.getElementById('form1'));
+        $.ajax({
+            url:"{:url('Zhyong/roleedit')}",
+            type:"POST",
+            data:form,
+            processData:false,
+            contentType:false,
+            success:function(data){
+                layer.msg(data.msg,{time:800},function(){
+                    self.location=document.referrer;
+                })
+            },
+            error:function(data){
+                layer.msg(data.msg);
+            }
+        });
+    });
+</script>
+{/block}

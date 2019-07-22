@@ -1,0 +1,10 @@
+{volist name="list" id="lo"}
+<h2>{$lo.title}</h2>
+<p class="dateview"><span style="padding-left: 1%;">发布时间：<?php echo date('Y-m-d',$lo['add_time'])?></span><span>作者：{$lo.author}</span><span>分类：[<a href="{:url('About/phpOption')}">后端文章</a>]</span></p>
+<figure><img src="{$lo.img}"></figure>
+<ul class="nlist">
+    <p>{$lo.describe}</p>
+    <a title="阅读全文" href="{:url('Index/info',['id'=>$lo['id']])}" class="readmore">阅读全文>></a>
+</ul>
+<div class="line"></div>
+{/volist}

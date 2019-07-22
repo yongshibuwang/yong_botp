@@ -1,0 +1,76 @@
+{extend name="Father:father"/}
+{block name="article"}
+
+    <div class="container">
+        <div class="content-wrap">
+            <div class="sidebar ">
+                <!--<div class="widget widget_hot">
+                    <h3>文章目录</h3>
+                    <ul>
+                        <li><a title="" href="#"><span class="text">用DTcms做一个独立博客网站（响应式模板）</span></a></li>
+                        <li><a title="" href="#"><span class="text">用DTcms做一个独立博客网站（响应式模板）</span></a></li>
+                    </ul>
+                </div>-->
+                <div class="widget widget_hot ">
+                    <h3>最新文章</h3>
+                    <ul>
+                        {volist name="new_article" id="lo"}
+                        <li>
+                            <a title="" href="{:url('Index/detail',['id'=>$lo.id])}">
+                                <span class="text">{$lo.title}</span>
+                                <span class="muted">
+                                            <i class="glyphicon glyphicon-time"></i>
+                                    <?php echo date('Y-m-d',$lo['add_time'])?>
+                                        </span>
+                                <span class="muted">
+                                            <i class="glyphicon glyphicon-eye-open"></i> {$lo.read_num}</span>
+                            </a>
+                        </li>
+                        {/volist}
+                    </ul>
+                </div>
+
+            </div>
+            <div class="content">
+                <header class="article-header" style="text-align: center;">
+                    <h1 class="article-title">{$info.title}</h1>
+                    <div class="article-meta ">
+                        <span class="item category">{$info.kind}</span>
+                        <span class="item time "><?php echo date('Y-m-d',$info['add_time'])?></span>
+                        <!--<span class="item tags">标签：<a href="#">架构</a><a href="#">架构</a><a href="#">架构</a></span>-->
+                        <span class="item views"><i class="glyphicon glyphicon-eye-open"></i> {$info.read_num}</span>
+                    </div>
+                </header>
+                <article class="article-content">
+                    {$info.content}
+                </article>
+                <!--<div class="title">-->
+                    <!--<h3>评论</h3>-->
+                <!--</div>-->
+                <!--<div class="article-comment">-->
+                    <!--<form action="" method="POST">-->
+                        <!--<input type="text" class="form-control" placeholder="您的昵称（必填）">-->
+                        <!--<input type="text" class="form-control" placeholder="您的邮箱或联系电话（非必填）">-->
+                        <!--<textarea class="form-control" rows="3" placeholder="您的评论或留言（必填）"></textarea>-->
+                        <!--<button type="button" class="btn btn-default">发布评论</button>-->
+                    <!--</form>-->
+                <!--</div>-->
+
+                <!--<div class="postcomments">-->
+                    <!--<ol class="commentlist">-->
+                        <!--<li class="comment-content"><span class="comment-f">#2</span>-->
+                            <!--<div class="comment-main">-->
+                                <!--<p><a class="name" href="#" target="_blank">zx@reedo.cn</a><span class="time"> 2016/10/28 11:41:03</span><br>不错的网站主题，看着相当舒服</p>-->
+                            <!--</div>-->
+                        <!--</li>-->
+                        <!--<li class="comment-content"><span class="comment-f">#2</span>-->
+                            <!--<div class="comment-main">-->
+                                <!--<p><a class="name" href="#" target="_blank">九日</a><span class="time"> 2016/10/28 11:41:03</span><br>不错的网站主题，看着相当舒服</p>-->
+                            <!--</div>-->
+                        <!--</li>-->
+                    <!--</ol>-->
+                <!--</div>-->
+            </div>
+        </div>
+    </div>
+{/block}

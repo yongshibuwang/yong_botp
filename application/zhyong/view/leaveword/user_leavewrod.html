@@ -1,0 +1,204 @@
+{extend name="Father:index"/}
+{block name="tpl-content-wrapper"}
+        <!-- 内容区域 -->
+        <div class="tpl-content-wrapper">
+            <div class="row-content am-cf">
+                <div class="row">
+                    <!--<div class="am-u-sm-12 am-u-md-12 am-u-lg-6">-->
+                    <div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
+                        <div class="widget am-cf">
+                            <div class="widget-head am-cf">
+                                <form action="">
+                                <div class="widget-title am-fl tpl-table-black-operation">
+                                    <a href="javascript:;" style="{$type==1?'background-color:#36c6d3;color:#fff;':''}padding:6px 8px; border-radius: 4%;font-size: 18px;margin-right: 6px;"  onclick="t_type(1)">未审核</a>
+                                    <a href="javascript:;" style="{$type==2?'background-color:#36c6d3;color:#fff;':''}padding:6px 8px; border-radius: 4%;font-size: 18px;margin-right: 6px;"  onclick="t_type(2)">已通过</a>
+                                    <!--<a href="javascript:;" style="{$type==3?'background-color:#36c6d3;color:#fff;':''}padding:6px 8px; border-radius: 4%;font-size: 18px;margin-right: 6px;"  onclick="t_type(3)">未通过</a>-->
+                                </div>
+                                    <input type="hidden" name="type" value="{$type}"/>
+                                    <input type="submit" id="tijiao" style="display: none;"/>
+                                </form>
+                                <div class="widget-function am-fr" style="margin-right: 3%;">
+                                    <!--<a href="{:url('Leaveword/add')}" class="">添加</a>-->
+                                    <a href="javascript:;" class="delete">删除</a>
+                                    <a href="javascript:;" class="click_back">刷新</a>
+                                </div>
+                            </div>
+                            <div class="widget-body  widget-body-lg am-fr">
+                                <table width="100%" class="am-table am-table-compact tpl-table-black " id="">
+                                    <thead>
+                                        <tr>
+                                            <th width="">用户名</th>
+                                            <th width="60%"  style="text-align: center">留言内容</th>
+                                            <th>时间</th>
+                                            <th>操作</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    {volist name="$leave" id="vo"}
+                                        <tr class="gradeX">
+                                            <td>{$vo.user_name}</td>
+                                            <td width="60%">{$vo.content}</td>
+                                            <td><?php echo date('Y-m-d',$vo['add_time'])?></td>
+                                            <td>
+                                                <div class="tpl-table-black-operation">
+                                                    <a href="javascript:;" class="tpl-table-black-operation-del">
+                                                        <i class="am-icon-trash"></i> 删除
+                                                    </a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    {/volist}
+                                        <!-- more data -->
+                                    </tbody>
+                                </table>
+                                <style type="text/css">
+                                    #page {
+                                        float: right;
+                                    }
+                                    #page div span a{
+                                        border: 1px solid #fff;
+                                        border-radius: 4px;
+                                        height: 25px;
+                                        line-height: 26px;
+                                        margin: 0 3px;
+                                        padding: 8px 12px;
+                                        font-size: 12px;
+                                        color: #fff;
+                                    }
+                                </style>
+                                <div id="page">{$page}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--<div class="row">
+
+                    <div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
+                        <div class="widget am-cf">
+                            <div class="widget-head am-cf">
+                                <div class="widget-title am-fl">斑马线</div>
+                                <div class="widget-function am-fr">
+                                    <a href="javascript:;" class="am-icon-cog"></a>
+                                </div>
+                            </div>
+                            <div class="widget-body  widget-body-lg am-fr">
+
+                                <table width="100%" class="am-table am-table-compact am-table-striped tpl-table-black " id="example-r">
+                                    <thead>
+                                        <tr>
+                                            <th>文章标题</th>
+                                            <th>作者</th>
+                                            <th>时间</th>
+                                            <th>操作</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="gradeX">
+                                            <td>Amaze UI 模式窗口</td>
+                                            <td>张鹏飞</td>
+                                            <td>2016-09-26</td>
+                                            <td>
+                                                <div class="tpl-table-black-operation">
+                                                    <a href="javascript:;">
+                                                        <i class="am-icon-pencil"></i> 编辑
+                                                    </a>
+                                                    <a href="javascript:;" class="tpl-table-black-operation-del">
+                                                        <i class="am-icon-trash"></i> 删除
+                                                    </a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="even gradeC">
+                                            <td>有适配微信小程序的计划吗</td>
+                                            <td>天纵之人</td>
+                                            <td>2016-09-26</td>
+                                            <td>
+                                                <div class="tpl-table-black-operation">
+                                                    <a href="javascript:;">
+                                                        <i class="am-icon-pencil"></i> 编辑
+                                                    </a>
+                                                    <a href="javascript:;" class="tpl-table-black-operation-del">
+                                                        <i class="am-icon-trash"></i> 删除
+                                                    </a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="gradeX">
+                                            <td>请问有没有amazeui 分享插件</td>
+                                            <td>王宽师</td>
+                                            <td>2016-09-26</td>
+                                            <td>
+                                                <div class="tpl-table-black-operation">
+                                                    <a href="javascript:;">
+                                                        <i class="am-icon-pencil"></i> 编辑
+                                                    </a>
+                                                    <a href="javascript:;" class="tpl-table-black-operation-del">
+                                                        <i class="am-icon-trash"></i> 删除
+                                                    </a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="even gradeC">
+                                            <td>关于input输入框的问题</td>
+                                            <td>着迷</td>
+                                            <td>2016-09-26</td>
+                                            <td>
+                                                <div class="tpl-table-black-operation">
+                                                    <a href="javascript:;">
+                                                        <i class="am-icon-pencil"></i> 编辑
+                                                    </a>
+                                                    <a href="javascript:;" class="tpl-table-black-operation-del">
+                                                        <i class="am-icon-trash"></i> 删除
+                                                    </a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="even gradeC">
+                                            <td>有没有发现官网上的下载包不好用</td>
+                                            <td>醉里挑灯看键</td>
+                                            <td>2016-09-26</td>
+                                            <td>
+                                                <div class="tpl-table-black-operation">
+                                                    <a href="javascript:;">
+                                                        <i class="am-icon-pencil"></i> 编辑
+                                                    </a>
+                                                    <a href="javascript:;" class="tpl-table-black-operation-del">
+                                                        <i class="am-icon-trash"></i> 删除
+                                                    </a>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                        <tr class="even gradeC">
+                                            <td>我建议WEB版本文件引入问题</td>
+                                            <td>罢了</td>
+                                            <td>2016-09-26</td>
+                                            <td>
+                                                <div class="tpl-table-black-operation">
+                                                    <a href="javascript:;">
+                                                        <i class="am-icon-pencil"></i> 编辑
+                                                    </a>
+                                                    <a href="javascript:;" class="tpl-table-black-operation-del">
+                                                        <i class="am-icon-trash"></i> 删除
+                                                    </a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        &lt;!&ndash; more data &ndash;&gt;
+                                    </tbody>
+                                </table>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>-->
+
+            </div>
+        </div>
+<script>
+    function t_type(id){
+        $('[name=type]').val(id);
+        document.getElementById('tijiao').click();
+    }
+</script>
+{/block}

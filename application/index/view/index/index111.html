@@ -1,0 +1,103 @@
+
+{extend name="Father:index"/}
+{block name="article"}
+<div class="banner" style="width: 100%;background-size:cover;">
+  <section class="box">
+    <ul class="texts">
+      <p>好想给你打一辈子辅助</p>
+      <p>人头是你的、兵线是你的、buff是你的、塔是你的</p>
+      <p>所有经济都是你的，我什么都不要，只要你活着。</p>
+    </ul>
+    <div class="avatar"><a href="#"><span>勇☆贳&卟☆莣</span></a> </div>
+  </section>
+</div>
+<div class="template">
+  <div class="box">
+    <h3>
+      <p><span>最新文章</span> The latest article</p>
+    </h3>
+    <ul>
+        {volist name="list" id="lo"}
+        <li><a href="{:url('Index/info',['id'=>$lo['id']])}"><img src="{$lo.img}"></a><span  style="color: #fff;">{$lo.title}</span></li>
+        {/volist}
+      <!--<li><a href="/" target="_blank"><img src="__PUBLIC__/static/index/images/02.jpg"></a><span>黑色质感时间轴html5个人博客模板</span></li>
+      <li><a href="/"  target="_blank"><img src="__PUBLIC__/static/index/images/03.jpg"></a><span>Green绿色小清新的夏天-个人博客模板</span></li>
+      <li><a href="/" target="_blank"><img src="__PUBLIC__/static/index/images/04.jpg"></a><span>女生清新个人博客网站模板</span></li>
+      <li><a href="/"  target="_blank"><img src="__PUBLIC__/static/index/images/02.jpg"></a><span>黑色质感时间轴html5个人博客模板</span></li>
+      <li><a href="/"  target="_blank"><img src="__PUBLIC__/static/index/images/03.jpg"></a><span>Green绿色小清新的夏天-个人博客模板</span></li>
+    --></ul>
+  </div>
+</div>
+<article>
+  <h2 class="title_tj">
+    <p>文章<span>推荐</span></p>
+  </h2>
+  <div class="bloglist left">
+      {volist name="list" id="vo"}
+      <h3>{$vo.title}</h3>
+      <figure><img src="{$vo.img}"></figure>
+      <ul>
+          <p style="display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    white-space: normal !important;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;">{$vo.describe}</p>
+          <a title="{$vo.title}" href="{:url('Index/info',['id'=>$vo['id']])}" class="readmore">阅读全文>></a>
+      </ul>
+      <p class="dateview"><span><?php echo date('Y-m-d',$vo['add_time'])?></span><span>作者：{$vo.author}</span><!--<span>个人博客：[<a href="/news/life/">程序人生</a>]</span>--></p>
+      {/volist}
+
+    <!--<h3>程序员请放下你的技术情节，与你的同伴一起进步</h3>
+    <figure><img src="__PUBLIC__/static/index/images/001.png"></figure>
+    <ul>
+      <p>如果说掌握一门赖以生计的技术是技术人员要学会的第一课的话， 那么我觉得技术人员要真正学会的第二课，不是技术，而是业务、交流与协作，学会关心其他工作伙伴的工作情况和进展...</p>
+      <a title="/" href="/" target="_blank" class="readmore">阅读全文>></a>
+    </ul>
+    <p class="dateview"><span>2013-11-04</span><span>作者：杨青</span><span>个人博客：[<a href="/news/life/">程序人生</a>]</span></p>-->
+
+  <div id="page">{$page}</div>
+  </div>
+  <aside class="right">
+    <div class="weather"><iframe width="250" scrolling="no" height="60" frameborder="0" allowtransparency="true" src="http://i.tianqi.com/index.php?c=code&id=12&icon=1&num=1"></iframe></div>
+    <div class="news">
+    <h3>
+      <p>最新<span>文章</span></p>
+    </h3>
+    <ul class="rank">
+        {volist name="list" id="lio"}
+        <li style="overflow: hidden;white-space: nowrap;text-overflow: ellipsis;"><a href="{:url('Index/info',['id'=>$lio['id']])}" title="{$lio.title}" >{$lio.title}</a></li>
+        {/volist}
+
+    </ul>
+    <h3 class="ph">
+      <p>点击<span>排行</span></p>
+    </h3>
+    <ul class="paih">
+        {volist name="read_more" id="ro"}
+        <li><a href="{:url('Index/info',['id'=>$ro['id']])}" title="{$ro.title}">{$ro.title}</a></li>
+        {/volist}
+    </ul>
+    <h3 class="links">
+      <p>友情<span>链接</span></p>
+    </h3>
+    <ul class="website">
+      <li><a href="/">个人博客</a></li>
+      <li><a href="/">谢泽文个人博客</a></li>
+      <li><a href="/">3DST技术网</a></li>
+      <li><a href="/">思衡网络</a></li>
+    </ul>
+    </div>
+    <!-- Baidu Button BEGIN -->
+    <div id="bdshare" class="bdshare_t bds_tools_32 get-codes-bdshare"><a class="bds_tsina"></a><a class="bds_qzone"></a><a class="bds_tqq"></a><a class="bds_renren"></a><span class="bds_more"></span><a class="shareCount"></a></div>
+    <script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=6574585" ></script>
+    <script type="text/javascript" id="bdshell_js"></script>
+
+    <!-- Baidu Button END -->
+    <a href="/" class="weixin"  style="width: 250px;height: 260px;background: url({$selfWebInfo.img});background-size: cover;"> </a></aside>
+    <script type="text/javascript">
+        document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+    </script>
+</article>
+{/block}

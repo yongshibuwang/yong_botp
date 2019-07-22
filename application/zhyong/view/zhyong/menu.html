@@ -1,0 +1,94 @@
+{extend name="Father:index"/}
+{block name="tpl-content-wrapper"}
+        <!-- 内容区域 -->
+        <div class="tpl-content-wrapper">
+            <div class="row-content am-cf">
+                <div class="row">
+                    <!--<div class="am-u-sm-12 am-u-md-12 am-u-lg-6">-->
+                    <div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
+                        <div class="widget am-cf">
+                            <div class="widget-head am-cf">
+                                <div class="widget-function am-fr" style="margin-right: 3%;">
+                                    <a href="{:url('Zhyong/topmenuadd')}" class="">添加顶级菜单</a>
+                                    <a href="javascript:;" class="click_back">刷新</a>
+                                </div>
+                            </div>
+                            <div class="widget-body  widget-body-lg am-fr">
+                                <table width="100%" class="am-table am-table-compact tpl-table-black " id="">
+                                    <thead>
+                                        <tr>
+                                            <th>菜单名称</th>
+                                            <th>所属分级</th>
+                                            <th>操作</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    {volist name="menu_info" id="me_vo"}
+                                        <tr class="gradeX">
+                                            <td>{$me_vo.menu_name}</td>
+                                            <td>{$me_vo.pid1?$me_vo.pid1:''}</td>
+                                            <td>
+                                                <div class="tpl-table-black-operation">
+                                                        <a href="{:url('Zhyong/menuedit',['id'=>$me_vo.id])}">
+                                                            <i class="am-icon-pencil"></i> 编辑
+                                                        </a>
+                                                    {if condition="($me_vo.pid=='0')"}
+                                                        <a href="{:url('Zhyong/menuadd',['id'=>$me_vo.id,'er'=>2])}">
+                                                            <i class="am-icon-pencil"></i> 添加
+                                                        </a>
+                                                    {elseif condition="($me_vo['er']=='2')"}
+                                                        <a href="{:url('Zhyong/menuadd',['id'=>$me_vo.id,'er'=>3])}">
+                                                            <i class="am-icon-pencil"></i> 添加
+                                                        </a>
+                                                    {else /}
+                                                        <em style="width: 51px;height: 25px;">
+                                                        </em>
+                                                    {/if}
+                                                        <a href="javascript:;" class="tpl-table-black-operation-del" onclick="del_menu({$me_vo.id})">
+                                                            <i class="am-icon-trash"></i> 删除
+                                                        </a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    {/volist}
+                                    </tbody>
+                                </table>
+                                <style type="text/css">
+                                    #page {
+                                        float: right;
+                                    }
+                                    #page div span a{
+                                        border: 1px solid #fff;
+                                        border-radius: 4px;
+                                        height: 25px;
+                                        line-height: 26px;
+                                        margin: 0 3px;
+                                        padding: 8px 12px;
+                                        font-size: 12px;
+                                        color: #fff;
+                                    }
+                                </style>
+                                <div id="page">{$page}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+<script>
+    function del_menu(id){
+        layer.confirm('确认要删除吗？', function () {
+            $.post("{:url('del_menu')}",{id:id},function(data){
+                if(data.code){
+                    layer.msg('删除成功',{time:800},function(){
+                        location=location;
+                    })
+                }else{
+                    layer.msg('网络错误',{time:800})
+                }
+            });
+        })
+    }
+
+</script>
+{/block}

@@ -1,0 +1,124 @@
+{extend name="Father:index"/}
+{block name="tpl-content-wrapper"}
+<script>
+    KindEditor.ready(function(K) {
+        window.editor = K.create('#editor');
+    });
+</script>
+        <!-- 内容区域 -->
+        <div class="tpl-content-wrapper">
+            <div class="row-content am-cf">
+                <div class="row">
+                    <div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
+                        <div class="widget am-cf">
+                            <div class="widget-head am-cf">
+                                <div class="widget-title am-fl" style="width: 30%;">
+                                <a href="javascript:history.go(-1)" style="margin-right: 4%;">
+                                    <img src="__PUBLIC__/static/admin/assets/img/back_i1.png" alt=""/></a>
+                                系统管理->管理员->添加</div>
+                                <div class="widget-function am-fr" style="margin-right: 3%;">
+                                    <a href="javascript:;" class="click_back">刷新</a>
+                                </div>
+                            </div>
+                            <div class="widget-body am-fr">
+                                <form class="am-form tpl-form-border-form tpl-form-border-br" id="form1">
+                                    <div class="am-form-group">
+                                        <label for="name" class="am-u-sm-3 am-form-label">管理员名称 <span class="tpl-form-line-small-title">Name</span></label>
+                                        <div class="am-u-sm-9">
+                                            <input type="text" name="name" style="width: 40%;" class="tpl-form-input" id="name" placeholder="请输入标题文字">
+                                        </div>
+                                    </div>
+                                    <div class="am-form-group">
+                                        <label for="role-name" class="am-u-sm-3 am-form-label">所属角色 <span class="tpl-form-line-small-title">RoleType</span></label>
+                                        <div class="am-u-sm-9">
+                                            <input type="text" name="rolename" style="width: 40%;" class="tpl-form-input" id="role-name" placeholder="请输入标题文字">
+                                        </div>
+                                    </div>
+                                    <div class="am-form-group">
+                                        <label for="password" class="am-u-sm-3 am-form-label">管理密码 <span class="tpl-form-line-small-title">Password</span></label>
+                                        <div class="am-u-sm-9">
+                                            <input type="text" name="password" style="width: 40%;" class="tpl-form-input" id="password" placeholder="请输入管理密码">
+                                        </div>
+                                    </div>
+                                    <div class="am-form-group" >
+                                        <label class="am-u-sm-3 am-form-label">图片 <span class="tpl-form-line-small-title">Images</span></label>
+                                        <div class="am-u-sm-9" style="height:100px;">
+                                            <div class="am-form-group am-form-file list_pic" style="height: 120px;width: 120px;">
+                                                <label class="up_pic" for="doc-form-file">
+                                                    <div id="look_toux"  class="pic tpl-form-file-img" style="background-image: url(__PUBLIC__/static/admin/assets/img/add2.png);"></div>
+                                                </label>
+                                                <input id="doc-form-file" name="file" type="file" multiple="" onchange="javascript:setImagePreviews(this);">
+                                                <input type="hidden" name="img"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="am-form-group">
+                                        <label for="password" class="am-u-sm-3 am-form-label">管理权限 <span class="tpl-form-line-small-title">Password</span></label>
+                                        <div class="am-u-sm-9" style="margin-top: 3%;">
+                                            {volist name='menu' id="v"}
+                                                <div class="" style="">
+                                                    <span style="font-size: 16px;color: #888;">{$v.menu_name}</span>
+                                                    <div style="margin-left: 3%;">
+                                                        {volist name='v.child_menu' id="voo"}
+                                                        <label style="font-size: 14px;color: #888;margin-left: 1%;"><input class="choes_dan" type="checkbox"  name="ChkTrue[]" data-id="{$voo.id}" value="{$v.id}_{$voo.id}">{$voo.menu_name}</label>
+                                                        {/volist}
+                                                    </div>
+                                                </div>
+                                            {/volist}
+
+                                        </div>
+                                    </div>
+                                    <div class="am-form-group">
+                                        <div class="am-u-sm-9 am-u-sm-push-3">
+                                            <button type="button" class="am-btn am-btn-primary tpl-btn-bg-color-success submit_up">提交</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+<script>
+    //图片转化为base64
+    var picArr = "";
+    $('.list_pic input:file').localResizeIMG({
+        width:600,
+        quality: 0.7,
+        success: function (result) {
+            var img = new Image();
+            img.src = result.base64;
+            $(".list_pic").css("background-image","url("+result.base64+")");
+            picArr= result.base64;
+            // picArr[_i] = _i;
+//            console.log(picArr)
+        }
+    });
+    //提交
+    $('.submit_up').click(function(){
+        if(!$('[name=name]').val()){layer.msg('请输入管理员名称',{time:800});$('[name=name]').focus();return false;};
+        if(!$('[name=rolename]').val()){layer.msg('请输入角色名称',{time:800});$('[name=rolename]').focus();return false;};
+        if(!$('[name=password]').val()){layer.msg('请输入管理密码',{time:800});$('[name=password]').focus();return false;};
+        if(!picArr){layer.msg('请添加图片',{time:800});};
+        $('[name="img"]').val(picArr);
+        var form = new FormData($("#form1")[0]);
+        $.ajax({
+            url:"{:url('Zhyong/add')}",
+            type:"POST",
+            data:form,
+            dataType:'json',    //返回的数据格式：json/xml/html/script/jsonp/text
+            processData:false,
+            contentType:false,
+            success:function(data){
+                layer.msg(data.msg,{time:800},function(){
+                    self.location=document.referrer;
+                })
+            },
+            error:function(data){
+                layer.msg(data.msg);
+            }
+        });
+    });
+</script>
+{/block}

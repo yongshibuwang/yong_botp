@@ -1,0 +1,44 @@
+{extend name="Father:father"/}
+{block name="article"}
+
+    <h1 class="t_nav" style="position: relative"><span style="position: absolute;right: 3%;">
+            <input type="text" name="title" style="height: 26px;width: 160px;" />
+            <span class="sub_seach" style="font-size: 16px;line-height: 26px;margin-top:4px;background-color: #f90;padding: 0 10px 4px 10px;"><img src="__PUBLIC__/static/index/images/seach.png" style="float: left;width: 20px;height: 20px;padding-top:6px;" alt=""/></span>
+        </span>
+        <a href="/" class="n1">网站首页</a><a href="/" class="n2">常用网站</a></h1>
+    <div class="newblog left">
+        <div class="template" style="position: relative;right: 12px;">
+            <div class="box">
+                <ul style="width: 80%;position: relative;left: 6px;">
+                    {volist name="list" id="lo"}
+                    <li style="height: 162px;"><a href="{$lo.web_address}" target="_blank" >
+                        <img style="width: 160px;height: 92px;" src="{$lo.img}"></a>
+                        <span class="web_color" style="height: 16px;">{$lo.name}</span>
+                        <div class="web_color" style="width: 170px;display: -webkit-box;
+    overflow: hidden;text-overflow: ellipsis;word-wrap: break-word;white-space: normal !important;-webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;color: #fff;font-size: 10px;word-break:break-all;text-align: left;">{$lo.intro}</div>
+                    </li>
+                    {/volist}
+                </ul>
+            </div>
+        </div>
+        <div class="blank"></div>
+        <div class="ad">
+            <!--广告位<img src="__PUBLIC__/static/index/images/ad.png">-->
+        </div>
+        <div class="page">
+            {$page}
+        </div>
+    </div>
+<script>
+    $('.sub_seach').click(function(){
+        var title=$('[name=title]').val();
+        $.post("{:url('Article/ajax_seach')}",{title:title},function(data){
+            console.log(data);
+            if(data.code){
+                $('.add_title').html(data.msg);
+            }
+        });
+    });
+</script>
+{/block}
