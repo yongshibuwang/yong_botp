@@ -24,9 +24,6 @@ class Oftenweb extends Father
         if($type) $where['type']=$type;
         $this->assign('type',$type);*/
         $web=Db::table('web')->where('status=1')->order('sort desc,add_time desc')->select();//数据
-        foreach($web as &$val){
-            $val['img']=request()->domain().'/'.$val['img'];
-        }
         $count =Db::table('web')->where('status=1')->order('sort desc,add_time desc')->count();//总条数
         $pagesize=10;
         $url=$this->request->domain().'/zhyong/Oftenweb/web';
@@ -54,7 +51,7 @@ class Oftenweb extends Father
             $data=$_POST['data'];
             if($data['img']){
                 $img=uploadPIC($data['img']);
-                if($img){$data['img']=$img;}else{$this->error('网络出错啦！');};
+                if($img){$data['img']='http://www.zhyong.top/'.$img;}else{$this->error('网络出错啦！');};
             }
             $data['add_time']=time();
             $data['status']=1;
@@ -79,7 +76,7 @@ class Oftenweb extends Father
             if($data['img']){
                 @unlink($pic);
                 $img=uploadPIC($data['img']);
-                if($img){$data['img']=$img;}else{$this->error('网络出错啦！');};
+                if($img){$data['img']='http://www.zhyong.top/'.$img;}else{$this->error('网络出错啦！');};
             }else{
                 unset($data['img']);
             }

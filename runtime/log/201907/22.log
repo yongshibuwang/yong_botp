@@ -1218,3 +1218,2554 @@
 )
 [ info ] [ LOG ] INIT File
 [ error ] [0]致命错误: Call to undefined method app\index\controller\Father::index()[F:\yong_bo\application\index\controller\Oftenweb.php:9]
+---------------------------------------------------------------
+[ 2019-07-22T16:49:39+08:00 ] 127.0.0.1 GET www.yong.com/
+[运行时间：1.616092s] [吞吐率：0.62req/s] [内存消耗：3,271.27kb] [文件加载：81]
+[ info ] [ LANG ] F:\yong_bo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think_admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ F:\yong_bo\application\index\controller\Index.php ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ VIEW ] F:\yong_bo\public/../application/index\view\index\index.html [ array (
+  0 => 'accessNum',
+  1 => 'access',
+  2 => 'selfWebInfo',
+  3 => 'list',
+  4 => 'page',
+  5 => 'new_article',
+  6 => 'p_article',
+  7 => 'w_article',
+  8 => 's_article',
+  9 => 'w_web',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.093005s ] mysql:host=39.96.56.58;port=3306;dbname=boke;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `access` [ RunTime:0.061004s ]
+[ sql ] [ SQL ] SELECT * FROM `access` WHERE  `ip` = '127.0.0.1' LIMIT 1 [ RunTime:0.062003s ]
+[ sql ] [ SQL ] SELECT * FROM `access` WHERE  `access_date` = 20190722 ORDER BY `access_num` DESC,`access_time` DESC [ RunTime:0.062004s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_info` [ RunTime:0.062003s ]
+[ sql ] [ SQL ] SELECT * FROM `web_info` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.061004s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `copy_web` [ RunTime:0.062004s ]
+[ sql ] [ SQL ] SELECT * FROM `copy_web` WHERE  (  kind=4 ) ORDER BY `add_time` DESC [ RunTime:0.092005s ]
+[ sql ] [ SQL ] select id from copy_web where kind=4 AND add_time < 1561193378 [ RunTime:0.061003s ]
+[ sql ] [ SQL ] select id from ling where add_time < 1561193378 [ RunTime:0.061004s ]
+[ sql ] [ SQL ] SELECT * FROM `access` WHERE  `ip` = '127.0.0.1' ORDER BY `access_time` DESC [ RunTime:0.061003s ]
+[ sql ] [ SQL ] UPDATE `access`  SET `access_num`=`access_num`+1  WHERE  `id` = 5 [ RunTime:0.061003s ]
+[ sql ] [ SQL ] UPDATE `access`  SET `access_time`=1563785378,`access_web`='访问首页'  WHERE  `id` = 5 [ RunTime:0.061004s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `article` [ RunTime:0.061003s ]
+[ sql ] [ SQL ] SELECT * FROM `article` WHERE  (  status=1 AND type=2 AND kind=1 )  AND (  is_hot=1 ) OR (  status=1 AND type=2 AND kind=2 ) ORDER BY `add_time` DESC LIMIT 0,6 [ RunTime:0.064004s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `article` WHERE  (  status=1 AND type=2 AND kind=1 )  AND (  is_hot=1 ) OR (  status=1 AND type=2 AND kind=2 ) ORDER BY `add_time` DESC LIMIT 1 [ RunTime:0.061003s ]
+[ sql ] [ SQL ] SELECT * FROM `article` WHERE  (  status=1 AND type=2 AND kind=1 ) OR (  status=1 AND type=2 AND kind=2 ) ORDER BY `add_time` DESC LIMIT 8 [ RunTime:0.126007s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `article` WHERE  (  type=2 AND kind=1 ) LIMIT 1 [ RunTime:0.061004s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `article` WHERE  (  type=2 AND kind=2 ) LIMIT 1 [ RunTime:0.061003s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `article` WHERE  (  type=2 AND kind=3 ) LIMIT 1 [ RunTime:0.061004s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web` [ RunTime:0.061003s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web` LIMIT 1 [ RunTime:0.060004s ]
+[ sql ] [ SQL ] SELECT * FROM `web_info` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.061003s ]
+---------------------------------------------------------------
+[ 2019-07-22T16:49:39+08:00 ] 127.0.0.1 GET www.yong.com/static/index/images/2.gif
+[运行时间：0.050003s] [吞吐率：20.00req/s] [内存消耗：1,851.80kb] [文件加载：61]
+[ info ] [ LANG ] F:\yong_bo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'index',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=65vgt35jbnkhnik6p3d5h3ku23',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.yong.com/',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-07-22T16:49:46+08:00 ] 127.0.0.1 GET www.yong.com/zhyong
+[运行时间：0.042003s] [吞吐率：23.81req/s] [内存消耗：2,039.01kb] [文件加载：67]
+[ info ] [ LANG ] F:\yong_bo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'zhyong',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=65vgt35jbnkhnik6p3d5h3ku23',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think_admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-07-22T16:49:46+08:00 ] 127.0.0.1 GET www.yong.com/Zhyong/Login/login
+[运行时间：0.043003s] [吞吐率：23.25req/s] [内存消耗：2,217.28kb] [文件加载：72]
+[ info ] [ LANG ] F:\yong_bo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'Zhyong',
+    1 => 'Login',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=65vgt35jbnkhnik6p3d5h3ku23',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\zhyong\controller\Login->login[ F:\yong_bo\application\zhyong\controller\Login.php ]
+[ info ] [ VIEW ] F:\yong_bo\public/../application/zhyong\view\login\login.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-07-22T16:49:54+08:00 ] 127.0.0.1 POST www.yong.com/zhyong/login/login.html
+[运行时间：0.285016s] [吞吐率：3.51req/s] [内存消耗：2,722.38kb] [文件加载：78]
+[ info ] [ LANG ] F:\yong_bo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'zhyong',
+    1 => 'login',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=65vgt35jbnkhnik6p3d5h3ku23',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.yong.com/Zhyong/Login/login',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://www.yong.com',
+  'accept' => '*/*',
+  'content-length' => '42',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+  'name' => '大叔',
+  'password' => '123456789',
+)
+[ info ] [ RUN ] app\zhyong\controller\Login->login[ F:\yong_bo\application\zhyong\controller\Login.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think_admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.095005s ] mysql:host=39.96.56.58;port=3306;dbname=boke;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin` [ RunTime:0.065004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin` WHERE  `name` = '大叔' LIMIT 1 [ RunTime:0.066004s ]
+---------------------------------------------------------------
+[ 2019-07-22T16:49:56+08:00 ] 127.0.0.1 GET www.yong.com/zhyong/index/index.html
+[运行时间：0.887051s] [吞吐率：1.13req/s] [内存消耗：3,068.65kb] [文件加载：80]
+[ info ] [ LANG ] F:\yong_bo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'zhyong',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=65vgt35jbnkhnik6p3d5h3ku23',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.yong.com/Zhyong/Login/login',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think_admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\zhyong\controller\Index->index[ F:\yong_bo\application\zhyong\controller\Index.php ]
+[ info ] [ VIEW ] F:\yong_bo\public/../application/zhyong\view\index\index.html [ array (
+  0 => 'menu',
+  1 => 'http',
+  2 => 'admin_user_info',
+  3 => 'img',
+  4 => 'gl',
+  5 => 'admin_info',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.104005s ] mysql:host=39.96.56.58;port=3306;dbname=boke;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin` [ RunTime:0.071004s ]
+[ sql ] [ SQL ] SELECT `role` FROM `admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.065003s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_menu` [ RunTime:0.063004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  (  id in (1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.066004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 1  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.070004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 6  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.062003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 14  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.062003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 16  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.063004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 18  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.063003s ]
+[ sql ] [ SQL ] SELECT `id` FROM `admin_menu` WHERE  `controller` = 'Index'  AND `function` = 'index' LIMIT 1 [ RunTime:0.062004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.064004s ]
+---------------------------------------------------------------
+[ 2019-07-22T16:49:58+08:00 ] 127.0.0.1 GET www.yong.com/zhyong/index/welcome.html
+[运行时间：1.233070s] [吞吐率：0.81req/s] [内存消耗：3,133.69kb] [文件加载：80]
+[ info ] [ LANG ] F:\yong_bo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'zhyong',
+    1 => 'index',
+    2 => 'welcome',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=65vgt35jbnkhnik6p3d5h3ku23',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.yong.com/zhyong/index/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think_admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\zhyong\controller\Index->welcome[ F:\yong_bo\application\zhyong\controller\Index.php ]
+[ info ] [ VIEW ] F:\yong_bo\public/../application/zhyong\view\index\welcome.html [ array (
+  0 => 'menu',
+  1 => 'http',
+  2 => 'admin_user_info',
+  3 => 'img',
+  4 => 'gl',
+  5 => 'admin_info',
+  6 => 'accessNum',
+  7 => 'accessChart',
+  8 => 'new_article',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.096005s ] mysql:host=39.96.56.58;port=3306;dbname=boke;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin` [ RunTime:0.063004s ]
+[ sql ] [ SQL ] SELECT `role` FROM `admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.063003s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_menu` [ RunTime:0.063004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  (  id in (1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.063004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 1  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.063003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 6  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.064004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 14  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.063004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 16  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.063003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 18  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.063004s ]
+[ sql ] [ SQL ] SELECT `id` FROM `admin_menu` WHERE  `controller` = 'Index'  AND `function` = 'welcome' LIMIT 1 [ RunTime:0.062003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.062004s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `access` [ RunTime:0.065004s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `access` WHERE  `access_date` = 20190722 LIMIT 1 [ RunTime:0.062003s ]
+[ sql ] [ SQL ] select access_date,count('id') as 'num' from access group by access_date order by access_time desc limit 7 [ RunTime:0.063004s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `article` [ RunTime:0.063004s ]
+[ sql ] [ SQL ] SELECT * FROM `article` WHERE  (  status=1 AND type=2 ) ORDER BY `add_time` DESC LIMIT 6 [ RunTime:0.096005s ]
+---------------------------------------------------------------
+[ 2019-07-22T16:50:00+08:00 ] 127.0.0.1 GET www.yong.com/zhyong/Oftenweb/web
+[运行时间：0.963055s] [吞吐率：1.04req/s] [内存消耗：3,106.53kb] [文件加载：80]
+[ info ] [ LANG ] F:\yong_bo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'zhyong',
+    1 => 'Oftenweb',
+    2 => 'web',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=65vgt35jbnkhnik6p3d5h3ku23',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.yong.com/zhyong/index/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think_admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\zhyong\controller\Oftenweb->web[ F:\yong_bo\application\zhyong\controller\Oftenweb.php ]
+[ info ] [ VIEW ] F:\yong_bo\public/../application/zhyong\view\oftenweb\web.html [ array (
+  0 => 'menu',
+  1 => 'http',
+  2 => 'admin_user_info',
+  3 => 'img',
+  4 => 'gl',
+  5 => 'web',
+  6 => 'article',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.093005s ] mysql:host=39.96.56.58;port=3306;dbname=boke;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin` [ RunTime:0.062004s ]
+[ sql ] [ SQL ] SELECT `role` FROM `admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.061003s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_menu` [ RunTime:0.063003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  (  id in (1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.063004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 1  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.061003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 6  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.061004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 14  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.061003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 16  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.060004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 18  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.061003s ]
+[ sql ] [ SQL ] SELECT `id` FROM `admin_menu` WHERE  `controller` = 'Oftenweb'  AND `function` = 'web' LIMIT 1 [ RunTime:0.060004s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web` [ RunTime:0.061003s ]
+[ sql ] [ SQL ] SELECT * FROM `web` WHERE  (  status=1 ) ORDER BY `sort` DESC,`add_time` DESC [ RunTime:0.062004s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web` WHERE  (  status=1 ) ORDER BY `sort` DESC,`add_time` DESC LIMIT 1 [ RunTime:0.060003s ]
+---------------------------------------------------------------
+[ 2019-07-22T16:50:22+08:00 ] 127.0.0.1 GET www.yong.com/zhyong/oftenweb/edit/id/11.html
+[运行时间：1.074062s] [吞吐率：0.93req/s] [内存消耗：3,080.27kb] [文件加载：80]
+[ info ] [ LANG ] F:\yong_bo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'zhyong',
+    1 => 'oftenweb',
+    2 => 'edit',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=65vgt35jbnkhnik6p3d5h3ku23',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.yong.com/zhyong/Oftenweb/web',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+  'id' => '11',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think_admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\zhyong\controller\Oftenweb->edit[ F:\yong_bo\application\zhyong\controller\Oftenweb.php ]
+[ info ] [ VIEW ] F:\yong_bo\public/../application/zhyong\view\oftenweb\edit.html [ array (
+  0 => 'menu',
+  1 => 'http',
+  2 => 'admin_user_info',
+  3 => 'img',
+  4 => 'gl',
+  5 => 'web_edit',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.096006s ] mysql:host=39.96.56.58;port=3306;dbname=boke;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin` [ RunTime:0.111006s ]
+[ sql ] [ SQL ] SELECT `role` FROM `admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.091005s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_menu` [ RunTime:0.066004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  (  id in (1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.071004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 1  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.062004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 6  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.062003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 14  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.065004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 16  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.069004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 18  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.063004s ]
+[ sql ] [ SQL ] SELECT `id` FROM `admin_menu` WHERE  `controller` = 'Oftenweb'  AND `function` = 'edit' LIMIT 1 [ RunTime:0.067004s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web` [ RunTime:0.125007s ]
+[ sql ] [ SQL ] SELECT * FROM `web` WHERE  `id` = 11 LIMIT 1 [ RunTime:0.063003s ]
+---------------------------------------------------------------
+[ 2019-07-22T16:50:47+08:00 ] 127.0.0.1 POST www.yong.com/zhyong/oftenweb/edit/id/11.html
+[运行时间：1.079062s] [吞吐率：0.93req/s] [内存消耗：2,986.50kb] [文件加载：84]
+[ info ] [ LANG ] F:\yong_bo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'zhyong',
+    1 => 'oftenweb',
+    2 => 'edit',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=65vgt35jbnkhnik6p3d5h3ku23',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.yong.com/zhyong/oftenweb/edit/id/11.html',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://www.yong.com',
+  'accept' => '*/*',
+  'content-length' => '11839',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+  'data' => 
+  array (
+    'name' => '看云',
+    'intro' => '看云专注于文档的在线创作、协作、分享和托管服务,致力于提供最佳的在线创作和阅读体验,让企业和个人可以更方便地发布和管理自己的文档。',
+    'web_address' => 'https://www.kancloud.cn',
+    'sort' => '1',
+    'is_recommend' => '2',
+    'img' => 'data:image/jpeg;base64,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',
+  ),
+  'id' => '11',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think_admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\zhyong\controller\Oftenweb->edit[ F:\yong_bo\application\zhyong\controller\Oftenweb.php ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.096005s ] mysql:host=39.96.56.58;port=3306;dbname=boke;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin` [ RunTime:0.065004s ]
+[ sql ] [ SQL ] SELECT `role` FROM `admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.067004s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_menu` [ RunTime:0.065004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  (  id in (1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.068003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 1  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.063004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 6  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.064004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 14  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.064003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 16  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.063004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 18  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.065004s ]
+[ sql ] [ SQL ] SELECT `id` FROM `admin_menu` WHERE  `controller` = 'Oftenweb'  AND `function` = 'edit' LIMIT 1 [ RunTime:0.064003s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_info` [ RunTime:0.063004s ]
+[ sql ] [ SQL ] SELECT `img` FROM `web_info` WHERE  `id` = 11 LIMIT 1 [ RunTime:0.063004s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web` [ RunTime:0.063004s ]
+[ sql ] [ SQL ] UPDATE `web`  SET `name`='看云',`intro`='看云专注于文档的在线创作、协作、分享和托管服务,致力于提供最佳的在线创作和阅读体验,让企业和个人可以更方便地发布和管理自己的文档。',`web_address`='https://www.kancloud.cn',`sort`=1,`is_recommend`=2,`img`='http://www.zhyong.top/public/uploads/20190722/165046_6123370.png',`add_time`=1563785446,`status`=1  WHERE  `id` = 11 [ RunTime:0.063004s ]
+[ error ] [2]unlink(): No such file or directory[F:\yong_bo\application\zhyong\controller\Oftenweb.php:80]
+---------------------------------------------------------------
+[ 2019-07-22T16:50:49+08:00 ] 127.0.0.1 GET www.yong.com/zhyong/Oftenweb/web
+[运行时间：0.993056s] [吞吐率：1.01req/s] [内存消耗：2,779.11kb] [文件加载：78]
+[ info ] [ LANG ] F:\yong_bo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'zhyong',
+    1 => 'Oftenweb',
+    2 => 'web',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=65vgt35jbnkhnik6p3d5h3ku23',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.yong.com/zhyong/oftenweb/edit/id/11.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think_admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\zhyong\controller\Oftenweb->web[ F:\yong_bo\application\zhyong\controller\Oftenweb.php ]
+[ info ] [ VIEW ] F:\yong_bo\public/../application/zhyong\view\oftenweb\web.html [ array (
+  0 => 'menu',
+  1 => 'http',
+  2 => 'admin_user_info',
+  3 => 'img',
+  4 => 'gl',
+  5 => 'web',
+  6 => 'article',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.097005s ] mysql:host=39.96.56.58;port=3306;dbname=boke;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin` [ RunTime:0.064003s ]
+[ sql ] [ SQL ] SELECT `role` FROM `admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.064004s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_menu` [ RunTime:0.063004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  (  id in (1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.063003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 1  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.063004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 6  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.063003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 14  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.062004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 16  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.061003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 18  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.064004s ]
+[ sql ] [ SQL ] SELECT `id` FROM `admin_menu` WHERE  `controller` = 'Oftenweb'  AND `function` = 'web' LIMIT 1 [ RunTime:0.065004s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web` [ RunTime:0.065004s ]
+[ sql ] [ SQL ] SELECT * FROM `web` WHERE  (  status=1 ) ORDER BY `sort` DESC,`add_time` DESC [ RunTime:0.066003s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web` WHERE  (  status=1 ) ORDER BY `sort` DESC,`add_time` DESC LIMIT 1 [ RunTime:0.062004s ]
+---------------------------------------------------------------
+[ 2019-07-22T16:51:01+08:00 ] 127.0.0.1 GET www.yong.com/zhyong/oftenweb/edit/id/2.html
+[运行时间：0.915053s] [吞吐率：1.09req/s] [内存消耗：2,760.34kb] [文件加载：78]
+[ info ] [ LANG ] F:\yong_bo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'zhyong',
+    1 => 'oftenweb',
+    2 => 'edit',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=65vgt35jbnkhnik6p3d5h3ku23',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.yong.com/zhyong/Oftenweb/web',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+  'id' => '2',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think_admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\zhyong\controller\Oftenweb->edit[ F:\yong_bo\application\zhyong\controller\Oftenweb.php ]
+[ info ] [ VIEW ] F:\yong_bo\public/../application/zhyong\view\oftenweb\edit.html [ array (
+  0 => 'menu',
+  1 => 'http',
+  2 => 'admin_user_info',
+  3 => 'img',
+  4 => 'gl',
+  5 => 'web_edit',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.094005s ] mysql:host=39.96.56.58;port=3306;dbname=boke;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin` [ RunTime:0.063004s ]
+[ sql ] [ SQL ] SELECT `role` FROM `admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.062004s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_menu` [ RunTime:0.064003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  (  id in (1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.063004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 1  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.061004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 6  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.062003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 14  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.062004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 16  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.062003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 18  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.062004s ]
+[ sql ] [ SQL ] SELECT `id` FROM `admin_menu` WHERE  `controller` = 'Oftenweb'  AND `function` = 'edit' LIMIT 1 [ RunTime:0.062003s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web` [ RunTime:0.062004s ]
+[ sql ] [ SQL ] SELECT * FROM `web` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.075004s ]
+---------------------------------------------------------------
+[ 2019-07-22T16:51:10+08:00 ] 127.0.0.1 POST www.yong.com/zhyong/oftenweb/edit/id/2.html
+[运行时间：1.041060s] [吞吐率：0.96req/s] [内存消耗：3,002.26kb] [文件加载：84]
+[ info ] [ LANG ] F:\yong_bo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'zhyong',
+    1 => 'oftenweb',
+    2 => 'edit',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=65vgt35jbnkhnik6p3d5h3ku23',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.yong.com/zhyong/oftenweb/edit/id/2.html',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://www.yong.com',
+  'accept' => '*/*',
+  'content-length' => '15923',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+  'data' => 
+  array (
+    'name' => 'Amaze UI模板',
+    'intro' => 'Amaze UI 是一个轻量级（所有 CSS 和 JS gzip 后 100 kB 左右）、 Mobile first 的前端框架，',
+    'web_address' => 'http://amazeui.org',
+    'sort' => '1',
+    'is_recommend' => '2',
+    'img' => 'data:image/jpeg;base64,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',
+  ),
+  'id' => '2',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think_admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\zhyong\controller\Oftenweb->edit[ F:\yong_bo\application\zhyong\controller\Oftenweb.php ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.093005s ] mysql:host=39.96.56.58;port=3306;dbname=boke;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin` [ RunTime:0.064004s ]
+[ sql ] [ SQL ] SELECT `role` FROM `admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.062004s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_menu` [ RunTime:0.064003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  (  id in (1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.063004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 1  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.062003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 6  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.062004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 14  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.063004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 16  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.062003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 18  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.062004s ]
+[ sql ] [ SQL ] SELECT `id` FROM `admin_menu` WHERE  `controller` = 'Oftenweb'  AND `function` = 'edit' LIMIT 1 [ RunTime:0.063003s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_info` [ RunTime:0.064004s ]
+[ sql ] [ SQL ] SELECT `img` FROM `web_info` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.062004s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web` [ RunTime:0.063003s ]
+[ sql ] [ SQL ] UPDATE `web`  SET `name`='Amaze UI模板',`intro`='Amaze UI 是一个轻量级（所有 CSS 和 JS gzip 后 100 kB 左右）、 Mobile first 的前端框架，',`web_address`='http://amazeui.org',`sort`=1,`is_recommend`=2,`img`='http://www.zhyong.top/public/uploads/20190722/165110_4555166.png',`add_time`=1563785470,`status`=1  WHERE  `id` = 2 [ RunTime:0.062003s ]
+[ error ] [2]unlink(): No such file or directory[F:\yong_bo\application\zhyong\controller\Oftenweb.php:80]
+---------------------------------------------------------------
+[ 2019-07-22T16:51:12+08:00 ] 127.0.0.1 GET www.yong.com/zhyong/Oftenweb/web
+[运行时间：0.969055s] [吞吐率：1.03req/s] [内存消耗：2,779.02kb] [文件加载：78]
+[ info ] [ LANG ] F:\yong_bo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'zhyong',
+    1 => 'Oftenweb',
+    2 => 'web',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=65vgt35jbnkhnik6p3d5h3ku23',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.yong.com/zhyong/oftenweb/edit/id/2.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think_admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\zhyong\controller\Oftenweb->web[ F:\yong_bo\application\zhyong\controller\Oftenweb.php ]
+[ info ] [ VIEW ] F:\yong_bo\public/../application/zhyong\view\oftenweb\web.html [ array (
+  0 => 'menu',
+  1 => 'http',
+  2 => 'admin_user_info',
+  3 => 'img',
+  4 => 'gl',
+  5 => 'web',
+  6 => 'article',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.095005s ] mysql:host=39.96.56.58;port=3306;dbname=boke;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin` [ RunTime:0.063004s ]
+[ sql ] [ SQL ] SELECT `role` FROM `admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.063004s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_menu` [ RunTime:0.063003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  (  id in (1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.063004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 1  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.062004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 6  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.063003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 14  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.062004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 16  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.062003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 18  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.062004s ]
+[ sql ] [ SQL ] SELECT `id` FROM `admin_menu` WHERE  `controller` = 'Oftenweb'  AND `function` = 'web' LIMIT 1 [ RunTime:0.062003s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web` [ RunTime:0.061004s ]
+[ sql ] [ SQL ] SELECT * FROM `web` WHERE  (  status=1 ) ORDER BY `sort` DESC,`add_time` DESC [ RunTime:0.062003s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web` WHERE  (  status=1 ) ORDER BY `sort` DESC,`add_time` DESC LIMIT 1 [ RunTime:0.062004s ]
+---------------------------------------------------------------
+[ 2019-07-22T16:52:02+08:00 ] 127.0.0.1 GET www.yong.com/zhyong/Oftenweb/web
+[运行时间：1.010058s] [吞吐率：0.99req/s] [内存消耗：2,778.03kb] [文件加载：78]
+[ info ] [ LANG ] F:\yong_bo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'zhyong',
+    1 => 'Oftenweb',
+    2 => 'web',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=65vgt35jbnkhnik6p3d5h3ku23',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.yong.com/zhyong/index/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think_admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\zhyong\controller\Oftenweb->web[ F:\yong_bo\application\zhyong\controller\Oftenweb.php ]
+[ info ] [ VIEW ] F:\yong_bo\public/../application/zhyong\view\oftenweb\web.html [ array (
+  0 => 'menu',
+  1 => 'http',
+  2 => 'admin_user_info',
+  3 => 'img',
+  4 => 'gl',
+  5 => 'web',
+  6 => 'article',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.096005s ] mysql:host=39.96.56.58;port=3306;dbname=boke;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin` [ RunTime:0.065004s ]
+[ sql ] [ SQL ] SELECT `role` FROM `admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.065004s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_menu` [ RunTime:0.065004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  (  id in (1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.066003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 1  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.064004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 6  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.065004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 14  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.063003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 16  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.063004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 18  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.063003s ]
+[ sql ] [ SQL ] SELECT `id` FROM `admin_menu` WHERE  `controller` = 'Oftenweb'  AND `function` = 'web' LIMIT 1 [ RunTime:0.064003s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web` [ RunTime:0.065004s ]
+[ sql ] [ SQL ] SELECT * FROM `web` WHERE  (  status=1 ) ORDER BY `sort` DESC,`add_time` DESC [ RunTime:0.064004s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web` WHERE  (  status=1 ) ORDER BY `sort` DESC,`add_time` DESC LIMIT 1 [ RunTime:0.066003s ]
+---------------------------------------------------------------
+[ 2019-07-22T16:52:02+08:00 ] 127.0.0.1 GET www.yong.com/zhyong/Oftenweb/public/uploads/20190710/152423_3628361.png
+[运行时间：0.800046s] [吞吐率：1.25req/s] [内存消耗：2,677.37kb] [文件加载：75]
+[ info ] [ LANG ] F:\yong_bo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'zhyong',
+    1 => 'Oftenweb',
+    2 => 'public',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=65vgt35jbnkhnik6p3d5h3ku23',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.yong.com/zhyong/Oftenweb/web',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+  'uploads' => '20190710',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think_admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.096005s ] mysql:host=39.96.56.58;port=3306;dbname=boke;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin` [ RunTime:0.064004s ]
+[ sql ] [ SQL ] SELECT `role` FROM `admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.065004s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_menu` [ RunTime:0.065004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  (  id in (1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.065003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 1  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.069004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 6  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.064004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 14  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.064004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 16  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.063003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 18  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.063004s ]
+[ sql ] [ SQL ] SELECT `id` FROM `admin_menu` WHERE  `controller` = 'Oftenweb'  AND `function` = 'public' LIMIT 1 [ RunTime:0.063003s ]
+---------------------------------------------------------------
+[ 2019-07-22T16:52:04+08:00 ] 127.0.0.1 GET www.yong.com/zhyong/Oftenweb/web
+[运行时间：0.941053s] [吞吐率：1.06req/s] [内存消耗：2,778.03kb] [文件加载：78]
+[ info ] [ LANG ] F:\yong_bo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'zhyong',
+    1 => 'Oftenweb',
+    2 => 'web',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=65vgt35jbnkhnik6p3d5h3ku23',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.yong.com/zhyong/index/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think_admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\zhyong\controller\Oftenweb->web[ F:\yong_bo\application\zhyong\controller\Oftenweb.php ]
+[ info ] [ VIEW ] F:\yong_bo\public/../application/zhyong\view\oftenweb\web.html [ array (
+  0 => 'menu',
+  1 => 'http',
+  2 => 'admin_user_info',
+  3 => 'img',
+  4 => 'gl',
+  5 => 'web',
+  6 => 'article',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.091006s ] mysql:host=39.96.56.58;port=3306;dbname=boke;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin` [ RunTime:0.062003s ]
+[ sql ] [ SQL ] SELECT `role` FROM `admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.060004s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_menu` [ RunTime:0.061003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  (  id in (1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.062004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 1  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.060003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 6  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.061004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 14  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.061003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 16  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.060004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 18  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.060003s ]
+[ sql ] [ SQL ] SELECT `id` FROM `admin_menu` WHERE  `controller` = 'Oftenweb'  AND `function` = 'web' LIMIT 1 [ RunTime:0.060004s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web` [ RunTime:0.061003s ]
+[ sql ] [ SQL ] SELECT * FROM `web` WHERE  (  status=1 ) ORDER BY `sort` DESC,`add_time` DESC [ RunTime:0.061004s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web` WHERE  (  status=1 ) ORDER BY `sort` DESC,`add_time` DESC LIMIT 1 [ RunTime:0.060003s ]
+---------------------------------------------------------------
+[ 2019-07-22T16:52:04+08:00 ] 127.0.0.1 GET www.yong.com/zhyong/Oftenweb/public/uploads/20190710/152239_4920976.png
+[运行时间：0.848048s] [吞吐率：1.18req/s] [内存消耗：2,677.37kb] [文件加载：75]
+[ info ] [ LANG ] F:\yong_bo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'zhyong',
+    1 => 'Oftenweb',
+    2 => 'public',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=65vgt35jbnkhnik6p3d5h3ku23',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.yong.com/zhyong/Oftenweb/web',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+  'uploads' => '20190710',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think_admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.097005s ] mysql:host=39.96.56.58;port=3306;dbname=boke;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin` [ RunTime:0.065004s ]
+[ sql ] [ SQL ] SELECT `role` FROM `admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.065004s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_menu` [ RunTime:0.065004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  (  id in (1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.065003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 1  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.064004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 6  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.064004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 14  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.064003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 16  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.063004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 18  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.063004s ]
+[ sql ] [ SQL ] SELECT `id` FROM `admin_menu` WHERE  `controller` = 'Oftenweb'  AND `function` = 'public' LIMIT 1 [ RunTime:0.064003s ]
+---------------------------------------------------------------
+[ 2019-07-22T16:52:05+08:00 ] 127.0.0.1 GET www.yong.com/zhyong/Oftenweb/public/uploads/20190710/152056_6838394.png
+[运行时间：0.825047s] [吞吐率：1.21req/s] [内存消耗：2,677.37kb] [文件加载：75]
+[ info ] [ LANG ] F:\yong_bo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'zhyong',
+    1 => 'Oftenweb',
+    2 => 'public',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=65vgt35jbnkhnik6p3d5h3ku23',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.yong.com/zhyong/Oftenweb/web',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+  'uploads' => '20190710',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think_admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.096006s ] mysql:host=39.96.56.58;port=3306;dbname=boke;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin` [ RunTime:0.064004s ]
+[ sql ] [ SQL ] SELECT `role` FROM `admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.064003s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_menu` [ RunTime:0.065004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  (  id in (1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.065004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 1  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.064004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 6  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.063003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 14  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.062004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 16  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.062003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 18  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.062003s ]
+[ sql ] [ SQL ] SELECT `id` FROM `admin_menu` WHERE  `controller` = 'Oftenweb'  AND `function` = 'public' LIMIT 1 [ RunTime:0.062004s ]
+---------------------------------------------------------------
+[ 2019-07-22T16:52:06+08:00 ] 127.0.0.1 GET www.yong.com/zhyong/Oftenweb/public/uploads/20190710/152145_9606924.png
+[运行时间：0.824047s] [吞吐率：1.21req/s] [内存消耗：2,677.37kb] [文件加载：75]
+[ info ] [ LANG ] F:\yong_bo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'zhyong',
+    1 => 'Oftenweb',
+    2 => 'public',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=65vgt35jbnkhnik6p3d5h3ku23',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.yong.com/zhyong/Oftenweb/web',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+  'uploads' => '20190710',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think_admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.101006s ] mysql:host=39.96.56.58;port=3306;dbname=boke;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin` [ RunTime:0.065004s ]
+[ sql ] [ SQL ] SELECT `role` FROM `admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.064004s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_menu` [ RunTime:0.065004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  (  id in (1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.065003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 1  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.063004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 6  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.063004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 14  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.064003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 16  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.063004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 18  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.064004s ]
+[ sql ] [ SQL ] SELECT `id` FROM `admin_menu` WHERE  `controller` = 'Oftenweb'  AND `function` = 'public' LIMIT 1 [ RunTime:0.063003s ]
+---------------------------------------------------------------
+[ 2019-07-22T16:52:07+08:00 ] 127.0.0.1 GET www.yong.com/zhyong/Oftenweb/public/uploads/20190710/152423_3628361.png
+[运行时间：0.811047s] [吞吐率：1.23req/s] [内存消耗：2,677.37kb] [文件加载：75]
+[ info ] [ LANG ] F:\yong_bo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'zhyong',
+    1 => 'Oftenweb',
+    2 => 'public',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=65vgt35jbnkhnik6p3d5h3ku23',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.yong.com/zhyong/Oftenweb/web',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+  'uploads' => '20190710',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think_admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.097005s ] mysql:host=39.96.56.58;port=3306;dbname=boke;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin` [ RunTime:0.065003s ]
+[ sql ] [ SQL ] SELECT `role` FROM `admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.067004s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_menu` [ RunTime:0.066004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  (  id in (1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.065004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 1  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.065003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 6  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.064004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 14  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.064004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 16  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.064003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 18  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.065004s ]
+[ sql ] [ SQL ] SELECT `id` FROM `admin_menu` WHERE  `controller` = 'Oftenweb'  AND `function` = 'public' LIMIT 1 [ RunTime:0.063004s ]
+---------------------------------------------------------------
+[ 2019-07-22T16:52:08+08:00 ] 127.0.0.1 GET www.yong.com/zhyong/Oftenweb/public/uploads/20190710/152239_4920976.png
+[运行时间：0.828047s] [吞吐率：1.21req/s] [内存消耗：2,677.37kb] [文件加载：75]
+[ info ] [ LANG ] F:\yong_bo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'zhyong',
+    1 => 'Oftenweb',
+    2 => 'public',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=65vgt35jbnkhnik6p3d5h3ku23',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.yong.com/zhyong/Oftenweb/web',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+  'uploads' => '20190710',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think_admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.098005s ] mysql:host=39.96.56.58;port=3306;dbname=boke;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin` [ RunTime:0.065004s ]
+[ sql ] [ SQL ] SELECT `role` FROM `admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.066004s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_menu` [ RunTime:0.067004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  (  id in (1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.066004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 1  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.066003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 6  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.066004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 14  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.066004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 16  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.065004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 18  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.065003s ]
+[ sql ] [ SQL ] SELECT `id` FROM `admin_menu` WHERE  `controller` = 'Oftenweb'  AND `function` = 'public' LIMIT 1 [ RunTime:0.065003s ]
+---------------------------------------------------------------
+[ 2019-07-22T16:52:08+08:00 ] 127.0.0.1 GET www.yong.com/zhyong/Oftenweb/public/uploads/20190710/152145_9606924.png
+[运行时间：0.793045s] [吞吐率：1.26req/s] [内存消耗：2,677.37kb] [文件加载：75]
+[ info ] [ LANG ] F:\yong_bo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'zhyong',
+    1 => 'Oftenweb',
+    2 => 'public',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=65vgt35jbnkhnik6p3d5h3ku23',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.yong.com/zhyong/Oftenweb/web',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+  'uploads' => '20190710',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think_admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.099006s ] mysql:host=39.96.56.58;port=3306;dbname=boke;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin` [ RunTime:0.063004s ]
+[ sql ] [ SQL ] SELECT `role` FROM `admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.063003s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_menu` [ RunTime:0.063004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  (  id in (1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.063004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 1  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.060003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 6  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.062004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 14  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.063003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 16  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.061004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 18  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.061003s ]
+[ sql ] [ SQL ] SELECT `id` FROM `admin_menu` WHERE  `controller` = 'Oftenweb'  AND `function` = 'public' LIMIT 1 [ RunTime:0.062004s ]
+---------------------------------------------------------------
+[ 2019-07-22T16:52:09+08:00 ] 127.0.0.1 GET www.yong.com/zhyong/Oftenweb/public/uploads/20190710/152056_6838394.png
+[运行时间：0.815046s] [吞吐率：1.23req/s] [内存消耗：2,677.37kb] [文件加载：75]
+[ info ] [ LANG ] F:\yong_bo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'zhyong',
+    1 => 'Oftenweb',
+    2 => 'public',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=65vgt35jbnkhnik6p3d5h3ku23',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.yong.com/zhyong/Oftenweb/web',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+  'uploads' => '20190710',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think_admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.095006s ] mysql:host=39.96.56.58;port=3306;dbname=boke;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin` [ RunTime:0.063004s ]
+[ sql ] [ SQL ] SELECT `role` FROM `admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.062003s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_menu` [ RunTime:0.064004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  (  id in (1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.063004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 1  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.064003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 6  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.062004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 14  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.063003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 16  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.062004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 18  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.062004s ]
+[ sql ] [ SQL ] SELECT `id` FROM `admin_menu` WHERE  `controller` = 'Oftenweb'  AND `function` = 'public' LIMIT 1 [ RunTime:0.062003s ]
+---------------------------------------------------------------
+[ 2019-07-22T16:52:10+08:00 ] 127.0.0.1 GET www.yong.com/zhyong/oftenweb/edit/id/2.html
+[运行时间：0.915053s] [吞吐率：1.09req/s] [内存消耗：2,759.52kb] [文件加载：78]
+[ info ] [ LANG ] F:\yong_bo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'zhyong',
+    1 => 'oftenweb',
+    2 => 'edit',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=65vgt35jbnkhnik6p3d5h3ku23',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.yong.com/zhyong/Oftenweb/web',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+  'id' => '2',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think_admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\zhyong\controller\Oftenweb->edit[ F:\yong_bo\application\zhyong\controller\Oftenweb.php ]
+[ info ] [ VIEW ] F:\yong_bo\public/../application/zhyong\view\oftenweb\edit.html [ array (
+  0 => 'menu',
+  1 => 'http',
+  2 => 'admin_user_info',
+  3 => 'img',
+  4 => 'gl',
+  5 => 'web_edit',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.092005s ] mysql:host=39.96.56.58;port=3306;dbname=boke;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin` [ RunTime:0.063003s ]
+[ sql ] [ SQL ] SELECT `role` FROM `admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.067004s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_menu` [ RunTime:0.063004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  (  id in (1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.062003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 1  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.060004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 6  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.061003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 14  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.061004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 16  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.062003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 18  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.062004s ]
+[ sql ] [ SQL ] SELECT `id` FROM `admin_menu` WHERE  `controller` = 'Oftenweb'  AND `function` = 'edit' LIMIT 1 [ RunTime:0.061003s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web` [ RunTime:0.062004s ]
+[ sql ] [ SQL ] SELECT * FROM `web` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.061003s ]
+---------------------------------------------------------------
+[ 2019-07-22T16:52:11+08:00 ] 127.0.0.1 GET www.yong.com/zhyong/oftenweb/edit/id/2.html
+[运行时间：0.898051s] [吞吐率：1.11req/s] [内存消耗：2,759.52kb] [文件加载：78]
+[ info ] [ LANG ] F:\yong_bo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'zhyong',
+    1 => 'oftenweb',
+    2 => 'edit',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=65vgt35jbnkhnik6p3d5h3ku23',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.yong.com/zhyong/Oftenweb/web',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+  'id' => '2',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think_admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\zhyong\controller\Oftenweb->edit[ F:\yong_bo\application\zhyong\controller\Oftenweb.php ]
+[ info ] [ VIEW ] F:\yong_bo\public/../application/zhyong\view\oftenweb\edit.html [ array (
+  0 => 'menu',
+  1 => 'http',
+  2 => 'admin_user_info',
+  3 => 'img',
+  4 => 'gl',
+  5 => 'web_edit',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.092005s ] mysql:host=39.96.56.58;port=3306;dbname=boke;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin` [ RunTime:0.062004s ]
+[ sql ] [ SQL ] SELECT `role` FROM `admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.063003s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_menu` [ RunTime:0.062004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  (  id in (1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.062004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 1  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.061003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 6  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.062004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 14  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.061003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 16  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.061004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 18  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.061003s ]
+[ sql ] [ SQL ] SELECT `id` FROM `admin_menu` WHERE  `controller` = 'Oftenweb'  AND `function` = 'edit' LIMIT 1 [ RunTime:0.060004s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web` [ RunTime:0.062003s ]
+[ sql ] [ SQL ] SELECT * FROM `web` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.061004s ]
+---------------------------------------------------------------
+[ 2019-07-22T16:52:23+08:00 ] 127.0.0.1 POST www.yong.com/zhyong/oftenweb/edit/id/2.html
+[运行时间：1.046060s] [吞吐率：0.96req/s] [内存消耗：3,001.48kb] [文件加载：84]
+[ info ] [ LANG ] F:\yong_bo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'zhyong',
+    1 => 'oftenweb',
+    2 => 'edit',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=65vgt35jbnkhnik6p3d5h3ku23',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.yong.com/zhyong/oftenweb/edit/id/2.html',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://www.yong.com',
+  'accept' => '*/*',
+  'content-length' => '15923',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+  'data' => 
+  array (
+    'name' => 'Amaze UI模板',
+    'intro' => 'Amaze UI 是一个轻量级（所有 CSS 和 JS gzip 后 100 kB 左右）、 Mobile first 的前端框架，',
+    'web_address' => 'http://amazeui.org',
+    'sort' => '1',
+    'is_recommend' => '2',
+    'img' => 'data:image/jpeg;base64,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',
+  ),
+  'id' => '2',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think_admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\zhyong\controller\Oftenweb->edit[ F:\yong_bo\application\zhyong\controller\Oftenweb.php ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.095005s ] mysql:host=39.96.56.58;port=3306;dbname=boke;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin` [ RunTime:0.064004s ]
+[ sql ] [ SQL ] SELECT `role` FROM `admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.064004s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_menu` [ RunTime:0.063003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  (  id in (1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.064004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 1  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.063004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 6  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.063003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 14  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.062004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 16  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.063003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 18  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.063004s ]
+[ sql ] [ SQL ] SELECT `id` FROM `admin_menu` WHERE  `controller` = 'Oftenweb'  AND `function` = 'edit' LIMIT 1 [ RunTime:0.063004s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_info` [ RunTime:0.064003s ]
+[ sql ] [ SQL ] SELECT `img` FROM `web_info` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.062004s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web` [ RunTime:0.064004s ]
+[ sql ] [ SQL ] UPDATE `web`  SET `name`='Amaze UI模板',`intro`='Amaze UI 是一个轻量级（所有 CSS 和 JS gzip 后 100 kB 左右）、 Mobile first 的前端框架，',`web_address`='http://amazeui.org',`sort`=1,`is_recommend`=2,`img`='http://www.zhyong.top/public/uploads/20190722/165223_6903174.png',`add_time`=1563785543,`status`=1  WHERE  `id` = 2 [ RunTime:0.063003s ]
+[ error ] [2]unlink(): No such file or directory[F:\yong_bo\application\zhyong\controller\Oftenweb.php:77]
+---------------------------------------------------------------
+[ 2019-07-22T16:52:25+08:00 ] 127.0.0.1 GET www.yong.com/zhyong/Oftenweb/web
+[运行时间：0.960055s] [吞吐率：1.04req/s] [内存消耗：2,778.08kb] [文件加载：78]
+[ info ] [ LANG ] F:\yong_bo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'zhyong',
+    1 => 'Oftenweb',
+    2 => 'web',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=65vgt35jbnkhnik6p3d5h3ku23',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.yong.com/zhyong/oftenweb/edit/id/2.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think_admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\zhyong\controller\Oftenweb->web[ F:\yong_bo\application\zhyong\controller\Oftenweb.php ]
+[ info ] [ VIEW ] F:\yong_bo\public/../application/zhyong\view\oftenweb\web.html [ array (
+  0 => 'menu',
+  1 => 'http',
+  2 => 'admin_user_info',
+  3 => 'img',
+  4 => 'gl',
+  5 => 'web',
+  6 => 'article',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.093006s ] mysql:host=39.96.56.58;port=3306;dbname=boke;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin` [ RunTime:0.063004s ]
+[ sql ] [ SQL ] SELECT `role` FROM `admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.061003s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_menu` [ RunTime:0.062004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  (  id in (1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.062003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 1  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.060004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 6  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.062003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 14  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.060004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 16  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.060003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 18  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.061004s ]
+[ sql ] [ SQL ] SELECT `id` FROM `admin_menu` WHERE  `controller` = 'Oftenweb'  AND `function` = 'web' LIMIT 1 [ RunTime:0.063003s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web` [ RunTime:0.061004s ]
+[ sql ] [ SQL ] SELECT * FROM `web` WHERE  (  status=1 ) ORDER BY `sort` DESC,`add_time` DESC [ RunTime:0.062003s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web` WHERE  (  status=1 ) ORDER BY `sort` DESC,`add_time` DESC LIMIT 1 [ RunTime:0.061004s ]
+---------------------------------------------------------------
+[ 2019-07-22T16:52:26+08:00 ] 127.0.0.1 GET www.yong.com/zhyong/Oftenweb/public/uploads/20190710/152423_3628361.png
+[运行时间：0.778045s] [吞吐率：1.29req/s] [内存消耗：2,677.37kb] [文件加载：75]
+[ info ] [ LANG ] F:\yong_bo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'zhyong',
+    1 => 'Oftenweb',
+    2 => 'public',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=65vgt35jbnkhnik6p3d5h3ku23',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.yong.com/zhyong/Oftenweb/web',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+  'uploads' => '20190710',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think_admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.093005s ] mysql:host=39.96.56.58;port=3306;dbname=boke;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin` [ RunTime:0.062004s ]
+[ sql ] [ SQL ] SELECT `role` FROM `admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.061003s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_menu` [ RunTime:0.062004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  (  id in (1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.063004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 1  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.061003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 6  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.061004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 14  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.061003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 16  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.061004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 18  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.061003s ]
+[ sql ] [ SQL ] SELECT `id` FROM `admin_menu` WHERE  `controller` = 'Oftenweb'  AND `function` = 'public' LIMIT 1 [ RunTime:0.061003s ]
+---------------------------------------------------------------
+[ 2019-07-22T16:52:27+08:00 ] 127.0.0.1 GET www.yong.com/zhyong/Oftenweb/public/uploads/20190710/152056_6838394.png
+[运行时间：0.793045s] [吞吐率：1.26req/s] [内存消耗：2,677.37kb] [文件加载：75]
+[ info ] [ LANG ] F:\yong_bo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'zhyong',
+    1 => 'Oftenweb',
+    2 => 'public',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=65vgt35jbnkhnik6p3d5h3ku23',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.yong.com/zhyong/Oftenweb/web',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+  'uploads' => '20190710',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think_admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.095005s ] mysql:host=39.96.56.58;port=3306;dbname=boke;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin` [ RunTime:0.064004s ]
+[ sql ] [ SQL ] SELECT `role` FROM `admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.063003s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_menu` [ RunTime:0.063004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  (  id in (1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.063004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 1  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.063003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 6  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.062004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 14  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.062003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 16  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.062004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 18  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.062004s ]
+[ sql ] [ SQL ] SELECT `id` FROM `admin_menu` WHERE  `controller` = 'Oftenweb'  AND `function` = 'public' LIMIT 1 [ RunTime:0.061003s ]
+---------------------------------------------------------------
+[ 2019-07-22T16:52:28+08:00 ] 127.0.0.1 GET www.yong.com/zhyong/Oftenweb/public/uploads/20190710/152239_4920976.png
+[运行时间：0.763043s] [吞吐率：1.31req/s] [内存消耗：2,677.37kb] [文件加载：75]
+[ info ] [ LANG ] F:\yong_bo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'zhyong',
+    1 => 'Oftenweb',
+    2 => 'public',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=65vgt35jbnkhnik6p3d5h3ku23',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.yong.com/zhyong/Oftenweb/web',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+  'uploads' => '20190710',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think_admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.091005s ] mysql:host=39.96.56.58;port=3306;dbname=boke;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin` [ RunTime:0.062004s ]
+[ sql ] [ SQL ] SELECT `role` FROM `admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.061003s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_menu` [ RunTime:0.061004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  (  id in (1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.062003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 1  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.060004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 6  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.060003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 14  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.061004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 16  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.060003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 18  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.060004s ]
+[ sql ] [ SQL ] SELECT `id` FROM `admin_menu` WHERE  `controller` = 'Oftenweb'  AND `function` = 'public' LIMIT 1 [ RunTime:0.060003s ]
+---------------------------------------------------------------
+[ 2019-07-22T16:52:29+08:00 ] 127.0.0.1 GET www.yong.com/zhyong/Oftenweb/public/uploads/20190710/152145_9606924.png
+[运行时间：0.793045s] [吞吐率：1.26req/s] [内存消耗：2,677.37kb] [文件加载：75]
+[ info ] [ LANG ] F:\yong_bo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'zhyong',
+    1 => 'Oftenweb',
+    2 => 'public',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=65vgt35jbnkhnik6p3d5h3ku23',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.yong.com/zhyong/Oftenweb/web',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+  'uploads' => '20190710',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think_admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.094005s ] mysql:host=39.96.56.58;port=3306;dbname=boke;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin` [ RunTime:0.066004s ]
+[ sql ] [ SQL ] SELECT `role` FROM `admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.063003s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_menu` [ RunTime:0.064003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  (  id in (1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.063004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 1  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.062003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 6  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.062004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 14  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.061003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 16  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.061004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 18  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.062003s ]
+[ sql ] [ SQL ] SELECT `id` FROM `admin_menu` WHERE  `controller` = 'Oftenweb'  AND `function` = 'public' LIMIT 1 [ RunTime:0.062004s ]
+---------------------------------------------------------------
+[ 2019-07-22T16:52:47+08:00 ] 127.0.0.1 GET www.yong.com/zhyong/index/index.html
+[运行时间：0.857050s] [吞吐率：1.17req/s] [内存消耗：2,753.61kb] [文件加载：78]
+[ info ] [ LANG ] F:\yong_bo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'zhyong',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=65vgt35jbnkhnik6p3d5h3ku23',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.yong.com/Zhyong/Login/login',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think_admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\zhyong\controller\Index->index[ F:\yong_bo\application\zhyong\controller\Index.php ]
+[ info ] [ VIEW ] F:\yong_bo\public/../application/zhyong\view\index\index.html [ array (
+  0 => 'menu',
+  1 => 'http',
+  2 => 'admin_user_info',
+  3 => 'img',
+  4 => 'gl',
+  5 => 'admin_info',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.094006s ] mysql:host=39.96.56.58;port=3306;dbname=boke;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin` [ RunTime:0.062003s ]
+[ sql ] [ SQL ] SELECT `role` FROM `admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.063004s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_menu` [ RunTime:0.063003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  (  id in (1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.069004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 1  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.062004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 6  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.062003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 14  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.061004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 16  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.061003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 18  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.062003s ]
+[ sql ] [ SQL ] SELECT `id` FROM `admin_menu` WHERE  `controller` = 'Index'  AND `function` = 'index' LIMIT 1 [ RunTime:0.062004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.063003s ]
+---------------------------------------------------------------
+[ 2019-07-22T16:52:48+08:00 ] 127.0.0.1 GET www.yong.com/zhyong/index/welcome.html
+[运行时间：1.285074s] [吞吐率：0.78req/s] [内存消耗：2,884.39kb] [文件加载：78]
+[ info ] [ LANG ] F:\yong_bo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'zhyong',
+    1 => 'index',
+    2 => 'welcome',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=65vgt35jbnkhnik6p3d5h3ku23',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.yong.com/zhyong/index/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think_admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\zhyong\controller\Index->welcome[ F:\yong_bo\application\zhyong\controller\Index.php ]
+[ info ] [ VIEW ] F:\yong_bo\public/../application/zhyong\view\index\welcome.html [ array (
+  0 => 'menu',
+  1 => 'http',
+  2 => 'admin_user_info',
+  3 => 'img',
+  4 => 'gl',
+  5 => 'admin_info',
+  6 => 'accessNum',
+  7 => 'accessChart',
+  8 => 'new_article',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.107006s ] mysql:host=39.96.56.58;port=3306;dbname=boke;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin` [ RunTime:0.068004s ]
+[ sql ] [ SQL ] SELECT `role` FROM `admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.078004s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_menu` [ RunTime:0.063004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  (  id in (1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.080004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 1  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.063004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 6  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.063004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 14  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.063003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 16  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.063004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 18  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.062004s ]
+[ sql ] [ SQL ] SELECT `id` FROM `admin_menu` WHERE  `controller` = 'Index'  AND `function` = 'welcome' LIMIT 1 [ RunTime:0.068003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.066004s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `access` [ RunTime:0.063004s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `access` WHERE  `access_date` = 20190722 LIMIT 1 [ RunTime:0.063003s ]
+[ sql ] [ SQL ] select access_date,count('id') as 'num' from access group by access_date order by access_time desc limit 7 [ RunTime:0.062004s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `article` [ RunTime:0.069004s ]
+[ sql ] [ SQL ] SELECT * FROM `article` WHERE  (  status=1 AND type=2 ) ORDER BY `add_time` DESC LIMIT 6 [ RunTime:0.096005s ]
+---------------------------------------------------------------
+[ 2019-07-22T16:52:49+08:00 ] 127.0.0.1 GET www.yong.com/zhyong/Oftenweb/web
+[运行时间：0.977056s] [吞吐率：1.02req/s] [内存消耗：2,778.03kb] [文件加载：78]
+[ info ] [ LANG ] F:\yong_bo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'zhyong',
+    1 => 'Oftenweb',
+    2 => 'web',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=65vgt35jbnkhnik6p3d5h3ku23',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.yong.com/zhyong/index/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think_admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\zhyong\controller\Oftenweb->web[ F:\yong_bo\application\zhyong\controller\Oftenweb.php ]
+[ info ] [ VIEW ] F:\yong_bo\public/../application/zhyong\view\oftenweb\web.html [ array (
+  0 => 'menu',
+  1 => 'http',
+  2 => 'admin_user_info',
+  3 => 'img',
+  4 => 'gl',
+  5 => 'web',
+  6 => 'article',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.101006s ] mysql:host=39.96.56.58;port=3306;dbname=boke;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin` [ RunTime:0.060003s ]
+[ sql ] [ SQL ] SELECT `role` FROM `admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.066004s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_menu` [ RunTime:0.062004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  (  id in (1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.060003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 1  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.059004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 6  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.064003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 14  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.061004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 16  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.059003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 18  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.059003s ]
+[ sql ] [ SQL ] SELECT `id` FROM `admin_menu` WHERE  `controller` = 'Oftenweb'  AND `function` = 'web' LIMIT 1 [ RunTime:0.058004s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web` [ RunTime:0.061003s ]
+[ sql ] [ SQL ] SELECT * FROM `web` WHERE  (  status=1 ) ORDER BY `sort` DESC,`add_time` DESC [ RunTime:0.064004s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web` WHERE  (  status=1 ) ORDER BY `sort` DESC,`add_time` DESC LIMIT 1 [ RunTime:0.059003s ]
+---------------------------------------------------------------
+[ 2019-07-22T16:52:50+08:00 ] 127.0.0.1 GET www.yong.com/zhyong/Oftenweb/public/uploads/20190710/152423_3628361.png
+[运行时间：0.805046s] [吞吐率：1.24req/s] [内存消耗：2,678.22kb] [文件加载：75]
+[ info ] [ LANG ] F:\yong_bo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'zhyong',
+    1 => 'Oftenweb',
+    2 => 'public',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=65vgt35jbnkhnik6p3d5h3ku23',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.yong.com/zhyong/Oftenweb/web',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+  'uploads' => '20190710',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think_admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.095005s ] mysql:host=39.96.56.58;port=3306;dbname=boke;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin` [ RunTime:0.064004s ]
+[ sql ] [ SQL ] SELECT `role` FROM `admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.063004s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_menu` [ RunTime:0.063003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  (  id in (1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.062004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 1  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.062003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 6  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.062004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 14  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.063004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 16  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.063003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 18  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.063004s ]
+[ sql ] [ SQL ] SELECT `id` FROM `admin_menu` WHERE  `controller` = 'Oftenweb'  AND `function` = 'public' LIMIT 1 [ RunTime:0.063004s ]
+---------------------------------------------------------------
+[ 2019-07-22T16:52:51+08:00 ] 127.0.0.1 GET www.yong.com/zhyong/Oftenweb/public/uploads/20190710/152145_9606924.png
+[运行时间：0.779044s] [吞吐率：1.28req/s] [内存消耗：2,678.22kb] [文件加载：75]
+[ info ] [ LANG ] F:\yong_bo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'zhyong',
+    1 => 'Oftenweb',
+    2 => 'public',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=65vgt35jbnkhnik6p3d5h3ku23',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.yong.com/zhyong/Oftenweb/web',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+  'uploads' => '20190710',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think_admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.093006s ] mysql:host=39.96.56.58;port=3306;dbname=boke;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin` [ RunTime:0.062003s ]
+[ sql ] [ SQL ] SELECT `role` FROM `admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.063004s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_menu` [ RunTime:0.063004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  (  id in (1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.063003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 1  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.060004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 6  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.061003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 14  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.062004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 16  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.061003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 18  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.061004s ]
+[ sql ] [ SQL ] SELECT `id` FROM `admin_menu` WHERE  `controller` = 'Oftenweb'  AND `function` = 'public' LIMIT 1 [ RunTime:0.061003s ]
+---------------------------------------------------------------
+[ 2019-07-22T16:52:52+08:00 ] 127.0.0.1 GET www.yong.com/zhyong/Oftenweb/public/uploads/20190710/152239_4920976.png
+[运行时间：0.789045s] [吞吐率：1.27req/s] [内存消耗：2,678.22kb] [文件加载：75]
+[ info ] [ LANG ] F:\yong_bo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'zhyong',
+    1 => 'Oftenweb',
+    2 => 'public',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=65vgt35jbnkhnik6p3d5h3ku23',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.yong.com/zhyong/Oftenweb/web',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+  'uploads' => '20190710',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think_admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.095006s ] mysql:host=39.96.56.58;port=3306;dbname=boke;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin` [ RunTime:0.063003s ]
+[ sql ] [ SQL ] SELECT `role` FROM `admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.063004s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_menu` [ RunTime:0.064004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  (  id in (1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.064003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 1  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.062004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 6  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.062003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 14  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.062004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 16  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.063004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 18  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.062003s ]
+[ sql ] [ SQL ] SELECT `id` FROM `admin_menu` WHERE  `controller` = 'Oftenweb'  AND `function` = 'public' LIMIT 1 [ RunTime:0.062004s ]
+---------------------------------------------------------------
+[ 2019-07-22T16:52:53+08:00 ] 127.0.0.1 GET www.yong.com/zhyong/Oftenweb/public/uploads/20190710/152056_6838394.png
+[运行时间：0.782045s] [吞吐率：1.28req/s] [内存消耗：2,678.22kb] [文件加载：75]
+[ info ] [ LANG ] F:\yong_bo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'zhyong',
+    1 => 'Oftenweb',
+    2 => 'public',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=65vgt35jbnkhnik6p3d5h3ku23',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.yong.com/zhyong/Oftenweb/web',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+  'uploads' => '20190710',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think_admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.093005s ] mysql:host=39.96.56.58;port=3306;dbname=boke;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin` [ RunTime:0.064004s ]
+[ sql ] [ SQL ] SELECT `role` FROM `admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.062004s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_menu` [ RunTime:0.065003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  (  id in (1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.063004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 1  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.061004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 6  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.061003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 14  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.061003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 16  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.061004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 18  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.061003s ]
+[ sql ] [ SQL ] SELECT `id` FROM `admin_menu` WHERE  `controller` = 'Oftenweb'  AND `function` = 'public' LIMIT 1 [ RunTime:0.062003s ]
+---------------------------------------------------------------
+[ 2019-07-22T16:53:05+08:00 ] 127.0.0.1 GET www.yong.com/zhyong/oftenweb/edit/id/6.html
+[运行时间：0.950055s] [吞吐率：1.05req/s] [内存消耗：2,759.55kb] [文件加载：78]
+[ info ] [ LANG ] F:\yong_bo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'zhyong',
+    1 => 'oftenweb',
+    2 => 'edit',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=65vgt35jbnkhnik6p3d5h3ku23',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.yong.com/zhyong/Oftenweb/web',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+  'id' => '6',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think_admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\zhyong\controller\Oftenweb->edit[ F:\yong_bo\application\zhyong\controller\Oftenweb.php ]
+[ info ] [ VIEW ] F:\yong_bo\public/../application/zhyong\view\oftenweb\edit.html [ array (
+  0 => 'menu',
+  1 => 'http',
+  2 => 'admin_user_info',
+  3 => 'img',
+  4 => 'gl',
+  5 => 'web_edit',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.098005s ] mysql:host=39.96.56.58;port=3306;dbname=boke;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin` [ RunTime:0.065003s ]
+[ sql ] [ SQL ] SELECT `role` FROM `admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.065004s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_menu` [ RunTime:0.069004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  (  id in (1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.067004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 1  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.064004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 6  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.063003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 14  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.065004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 16  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.065004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 18  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.063003s ]
+[ sql ] [ SQL ] SELECT `id` FROM `admin_menu` WHERE  `controller` = 'Oftenweb'  AND `function` = 'edit' LIMIT 1 [ RunTime:0.064004s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web` [ RunTime:0.064004s ]
+[ sql ] [ SQL ] SELECT * FROM `web` WHERE  `id` = 6 LIMIT 1 [ RunTime:0.065003s ]
+---------------------------------------------------------------
+[ 2019-07-22T16:53:12+08:00 ] 127.0.0.1 POST www.yong.com/zhyong/oftenweb/edit/id/6.html
+[运行时间：1.043060s] [吞吐率：0.96req/s] [内存消耗：2,985.41kb] [文件加载：84]
+[ info ] [ LANG ] F:\yong_bo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'zhyong',
+    1 => 'oftenweb',
+    2 => 'edit',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=65vgt35jbnkhnik6p3d5h3ku23',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.yong.com/zhyong/oftenweb/edit/id/6.html',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://www.yong.com',
+  'accept' => '*/*',
+  'content-length' => '10387',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+  'data' => 
+  array (
+    'name' => 'laravel框架中文社区',
+    'intro' => 'Laravel是一套简洁、优雅的PHP Web开发框架(PHP Web Framework)',
+    'web_address' => 'https://laravel-china.org/docs/',
+    'sort' => '1',
+    'is_recommend' => '2',
+    'img' => 'data:image/jpeg;base64,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',
+  ),
+  'id' => '6',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think_admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\zhyong\controller\Oftenweb->edit[ F:\yong_bo\application\zhyong\controller\Oftenweb.php ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.096006s ] mysql:host=39.96.56.58;port=3306;dbname=boke;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin` [ RunTime:0.063003s ]
+[ sql ] [ SQL ] SELECT `role` FROM `admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.065004s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_menu` [ RunTime:0.063004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  (  id in (1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.063003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 1  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.062004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 6  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.062004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 14  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.063003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 16  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.063004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 18  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.062003s ]
+[ sql ] [ SQL ] SELECT `id` FROM `admin_menu` WHERE  `controller` = 'Oftenweb'  AND `function` = 'edit' LIMIT 1 [ RunTime:0.063004s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_info` [ RunTime:0.063004s ]
+[ sql ] [ SQL ] SELECT `img` FROM `web_info` WHERE  `id` = 6 LIMIT 1 [ RunTime:0.062003s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web` [ RunTime:0.063004s ]
+[ sql ] [ SQL ] UPDATE `web`  SET `name`='laravel框架中文社区',`intro`='Laravel是一套简洁、优雅的PHP Web开发框架(PHP Web Framework)',`web_address`='https://laravel-china.org/docs/',`sort`=1,`is_recommend`=2,`img`='http://www.zhyong.top/public/uploads/20190722/165312_4661287.png',`add_time`=1563785592,`status`=1  WHERE  `id` = 6 [ RunTime:0.063004s ]
+[ error ] [2]unlink(): No such file or directory[F:\yong_bo\application\zhyong\controller\Oftenweb.php:77]
+---------------------------------------------------------------
+[ 2019-07-22T16:53:14+08:00 ] 127.0.0.1 GET www.yong.com/zhyong/Oftenweb/web
+[运行时间：0.995057s] [吞吐率：1.00req/s] [内存消耗：2,777.98kb] [文件加载：78]
+[ info ] [ LANG ] F:\yong_bo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'zhyong',
+    1 => 'Oftenweb',
+    2 => 'web',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=65vgt35jbnkhnik6p3d5h3ku23',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.yong.com/zhyong/oftenweb/edit/id/6.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think_admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\zhyong\controller\Oftenweb->web[ F:\yong_bo\application\zhyong\controller\Oftenweb.php ]
+[ info ] [ VIEW ] F:\yong_bo\public/../application/zhyong\view\oftenweb\web.html [ array (
+  0 => 'menu',
+  1 => 'http',
+  2 => 'admin_user_info',
+  3 => 'img',
+  4 => 'gl',
+  5 => 'web',
+  6 => 'article',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.096006s ] mysql:host=39.96.56.58;port=3306;dbname=boke;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin` [ RunTime:0.063004s ]
+[ sql ] [ SQL ] SELECT `role` FROM `admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.063003s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_menu` [ RunTime:0.063004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  (  id in (1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.062004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 1  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.062003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 6  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.063004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 14  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.063003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 16  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.063004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 18  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.072004s ]
+[ sql ] [ SQL ] SELECT `id` FROM `admin_menu` WHERE  `controller` = 'Oftenweb'  AND `function` = 'web' LIMIT 1 [ RunTime:0.063004s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web` [ RunTime:0.063003s ]
+[ sql ] [ SQL ] SELECT * FROM `web` WHERE  (  status=1 ) ORDER BY `sort` DESC,`add_time` DESC [ RunTime:0.063004s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web` WHERE  (  status=1 ) ORDER BY `sort` DESC,`add_time` DESC LIMIT 1 [ RunTime:0.063003s ]
+---------------------------------------------------------------
+[ 2019-07-22T16:53:15+08:00 ] 127.0.0.1 GET www.yong.com/zhyong/Oftenweb/public/uploads/20190710/152423_3628361.png
+[运行时间：0.800046s] [吞吐率：1.25req/s] [内存消耗：2,677.37kb] [文件加载：75]
+[ info ] [ LANG ] F:\yong_bo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'zhyong',
+    1 => 'Oftenweb',
+    2 => 'public',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=65vgt35jbnkhnik6p3d5h3ku23',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.yong.com/zhyong/Oftenweb/web',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+  'uploads' => '20190710',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think_admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.102006s ] mysql:host=39.96.56.58;port=3306;dbname=boke;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin` [ RunTime:0.063003s ]
+[ sql ] [ SQL ] SELECT `role` FROM `admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.064004s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_menu` [ RunTime:0.070004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  (  id in (1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.065004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 1  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.063004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 6  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.065003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 14  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.063004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 16  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.065004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 18  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.064003s ]
+[ sql ] [ SQL ] SELECT `id` FROM `admin_menu` WHERE  `controller` = 'Oftenweb'  AND `function` = 'public' LIMIT 1 [ RunTime:0.063004s ]
+---------------------------------------------------------------
+[ 2019-07-22T16:53:16+08:00 ] 127.0.0.1 GET www.yong.com/zhyong/Oftenweb/public/uploads/20190710/152239_4920976.png
+[运行时间：0.790046s] [吞吐率：1.27req/s] [内存消耗：2,677.37kb] [文件加载：75]
+[ info ] [ LANG ] F:\yong_bo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'zhyong',
+    1 => 'Oftenweb',
+    2 => 'public',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=65vgt35jbnkhnik6p3d5h3ku23',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.yong.com/zhyong/Oftenweb/web',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+  'uploads' => '20190710',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think_admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.093005s ] mysql:host=39.96.56.58;port=3306;dbname=boke;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin` [ RunTime:0.063004s ]
+[ sql ] [ SQL ] SELECT `role` FROM `admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.062003s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_menu` [ RunTime:0.063004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  (  id in (1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.066004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 1  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.061003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 6  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.063004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 14  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.062004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 16  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.062003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 18  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.066004s ]
+[ sql ] [ SQL ] SELECT `id` FROM `admin_menu` WHERE  `controller` = 'Oftenweb'  AND `function` = 'public' LIMIT 1 [ RunTime:0.061003s ]
+---------------------------------------------------------------
+[ 2019-07-22T16:53:17+08:00 ] 127.0.0.1 GET www.yong.com/zhyong/Oftenweb/public/uploads/20190710/152145_9606924.png
+[运行时间：0.789045s] [吞吐率：1.27req/s] [内存消耗：2,677.37kb] [文件加载：75]
+[ info ] [ LANG ] F:\yong_bo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'zhyong',
+    1 => 'Oftenweb',
+    2 => 'public',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=65vgt35jbnkhnik6p3d5h3ku23',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.yong.com/zhyong/Oftenweb/web',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+  'uploads' => '20190710',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think_admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.095005s ] mysql:host=39.96.56.58;port=3306;dbname=boke;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin` [ RunTime:0.063004s ]
+[ sql ] [ SQL ] SELECT `role` FROM `admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.063004s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_menu` [ RunTime:0.064003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  (  id in (1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.064004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 1  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.063004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 6  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.063003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 14  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.063004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 16  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.062003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 18  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.064004s ]
+[ sql ] [ SQL ] SELECT `id` FROM `admin_menu` WHERE  `controller` = 'Oftenweb'  AND `function` = 'public' LIMIT 1 [ RunTime:0.063004s ]
+---------------------------------------------------------------
+[ 2019-07-22T16:53:45+08:00 ] 127.0.0.1 GET www.yong.com/zhyong/Oftenweb/web
+[运行时间：1.006057s] [吞吐率：0.99req/s] [内存消耗：2,777.91kb] [文件加载：78]
+[ info ] [ LANG ] F:\yong_bo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'zhyong',
+    1 => 'Oftenweb',
+    2 => 'web',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=65vgt35jbnkhnik6p3d5h3ku23',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.yong.com/zhyong/Oftenweb/web',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think_admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\zhyong\controller\Oftenweb->web[ F:\yong_bo\application\zhyong\controller\Oftenweb.php ]
+[ info ] [ VIEW ] F:\yong_bo\public/../application/zhyong\view\oftenweb\web.html [ array (
+  0 => 'menu',
+  1 => 'http',
+  2 => 'admin_user_info',
+  3 => 'img',
+  4 => 'gl',
+  5 => 'web',
+  6 => 'article',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.097005s ] mysql:host=39.96.56.58;port=3306;dbname=boke;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin` [ RunTime:0.068003s ]
+[ sql ] [ SQL ] SELECT `role` FROM `admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.067004s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_menu` [ RunTime:0.065004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  (  id in (1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.065004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 1  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.064004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 6  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.064003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 14  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.063004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 16  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.063003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 18  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.064004s ]
+[ sql ] [ SQL ] SELECT `id` FROM `admin_menu` WHERE  `controller` = 'Oftenweb'  AND `function` = 'web' LIMIT 1 [ RunTime:0.064004s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web` [ RunTime:0.064003s ]
+[ sql ] [ SQL ] SELECT * FROM `web` WHERE  (  status=1 ) ORDER BY `sort` DESC,`add_time` DESC [ RunTime:0.064003s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web` WHERE  (  status=1 ) ORDER BY `sort` DESC,`add_time` DESC LIMIT 1 [ RunTime:0.063004s ]
+---------------------------------------------------------------
+[ 2019-07-22T16:53:46+08:00 ] 127.0.0.1 GET www.yong.com/zhyong/Oftenweb/public/uploads/20190710/152239_4920976.png
+[运行时间：0.800046s] [吞吐率：1.25req/s] [内存消耗：2,677.37kb] [文件加载：75]
+[ info ] [ LANG ] F:\yong_bo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'zhyong',
+    1 => 'Oftenweb',
+    2 => 'public',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=65vgt35jbnkhnik6p3d5h3ku23',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.yong.com/zhyong/Oftenweb/web',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+  'uploads' => '20190710',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think_admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.099006s ] mysql:host=39.96.56.58;port=3306;dbname=boke;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin` [ RunTime:0.065003s ]
+[ sql ] [ SQL ] SELECT `role` FROM `admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.064004s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_menu` [ RunTime:0.065004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  (  id in (1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.065004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 1  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.064003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 6  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.064004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 14  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.064004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 16  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.064003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 18  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.065004s ]
+[ sql ] [ SQL ] SELECT `id` FROM `admin_menu` WHERE  `controller` = 'Oftenweb'  AND `function` = 'public' LIMIT 1 [ RunTime:0.065004s ]
+---------------------------------------------------------------
+[ 2019-07-22T16:53:46+08:00 ] 127.0.0.1 GET www.yong.com/zhyong/Oftenweb/public/uploads/20190710/152423_3628361.png
+[运行时间：0.786045s] [吞吐率：1.27req/s] [内存消耗：2,677.37kb] [文件加载：75]
+[ info ] [ LANG ] F:\yong_bo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'zhyong',
+    1 => 'Oftenweb',
+    2 => 'public',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=65vgt35jbnkhnik6p3d5h3ku23',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.yong.com/zhyong/Oftenweb/web',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+  'uploads' => '20190710',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think_admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.093005s ] mysql:host=39.96.56.58;port=3306;dbname=boke;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin` [ RunTime:0.063004s ]
+[ sql ] [ SQL ] SELECT `role` FROM `admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.063004s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_menu` [ RunTime:0.065003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  (  id in (1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.063004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 1  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.062004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 6  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.063003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 14  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.061004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 16  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.062003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 18  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.062004s ]
+[ sql ] [ SQL ] SELECT `id` FROM `admin_menu` WHERE  `controller` = 'Oftenweb'  AND `function` = 'public' LIMIT 1 [ RunTime:0.061003s ]
+---------------------------------------------------------------
+[ 2019-07-22T16:53:47+08:00 ] 127.0.0.1 GET www.yong.com/zhyong/Oftenweb/public/uploads/20190710/152145_9606924.png
+[运行时间：0.783045s] [吞吐率：1.28req/s] [内存消耗：2,677.37kb] [文件加载：75]
+[ info ] [ LANG ] F:\yong_bo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'zhyong',
+    1 => 'Oftenweb',
+    2 => 'public',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=65vgt35jbnkhnik6p3d5h3ku23',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.yong.com/zhyong/Oftenweb/web',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+  'uploads' => '20190710',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think_admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.095006s ] mysql:host=39.96.56.58;port=3306;dbname=boke;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin` [ RunTime:0.063003s ]
+[ sql ] [ SQL ] SELECT `role` FROM `admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.063004s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin_menu` [ RunTime:0.063004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  (  id in (1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.063003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 1  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.062004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 6  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.063003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 14  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.062004s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 16  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.062003s ]
+[ sql ] [ SQL ] SELECT * FROM `admin_menu` WHERE  `pid` = 18  AND (  id in(1,2,11,6,7,14,16,17,18,2,21,24,11,22,23,7,25,26,13,20,15,17,27,28,19) ) ORDER BY `id` ASC [ RunTime:0.062004s ]
+[ sql ] [ SQL ] SELECT `id` FROM `admin_menu` WHERE  `controller` = 'Oftenweb'  AND `function` = 'public' LIMIT 1 [ RunTime:0.062004s ]
