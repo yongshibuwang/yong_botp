@@ -16,7 +16,7 @@ return [
 //    'hostname'        => '39.96.56.58',
     'hostname'        => '127.0.0.1',
     // 数据库名
-    'database'        => 'yong',
+    'database'        => 'boke',
     // 用户名
 //    'username'        => 'ling',
     'username'        => 'root',
