@@ -22,7 +22,7 @@ function menuImg($pic){
         $image = explode(',', $image);
         $image = $image[1];
     }
-    $path = "public/menuimg";
+    $path = "menuimg";
     if (!is_dir($path)) { //判断目录是否存在 不存在就创建
         mkdir($path, 0777, true);
     }
@@ -46,7 +46,7 @@ function uploadPIC($pic){
         $image = explode(',', $image);
         $image = $image[1];
     }
-    $path = "public/uploads/" . date("Ymd", time());
+    $path = "uploads/" . date("Ymd", time());
     if (!is_dir($path)) { //判断目录是否存在 不存在就创建
         mkdir($path, 0777, true);
     }
