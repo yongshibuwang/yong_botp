@@ -13,16 +13,16 @@ return [
     // 数据库类型
     'type'            => 'mysql',
     // 服务器地址
-//    'hostname'        => '39.96.56.58',
-    'hostname'        => '127.0.0.1',
+    'hostname'        => '39.96.56.58',
+//    'hostname'        => '127.0.0.1',
     // 数据库名
     'database'        => 'boke',
     // 用户名
 //    'username'        => 'ling',
-    'username'        => 'root',
+    'username'        => 'boke',
     // 密码
 //    'password'        => 'ling',
-    'password'        => 'root',
+    'password'        => 'boke123',
     // 端口
     'hostport'        => '3306',
     // 连接dsn

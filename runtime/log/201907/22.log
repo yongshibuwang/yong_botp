@@ -1094,3 +1094,127 @@
 [ info ] [ PARAM ] array (
 )
 [ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-07-22T15:52:25+08:00 ] 127.0.0.1 GET www.yong.com/index/article/htmloption/mobile/1.html
+[运行时间：1.414081s] [吞吐率：0.71req/s] [内存消耗：3,230.76kb] [文件加载：81]
+[ info ] [ LANG ] F:\yong_bo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'article',
+    2 => 'htmloption',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=vn31h9bov73qn73b151194e8dh',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+  'mobile' => '1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think_admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\index\controller\Article->htmlOption[ F:\yong_bo\application\index\controller\Article.php ]
+[ info ] [ VIEW ] F:\yong_bo\public/../application/index\view\article\html_option.html [ array (
+  0 => 'accessNum',
+  1 => 'access',
+  2 => 'selfWebInfo',
+  3 => 'gl',
+  4 => 'list',
+  5 => 'page',
+  6 => 'new_article',
+  7 => 'p_article',
+  8 => 'w_article',
+  9 => 's_article',
+  10 => 'w_web',
+  11 => 'label',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.094005s ] mysql:host=39.96.56.58;port=3306;dbname=boke;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `access` [ RunTime:0.063004s ]
+[ sql ] [ SQL ] SELECT * FROM `access` WHERE  `ip` = '127.0.0.1' LIMIT 1 [ RunTime:0.064004s ]
+[ sql ] [ SQL ] SELECT * FROM `access` WHERE  `access_date` = 20190722 ORDER BY `access_num` DESC,`access_time` DESC [ RunTime:0.063003s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_info` [ RunTime:0.063004s ]
+[ sql ] [ SQL ] SELECT * FROM `web_info` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.062004s ]
+[ sql ] [ SQL ] select id from copy_web where kind=4 AND add_time < 1561189944 [ RunTime:0.062003s ]
+[ sql ] [ SQL ] select id from ling where add_time < 1561189944 [ RunTime:0.062004s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `article` [ RunTime:0.063004s ]
+[ sql ] [ SQL ] SELECT `co`.*,la.name as laname FROM `article` `co` INNER JOIN `label` `la` ON `co`.`pid`=`la`.`id` WHERE  (  status=1 AND type=2 AND kind=2 )  AND (  is_hot=1 ) ORDER BY `co`.`add_time` DESC LIMIT 0,6 [ RunTime:0.064003s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `article` `co` INNER JOIN `label` `la` ON `co`.`pid`=`la`.`id` WHERE  (  status=1 AND type=2 AND kind=2 )  AND (  is_hot=1 ) ORDER BY `co`.`add_time` DESC LIMIT 1 [ RunTime:0.063004s ]
+[ sql ] [ SQL ] SELECT * FROM `article` WHERE  (  status=1 AND type=2 AND kind=1 ) OR (  status=1 AND type=2 AND kind=2 ) ORDER BY `add_time` DESC LIMIT 8 [ RunTime:0.160009s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `article` WHERE  (  type=2 AND kind=1 ) LIMIT 1 [ RunTime:0.062004s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `article` WHERE  (  type=2 AND kind=2 ) LIMIT 1 [ RunTime:0.071004s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `article` WHERE  (  type=2 AND kind=3 ) LIMIT 1 [ RunTime:0.079004s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web` [ RunTime:0.064004s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web` LIMIT 1 [ RunTime:0.062003s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `label` [ RunTime:0.063004s ]
+[ sql ] [ SQL ] SELECT * FROM `label` WHERE  (  kid=2 ) [ RunTime:0.062004s ]
+---------------------------------------------------------------
+[ 2019-07-22T15:52:25+08:00 ] 127.0.0.1 GET www.yong.com/static/index/images/2.gif
+[运行时间：0.037002s] [吞吐率：27.03req/s] [内存消耗：1,851.85kb] [文件加载：61]
+[ info ] [ LANG ] F:\yong_bo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'index',
+    2 => 'images',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=vn31h9bov73qn73b151194e8dh',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.yong.com/index/article/htmloption/mobile/1.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-07-22T15:52:32+08:00 ] 127.0.0.1 GET www.yong.com/index/oftenweb/web.html
+[运行时间：0.040003s] [吞吐率：25.00req/s] [内存消耗：2,110.57kb] [文件加载：71]
+[ info ] [ LANG ] F:\yong_bo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'oftenweb',
+    2 => 'web',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=vn31h9bov73qn73b151194e8dh',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.yong.com/index/article/htmloption/mobile/1.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.yong.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+[ error ] [0]致命错误: Call to undefined method app\index\controller\Father::index()[F:\yong_bo\application\index\controller\Oftenweb.php:9]
