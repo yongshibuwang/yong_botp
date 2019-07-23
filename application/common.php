@@ -9,6 +9,19 @@
 // | Author: 流年 <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
+/*自定义微信常量*/
+if(!WXAPPID){
+    $wx = \think\Config::get('wxconfig');
+    if($wx){
+        define('WXAPPID',$wx['AppID']);
+        define('WXAPPSECRET',$wx['AppSecret']);
+    }else{
+        define('WXAPPID','');
+        define('WXAPPSECRET','');
+    }
+}
+
+
 // 应用公共文件
 /**
  * 上传菜单图标base64

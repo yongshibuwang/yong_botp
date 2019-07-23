@@ -1,0 +1,81 @@
+{extend name="Father:index"/}
+{block name="tpl-content-wrapper"}
+<!-- 内容区域 -->
+<div class="tpl-content-wrapper">
+    <div class="row-content am-cf">
+        <div class="row">
+
+            <div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
+                <div class="widget am-cf">
+                    <div class="widget-head am-cf">
+                        <div class="widget-title am-fl" style="width: 30%;">
+                            <a href="javascript:history.go(-1)" style="padding-right: 4%;">
+                                <img src="__PUBLIC__/static/admin/assets/img/back_i1.png" alt=""/></a>
+                            系统配置->微信配置</div>
+                        <div class="widget-function am-fr" style="margin-right: 3%;">
+                            <a href="javascript:;" class="click_back">刷新</a>
+                        </div>
+                    </div>
+                    <div class="widget-body am-fr">
+                        <form class="am-form tpl-form-border-form tpl-form-border-br" id="form1">
+                            <div class="am-form-group">
+                                <label for="AppID" class="am-u-sm-3 am-form-label">AppID <span class="tpl-form-line-small-title">AppID</span></label>
+                                <div class="am-u-sm-9">
+                                    <input type="text" name="AppID"  style="width: 40%;" value="<?php echo WXAPPID;?>" class="tpl-form-input" id="AppID" placeholder="请输入AppID">
+                                </div>
+                            </div>
+                            <div class="am-form-group">
+                                <label for="AppSecret" class="am-u-sm-3 am-form-label">AppSecret <span class="tpl-form-line-small-title">AppSecret</span></label>
+                                <div class="am-u-sm-9">
+                                    <input type="text" name="AppSecret"  style="width: 40%;" value="<?php echo WXAPPSECRET;?>" class="tpl-form-input" id="AppSecret" placeholder="请输入AppSecret">
+                                </div>
+                            </div>
+                            <div class="am-form-group" style="margin-top: 6%;">
+                                <div class="am-u-sm-9 am-u-sm-push-3">
+                                    <button type="button" class="am-btn am-btn-primary tpl-btn-bg-color-success submit-up-add" id="" onclick="submit_menu()">提交</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        //提交
+        function submit_menu(){
+            if(!$('[name=AppID]').val()){layer.msg('请输入AppID',{time:800});$('[name=AppID]').focus();return false;}
+            if(!$('[name=AppSecret]').val()){layer.msg('请输入AppSecret',{time:1500});$('[name=AppSecret]').focus();return false;}
+            var a = {
+                'AppID':$('[name=AppID]').val(),
+                'AppSecret':$('[name=AppSecret]').val()
+            };
+            $.post("{:url('Allocation/index')}",{data:a},function(data){
+//                console.log(data);
+                if(data.code){
+                    layer.msg(data.msg,{time:800},function(){
+                        location=location;
+                    })
+                }else{
+                    layer.msg(data.msg);
+                }
+            });
+        };
+        //图片转化为base64
+        var picArr = "";
+        $('.list_pic input:file').localResizeIMG({
+            width:600,
+            quality: 0.7,
+            success: function (result) {
+                var img = new Image();
+                img.src = result.base64;
+                $(".list_pic").css("background-image","url("+result.base64+")");
+                picArr= result.base64;
+                // picArr[_i] = _i;
+//            console.log(picArr)
+            }
+        });
+    </script>
+</div>
+
+{/block}

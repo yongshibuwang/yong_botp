@@ -73,6 +73,26 @@ function getTrees($arr,$pid,$step = 0){
     }
     return $tree;
 }
+/**
+ * [writeArr 写入配置文件方法]
+ * @param  [type] $arr      [要写入的数据]
+ * @param  [type] $filename [文件路径]
+ * @return [type]           [description]
+ */
+function w_wxconfig($arr, $filename) {
+    $txt="<?php \r\n 
+// +---------------------------------------------------------------------- 
+// | ThinkPHP [ WE CAN DO IT JUST THINK ]
+// +----------------------------------------------------------------------
+// | Copyright (c) 2006~2018 http://thinkphp.cn All rights reserved.
+// +----------------------------------------------------------------------
+// | Licensed ( http://www.apache.org/licenses/LICENSE-2.0 )
+// +----------------------------------------------------------------------
+// | Author:  勇☆贳&卟☆莣 <1329939330@qq.com>
+// +----------------------------------------------------------------------
+  \r\n  return " . var_export($arr, true) . ";";
+    return file_put_contents($filename, $txt);
+}
 
 
 
