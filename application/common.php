@@ -10,15 +10,13 @@
 // +----------------------------------------------------------------------
 
 /*自定义微信常量*/
-if(!WXAPPID){
-    $wx = \think\Config::get('wxconfig');
-    if($wx){
-        define('WXAPPID',$wx['AppID']);
-        define('WXAPPSECRET',$wx['AppSecret']);
-    }else{
-        define('WXAPPID','');
-        define('WXAPPSECRET','');
-    }
+$wx = \think\Config::get('wxconfig');
+if($wx){
+    define('WXAPPID',$wx['AppID']);
+    define('WXAPPSECRET',$wx['AppSecret']);
+}else{
+    define('WXAPPID','');
+    define('WXAPPSECRET','');
 }
 
 
