@@ -79,6 +79,7 @@
     </div>
     <script>
         //提交
+        var tijiao=0;
         function submit_menu(){
             if(!$('[name=name]').val()){layer.msg('请输入网站名',{time:800});$('[name=name]').focus();return false;};
             if(!$('[name=web_address]').val()){layer.msg('请输入网站地址',{time:1500});$('[name=web_address]').focus();return false;};
@@ -86,7 +87,9 @@
             if($('[name=status]:checked').val()){
                 status_id=1;
             }
-            if(!picArr){layer.msg('请添加图片',{time:800});};
+            if(!picArr){layer.msg('请添加图片',{time:800});return false}
+            if(tijiao){layer.msg('请勿重复提交',{time:800});return false}
+            tijiao=1;
             var a = {
                 'name':$('[name=name]').val(),
                 'intro':$('[name=intro]').val(),
@@ -103,6 +106,7 @@
                     })
                 }else{
                     layer.msg(data.msg);
+                    tijiao=0
                 }
             });
         };
