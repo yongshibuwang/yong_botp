@@ -18,8 +18,6 @@ if($wx){
     define('WXAPPID','');
     define('WXAPPSECRET','');
 }
-
-
 // 应用公共文件
 /**
  * 上传菜单图标base64

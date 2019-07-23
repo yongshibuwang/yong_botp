@@ -74,7 +74,7 @@ function getTrees($arr,$pid,$step = 0){
     return $tree;
 }
 /**
- * [writeArr 写入配置文件方法]
+ * [w_wxconfig 写入配置文件方法]
  * @param  [type] $arr      [要写入的数据]
  * @param  [type] $filename [文件路径]
  * @return [type]           [description]

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8" />
+    <meta name="keywords" content="IT学习之家，PHP学习，web学习，vue学习，热门IT网址，时事政治，散文，捧腹笑话" />
+    <meta name="description" content="IT学习之家，PHP学习，web学习，vue学习，热门IT网址，时事政治，散文，捧腹笑话" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="format-detection" content="telephone=yes"/>
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{$selfWebInfo.name}</title>
+
+    <link rel="shortcut icon" href="/static/index/images/logo2.jpg">
+    <script src="/static/index/js/jquery.min.js"></script>
+    <script src="/static/index/js/bootstrap.min.js"></script>
+    <script src="/static/admin/layer/layer.js"></script>
+
+    <!--<link rel="stylesheet" type="text/css" media="screen" href="__PUBLIC__/static/index/css/bootstrap.min1.css" />-->
+    <link rel="stylesheet" type="text/css" media="screen" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/static/index/css/style1.css">
+</head>
+
+<body>
+<header>
+    <nav class="navbar navbar-default" id="navbar">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#header-navbar" aria-expanded="false">
+                    <span class="sr-only"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <h1 class="logo">
+                    <a href="{:url('Index/index')}">勇☆贳&卟☆莣</a>
+                </h1>
+
+            </div>
+            <div class="collapse navbar-collapse" id="header-navbar">
+                <form class="navbar-form visible-xs" action="#" method="POST">
+                    <div class="input-group">
+                        <input type="text" name="keyword" class="form-control" placeholder="请输入关键字" maxlength="20" autocomplete="off">
+                        <span class="input-group-btn">
+                                <button type="submit" class="btn btn-default btn-search">搜索</button>
+                            </span>
+                    </div>
+                </form>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="{:url('Index/index',['mobile'=>1])}">首页</a></li>
+                    <li><a href="{:url('Article/htmlOption',['mobile'=>1])}">Web文章</a></li>
+                    <li><a href="{:url('Article/phpOption',['mobile'=>1])}">后端文章</a></li>
+                    <li><a href="{:url('Article/gossip',['mobile'=>1])}">随笔</a></li>
+                    <!--<li><a href="{:url('Oftenweb/web')}">常用网站</a></li>-->
+                    <li><a href="http://m.zhyong.top">常用网站</a></li>
+                    <li><a href="http://we.zhyong.top">捧腹笑话</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+    {block name="article"}{/block}
+<div class="footer">
+    <div class="container"  style="height: 22px;">
+        <p style="height: 22px;">{$selfWebInfo.intro}-  <a href="https://new.cnzz.com/v1/login.php?siteid=5329134">网站统计<img style="width: 40px;height: 10px;display: inline;" src="__PUBLIC__/static/index/images/2.gif"></a></p>
+    </div>
+</div>
+</body>
+</html>

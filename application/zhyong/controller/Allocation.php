@@ -8,7 +8,7 @@ use think\Request;
 class Allocation extends Controller
 {
     /**
-     * 显示资源列表
+     * 将输入的信息写入配置文件
      *
      * @return \think\Response
      */
