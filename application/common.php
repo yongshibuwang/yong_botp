@@ -177,3 +177,32 @@ function page_array($count,$page,$array,$order){
     $pagedata=array_slice($array,$start,$count);
     return $pagedata;  #返回查询数据
 }
+/**
+ * 万能curl
+ * 默认get提交
+ * $url   请求路径
+ * $type   请求方式
+ */
+function curl($url,$type='get',$post_data=''){
+    //curl模拟GET请求
+    //1.初始curl
+    $curl=curl_init();
+    //2.设置参数
+    //设置要请求的url地址
+    curl_setopt($curl,CURLOPT_URL,$url);
+    //设置请求到的内容不在浏览器中直接显示，而是以文档流的方式返回
+    curl_setopt($curl,CURLOPT_RETURNTRANSFER,1);
+    curl_setopt($curl,CURLOPT_SSL_VERIFYPEER,0);
+    if($type=='post'){
+        //设置curl提交的方式为post类型
+        curl_setopt($curl,CURLOPT_POST,1);
+        //设置post要提交的数据
+        curl_setopt($curl,CURLOPT_POSTFIELDS,$post_data);
+    }
+    //3.执行curl
+    $res=curl_exec($curl);
+    //4.关闭curl
+    curl_close($curl);
+    //返回结果
+    return $res;
+}

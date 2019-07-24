@@ -11,6 +11,6 @@
 // +----------------------------------------------------------------------
   
   return array (
-  'AppID' => 'dstjsrtjdtsrkyfxdymks',
-  'AppSecret' => 'sjtrktdyjydtugstjskrjwsdjsts3246213724',
+  'AppID' => 'wx25d02549dd7fdbec',
+  'AppSecret' => '4079c7d3de59fe69f9a0c91ecdce84b6',
 );
