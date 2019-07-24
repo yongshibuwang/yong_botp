@@ -43,7 +43,18 @@ class Index extends Father
         $errCode = $pc->decryptData($encryptedData, $iv, $data);
         if ($errCode == 0) {
             $data=json_decode($data,true);
-            return self::json($data);
+            /*存入数据库*/
+            $u['phone']=$data['phoneNumber'];
+            if(!Db::table('user')->where('phone',$u['phone'])->count()){
+                $u['add_time']=time();
+                if($id=Db::table('user')->insertGetId($u)){
+                    return self::json($id);
+                }else{
+                    return self::json($data,199);
+                }
+            }else{
+                return self::json($data,199);
+            }
         } else {
             return self::json($errCode,199);
         }
