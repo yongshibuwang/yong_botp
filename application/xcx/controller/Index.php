@@ -42,6 +42,7 @@ class Index extends Father
         $pc = new WXBizDataCrypt($appid, $sessionKey);
         $errCode = $pc->decryptData($encryptedData, $iv, $data);
         if ($errCode == 0) {
+            $data=json_decode($data,true);
             return self::json($data);
         } else {
             return self::json($errCode,199);
