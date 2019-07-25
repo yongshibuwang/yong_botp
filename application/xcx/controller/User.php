@@ -89,8 +89,8 @@ class User extends Father
             if ($info) {
                 $file = $info->getSaveName();
                 $file=str_replace('\\','/',$file);
-                $data['filepath']="'".$request->domain().'/'.$path.$file."'";
-                return self::json($data);
+                $filepath="'".$request->domain().'/'.$path.$file."'";
+                return $filepath;
             }
         }
     }
