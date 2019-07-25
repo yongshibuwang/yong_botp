@@ -90,7 +90,7 @@ class User extends Father
                 $file = $info->getSaveName();
                 $file=str_replace('\\','/',$file);
                 $filepath=$request->domain().'/'.$path.$file;
-                return self::json($filepath);
+                return json(['code'=>200, 'list'=>$filepath]);
             }
         }
     }
