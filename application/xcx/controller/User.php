@@ -69,7 +69,6 @@ class User extends Father
     public function GetUserSub(Request $request){
         if(!$request->isPost()) return self::json([],403);
         $data=$_POST;
-        return self::json($data,199);
         if($id=Db::table('user')->update($data)){
             return self::json('成功');
         }else{
