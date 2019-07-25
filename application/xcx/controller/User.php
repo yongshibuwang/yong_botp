@@ -6,7 +6,7 @@ use think\Request;
 use think\cache\driver\Redis;
 use wechat\WXBizDataCrypt;
 
-class Index extends Father
+class User extends Father
 {
     public function _initialize(){
         parent::father();
@@ -21,7 +21,7 @@ class Index extends Father
         dump(111);
     }
     /**
-     * 获取用户信息
+     * 获取用户手机号
      *@author 勇☆贳&卟☆莣
      * @return \think\Response
      */
@@ -61,4 +61,21 @@ class Index extends Father
         }
 
     }
+    /**
+     * 获取用户提交的信息
+     *@author 勇☆贳&卟☆莣
+     * @return \think\Response
+     */
+    public function GetUserSub(Request $request){
+        if(!$request->isPost()) return self::json([],403);
+        $data=$_POST;
+        if($id=Db::table('user')->update($data)){
+            return self::json('成功');
+        }else{
+            return self::json($data,199);
+        }
+
+    }
+
+
 }
