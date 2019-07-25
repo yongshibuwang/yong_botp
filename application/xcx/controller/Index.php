@@ -45,12 +45,13 @@ class Index extends Father
             $data=json_decode($data,true);
             /*存入数据库*/
             $u['phone']=$data['phoneNumber'];
-            if($uid=Db::table('user')->where('phone',$u['phone'])->value('id')){
-                return self::json($uid);
+            if($u_info=Db::table('user')->where('phone',$u['phone'])->find()){
+                return self::json($u_info);
             }else{
                 $u['add_time']=time();
                 if($id=Db::table('user')->insertGetId($u)){
-                    return self::json($id);
+                    $u_info=Db::table('user')->find($id);
+                    return self::json($u_info);
                 }else{
                     return self::json($data,199);
                 }
