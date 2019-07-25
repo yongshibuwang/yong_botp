@@ -45,12 +45,13 @@ class User extends Father
             $data=json_decode($data,true);
             /*存入数据库*/
             $u['phone']=$data['phoneNumber'];
-            if($u_info=Db::table('user')->where('phone',$u['phone'])->find()){
+            if($uid=Db::table('user')->where('phone',$u['phone'])->value('id')){
+                $u_info=model('User')->find($uid);
                 return self::json($u_info);
             }else{
                 $u['add_time']=time();
                 if($id=Db::table('user')->insertGetId($u)){
-                    $u_info=Db::table('user')->find($id);
+                    $u_info=model('User')->find($id);
                     return self::json($u_info);
                 }else{
                     return self::json($data,199);
@@ -70,12 +71,28 @@ class User extends Father
         if(!$request->isPost()) return self::json([],403);
         $data=$_POST;
         if(Db::table('user')->update($data)){
-            $uinfo=Db::table('user')->find($data['id']);
+            $uinfo=model('User')->find($data['id']);
             return self::json($uinfo);
         }else{
             return self::json($data,199);
         }
 
+    }
+    /*
+     * 获取用户提交的轮播图图片
+     * */
+    public function GetUserImg(Request $request){
+        $file = request()->file('file');
+        if ($file) {
+            $path = "uploads/";
+            $info = $file->move($path);
+            if ($info) {
+                $file = $info->getSaveName();
+                $file=str_replace('\\','/',$file);
+                $filepath=$request->domain().'/'.$path.$file;
+                return self::json($filepath);
+            }
+        }
     }
 
 
