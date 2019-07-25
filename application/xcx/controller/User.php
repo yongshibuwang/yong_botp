@@ -89,7 +89,7 @@ class User extends Father
             if ($info) {
                 $file = $info->getSaveName();
                 $file=str_replace('\\','/',$file);
-                $filepath="'".$request->domain().'/'.$path.$file."'";
+                $filepath=$request->domain().'/'.$path.$file;
                 return $filepath;
             }
         }
