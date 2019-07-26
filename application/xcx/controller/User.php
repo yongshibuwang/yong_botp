@@ -13,14 +13,24 @@ class User extends Father
         parent::father();
     }
     /**
-     * 显示首页
+     * 获取用户信息
      *@author 勇☆贳&卟☆莣
      * @return \think\Response
      */
     public function index(Request $request)
     {
         if(!$request->isGet()) return self::json([],403);
-        $uinfo=model('User')->find($_GET['id']);
+        //声明CODE，获取小程序传过来的CODE
+        $code = $_GET["code"];
+        //配置appid
+        $appid = WXAPPID;
+        //配置appscret
+        $secret = WXAPPSECRET;
+        //api接口
+        $api = "https://api.weixin.qq.com/sns/jscode2session?appid=".$appid."&secret=".$secret."&js_code=".$code."&grant_type=authorization_code";
+        //获取GET请求
+        $str = json_decode(curl($api),true);
+        $uinfo=model('User')->where('openid',$str['openid'])->find();
         if($uinfo){
             return self::json($uinfo);
         }else{
@@ -87,7 +97,6 @@ class User extends Father
         }else{
             return self::json($data);
         }
-
     }
     /*
      * 获取用户提交的轮播图图片
