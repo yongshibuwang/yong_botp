@@ -50,7 +50,7 @@ class User extends Father
      public function GetUserInfo(Request $request)
     {
         if(!$request->isPost()) return self::json([],403);
-        return self::json($_POST['nickName']);
+        return self::json($_POST);
         $data['name']=$_POST['nickName'];
         $data['sex']=$_POST['gender'];
         $data['head_img']=$_POST['avatarUrl'];
