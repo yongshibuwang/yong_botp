@@ -85,7 +85,7 @@ class User extends Father
             $uinfo=model('User')->find($data['id']);
             return self::json($uinfo);
         }else{
-            return self::json($data,199);
+            return self::json($data);
         }
 
     }
