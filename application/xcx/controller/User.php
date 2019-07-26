@@ -1,5 +1,6 @@
 <?php
 namespace app\xcx\controller;
+use offen\OffenFunction;
 use think\Controller;
 use think\Db;
 use think\Request;
@@ -97,6 +98,23 @@ class User extends Father
             }
         }
     }
-
+    /*
+     * 删除图片
+     * */
+    public function DelImg(Request $request){
+        if(!$request->isPost()) return self::json([],403);
+        $table=$_POST['table'];
+        $img = $_POST['img'];
+        $id = $_POST['id'];
+        $field = $_POST['field'];
+        $function=new OffenFunction();
+        $info = $function->delImg($table,$id,$field,$img);
+        if($info){
+            $uinfo=model('User')->find($id);
+            return self::json($uinfo);
+        }else{
+            return self::json('删除失败',199);
+        }
+    }
 
 }
