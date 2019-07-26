@@ -17,9 +17,16 @@ class User extends Father
      *@author 勇☆贳&卟☆莣
      * @return \think\Response
      */
-    public function index($mobile=0)
+    public function index(Request $request)
     {
-        dump(111);
+        if(!$request->isGet()) return self::json([],403);
+        $uinfo=model('User')->find($_GET['id']);
+        if($uinfo){
+            return self::json($uinfo);
+        }else{
+            return self::json('获取失败',199);
+        }
+
     }
     /**
      * 获取用户手机号
