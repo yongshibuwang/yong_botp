@@ -17,6 +17,28 @@ class User extends Father
      *@author 勇☆贳&卟☆莣
      * @return \think\Response
      */
+    public function uinfo(Request $request)
+    {
+        if(!$request->isGet()) return self::json([],403);
+        //产品
+        $ginfo=Db::table('goods')->where('status=1')
+            ->where('uid',$_GET['uid'])->field('title,id,price,other,pic,uid')->select();
+        foreach ($ginfo as $gkey=>$gval){
+            $ginfo[$gkey]['pic'] = firstPic($gval['pic']);
+        }
+        //个人信息
+        $uinfo=model('User')->find($_GET['uid']);
+        if($uinfo){
+            return self::json(['gi'=>$ginfo,'ui'=>$uinfo]);
+        }else{
+            return self::json('',199);
+        }
+    }
+    /**
+     * 获取用户信息
+     *@author 勇☆贳&卟☆莣
+     * @return \think\Response
+     */
     public function index(Request $request)
     {
         if(!$request->isGet()) return self::json([],403);
@@ -40,7 +62,6 @@ class User extends Father
             $uinfo=model('User')->find($id);
             return self::json($uinfo,199);
         }
-
     }
     /**
      * 获取用户信息
@@ -50,16 +71,25 @@ class User extends Father
      public function GetUserInfo(Request $request)
     {
         if(!$request->isPost()) return self::json([],403);
-        return self::json($_POST);
         $data['name']=$_POST['nickName'];
         $data['sex']=$_POST['gender'];
         $data['head_img']=$_POST['avatarUrl'];
         $data['id']=$_POST['id'];
-        if(Db::table('user')->update($data)){
-            $uinfo=Db::table('user')->find($data['id']);
-            return self::json($uinfo);
+        if($data['id']){
+            if(Db::table('user')->update($data)){
+                $uinfo=Db::table('user')->find($data['id']);
+                return self::json($uinfo);
+            }else{
+                return self::json('失败',199);
+            }
         }else{
-            return self::json('失败',199);
+            unset($data['id']);
+            if($id=Db::table('user')->insertGetId($data)){
+                $uinfo=Db::table('user')->find($id);
+                return self::json($uinfo);
+            }else{
+                return self::json('失败',199);
+            }
         }
 
     }
@@ -151,7 +181,7 @@ class User extends Father
         $function=new OffenFunction();
         $info = $function->delImg($table,$id,$field,$img);
         if($info){
-            $uinfo=model('User')->find($id);
+            $uinfo=Db::table($table)->find($id);
             return self::json($uinfo);
         }else{
             return self::json('删除失败',199);

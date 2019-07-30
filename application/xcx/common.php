@@ -32,3 +32,18 @@ use QL\QueryList;
 
         return ($ip);
     }
+
+//数据库多图片取第一张路径,图片路径已‘，’隔开；
+function firstPic($img){
+    $pic='';
+    if($img){
+        $pic=explode(',',$img);
+        if(isset($pic[0])){
+            return $pic[0];
+        }else{
+            return $pic;
+        }
+    }else{
+        return $pic;
+    }
+}
