@@ -27,7 +27,10 @@ class User extends Father
             $ginfo[$gkey]['pic'] = firstPic($gval['pic']);
         }
         //个人信息
-        $uinfo=model('User')->find($_GET['uid']);
+        $uinfo=Db::table('user')->find($_GET['uid']);
+        $uinfo['img'] = firstPic($uinfo['pic']);
+        $uinfo['pic']=explode(',',$uinfo['pic']);
+
         if($uinfo){
             return self::json(['gi'=>$ginfo,'ui'=>$uinfo]);
         }else{
