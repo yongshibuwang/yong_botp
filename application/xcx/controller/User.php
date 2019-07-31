@@ -134,7 +134,7 @@ class User extends Father
         $pc = new WXBizDataCrypt($appid, $sessionKey);
         $errCode = $pc->decryptData($encryptedData, $iv, $data);
         /*解密*/
-        $phone = $data->phoneNumber;
+        $phone = $data['phoneNumber'];
         if($uid=Db::table('user')->where('openid',$openid)->value('id')){
             $u['phone']=$phone;
             $u['id']=$uid;
