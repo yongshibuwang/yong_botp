@@ -66,6 +66,20 @@ class User extends Father
             return self::json($uinfo,199);
         }
     }
+    public function userinfo(Request $request)
+    {
+        if(!$request->isGet()) return self::json([],403);
+        //个人信息
+        $uinfo=Db::table('user')->find($_GET['uid']);
+        $uinfo['img'] = firstPic($uinfo['pic']);
+        $uinfo['pic']=explode(',',$uinfo['pic']);
+
+        if($uinfo){
+            return self::json($uinfo);
+        }else{
+            return self::json('',199);
+        }
+    }
     /**
      * 获取用户信息
      *@author 勇☆贳&卟☆莣
@@ -108,6 +122,7 @@ class User extends Father
         $code          = $_GET['code'];
         $iv            = $_GET['iv'];
         $encryptedData = $_GET['encryptedData'];
+        $openid = $_GET['openid'];
         $appid      = WXAPPID;//小程序唯一标识   (在微信小程序管理后台获取)
         $appsecret  = WXAPPSECRET;//小程序的 app secret (在微信小程序管理后台获取)
         $grant_type = "authorization_code"; //授权（必填）
@@ -118,23 +133,15 @@ class User extends Father
         $sessionKey = $res['session_key'];//取出json里对应的值
         $pc = new WXBizDataCrypt($appid, $sessionKey);
         $errCode = $pc->decryptData($encryptedData, $iv, $data);
-        if ($errCode == 0) {
-            $data=json_decode($data,true);
-            /*存入数据库*/
-            $u['phone']=$data['phoneNumber'];
-            if($uid=Db::table('user')->where('phone',$u['phone'])->value('id')){
-                $u_info=model('User')->find($uid);
-                return self::json($u_info);
-            }else{
-                $u['add_time']=time();
-                if($id=Db::table('user')->insertGetId($u)){
-                    $u_info=model('User')->find($id);
-                    return self::json($u_info);
-                }else{
-                    return self::json($data,199);
-                }
-            }
-        } else {
+        /*解密*/
+        $phone = $data->phoneNumber;
+        if($uid=Db::table('user')->where('openid',$openid)->value('id')){
+            $u['phone']=$phone;
+            $u['id']=$uid;
+            Db::table('user')->update($u);
+            $u_info=model('User')->find($uid);
+            return self::json($u_info);
+        }else{
             return self::json($errCode,199);
         }
     }
