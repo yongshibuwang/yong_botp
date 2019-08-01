@@ -152,7 +152,7 @@ class Goods extends Father
         }
     }
     /**
-     * 获取商品信息
+     * 编辑商品信息
      *@author 勇☆贳&卟☆莣
      * @return \think\Response
      */
@@ -161,6 +161,32 @@ class Goods extends Father
         $gid=$_GET['id'];
         $ginfo=model('goods')->find($gid);
         return self::json($ginfo);
+    }
+    /**
+     * 获取商品信息
+     *@author 勇☆贳&卟☆莣
+     * @return \think\Response
+     */
+    public function gInfo(Request $request){
+        if(!$request->isGet()) return self::json([],403);
+        $gid=$_GET['gid'];
+        $uid=$_GET['uid'];
+        if($ginfo=model('goods')->where('id',$gid)->where('uid',$uid)->find()){
+            $ginfo['simg']=$ginfo->pic[0];
+            $u = Db::table('user')->field('color,x_name,id,wechat,link_phone')->find($uid);
+            if($u){
+                $ginfo['color']=$u['color'];
+                $ginfo['x_name']=$u['x_name'];
+                $ginfo['uid']=$u['id'];
+                $ginfo['wechat']=$u['wechat'];
+                $ginfo['phone']=$u['link_phone'];
+            }
+            return self::json($ginfo);
+        }else{
+            return self::json($ginfo,199);
+        }
+
+
     }
 
 

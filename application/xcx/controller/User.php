@@ -97,7 +97,8 @@ class User extends Father
                 $uinfo=Db::table('user')->find($data['id']);
                 return self::json($uinfo);
             }else{
-                return self::json('失败',199);
+                $uinfo=Db::table('user')->find($data['id']);
+                return self::json($uinfo);
             }
         }else{
             unset($data['id']);
@@ -146,13 +147,20 @@ class User extends Father
         }
     }
     /**
-     * 获取用户提交的信息
+     * 获取用户提交的用户的修改信息
      *@author 勇☆贳&卟☆莣
      * @return \think\Response
      */
     public function GetUserSub(Request $request){
         if(!$request->isPost()) return self::json([],403);
         $data=$_POST;
+        $adress = $data['city'].$data['county'].$data['address'];
+        $url = "https://apis.map.qq.com/ws/geocoder/v1/?address=".$adress."&key=5GPBZ-W6DKX-KF64X-7IF6L-J32IQ-XEBOU";
+        $result =json_decode(curl($url),true) ;
+        if($result['status'] == 0){
+            $data['lng'] = $result['result']['location']['lng'];
+            $data['lat'] = $result['result']['location']['lat'];
+        }
         if(!$data['pic']){
             unset($data['pic']);
         }
