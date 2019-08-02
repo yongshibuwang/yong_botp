@@ -13,7 +13,7 @@ class User extends Father
         parent::father();
     }
     /**
-     * 获取用户信息
+     * 获取用户及产品信息
      *@author 勇☆贳&卟☆莣
      * @return \think\Response
      */
@@ -37,8 +37,43 @@ class User extends Father
             return self::json('',199);
         }
     }
+    /*获取用户及下级*/
+    public function u_finfo(Request $request)
+    {
+        if(!$request->isGet()) return self::json([],403);
+        //个人信息
+        $uinfo=Db::table('user')->field('name,head_img,money,access') ->find($_GET['uid']);
+        $uinfo['wei'] = Db::table('user')->where('fid',$_GET['uid'])
+            ->where('vip',0)
+            ->count();
+        $uinfo['yi'] = Db::table('user')->where('fid',$_GET['uid'])
+            ->where('vip',1)
+            ->count();
+        $uinfo['vip'] = Db::table('user')->where('fid',$_GET['uid'])
+            ->where('vip',2)
+            ->count();
+
+        if($uinfo){
+            return self::json($uinfo);
+        }else{
+            return self::json('',199);
+        }
+    }
+    /*更新上级fid*/
+    public function upfid(Request $request){
+        if(!$request->isGet()) return self::json([],403);
+        if(!Db::table('user')->where('id',$_GET['uid'])->value('fid')){
+            if(Db::table('user')->update($_GET)){
+                return self::json('');
+            }else{
+                return self::json('',199);
+            }
+        }else{
+            return self::json('');
+        }
+    }
     /**
-     * 获取用户信息
+     * 获取用户首次登陆的code信息
      *@author 勇☆贳&卟☆莣
      * @return \think\Response
      */
@@ -81,7 +116,7 @@ class User extends Father
         }
     }
     /**
-     * 获取用户信息
+     * 获取用户微信信息
      *@author 勇☆贳&卟☆莣
      * @return \think\Response
      */
@@ -113,7 +148,7 @@ class User extends Father
     }
 
     /**
-     * 获取用户手机号
+     * 获取用户微信手机号
      *@author 勇☆贳&卟☆莣
      * @return \think\Response
      */
@@ -147,7 +182,7 @@ class User extends Father
         }
     }
     /**
-     * 获取用户提交的用户的修改信息
+     * 获取用户提交的修改信息
      *@author 勇☆贳&卟☆莣
      * @return \think\Response
      */
@@ -164,6 +199,7 @@ class User extends Father
         if(!$data['pic']){
             unset($data['pic']);
         }
+        $data['vip'] = 1;
         if(Db::table('user')->update($data)){
             $uinfo=model('User')->find($data['id']);
             return self::json($uinfo);
