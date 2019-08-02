@@ -62,7 +62,7 @@ class User extends Father
     /*更新上级fid*/
     public function upfid(Request $request){
         if(!$request->isGet()) return self::json([],403);
-        if(!Db::table('user')->where('id',$_GET['uid'])->value('fid')){
+        if(!Db::table('user')->where('id',$_GET['id'])->value('fid')){
             if(Db::table('user')->update($_GET)){
                 return self::json('');
             }else{
