@@ -171,6 +171,7 @@ class Goods extends Father
         if(!$request->isGet()) return self::json([],403);
         $gid=$_GET['gid'];
         $uid=$_GET['uid'];
+        
         if($ginfo=model('goods')->where('id',$gid)->where('uid',$uid)->find()){
             $ginfo['simg']=$ginfo->pic[0];
             $u = Db::table('user')->field('color,x_name,id,wechat,link_phone')->find($uid);
