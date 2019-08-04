@@ -79,8 +79,6 @@ class User extends Father
                 Db::table('xcxaccess')->insert($acc);
             }
         }
-
-
         if(!Db::table('user')->where('id',$_GET['id'])->value('fid')){
             if(Db::table('user')->update($_GET)){
                 return self::json('');

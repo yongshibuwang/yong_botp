@@ -5,6 +5,7 @@ use think\Controller;
 use think\Db;
 use think\Request;
 use think\cache\driver\Redis;
+use wechat\getCord;
 use wechat\WXBizDataCrypt;
 
 class Goods extends Father
@@ -186,9 +187,18 @@ class Goods extends Father
         }else{
             return self::json($ginfo,199);
         }
-
-
     }
+
+    /**
+     * 获取商品二维码
+     *@author 勇☆贳&卟☆莣
+     * @return \think\Response
+     */
+    public function getgoodsercode(){
+        $code = new getCord(WXAPPID,WXAPPSECRET,1,300);
+        echo "<img src='".$code->get_qrcode()."' alt=''>";
+    }
+
 
 
 }
