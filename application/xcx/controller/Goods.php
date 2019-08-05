@@ -194,9 +194,25 @@ class Goods extends Father
      *@author 勇☆贳&卟☆莣
      * @return \think\Response
      */
-    public function getgoodsercode(){
-        $code = new getCord(WXAPPID,WXAPPSECRET,1,300);
-        echo "<img src='".$code->get_qrcode()."' alt=''>";
+    public function getgoodsercode(Request $request){
+        if(!$request->isGet()) return self::json([],403);
+        $id = $request->get('id',1);
+        $uid = $request->get('uid',1);
+        $path = $request->get('path','pages/login/login');
+        $code = new getCord(WXAPPID,WXAPPSECRET,$id,100,$path,$uid);
+        /*删除指定日期前的文件*/
+        $dir = 'goods/';
+        if (!is_dir($dir)) { //判断目录是否存在 不存在就创建
+            mkdir($dir, 0777, true);
+        }
+        if(is_file($dir.'/'.$id.'.png')){
+            unlink($dir.'/'.$id.'.png');
+        }
+        $file_path = $dir.'/'.$id.'.png';
+        file_put_contents($file_path, $code->get_qrcode());//保存二维码
+        $f_path = $request->domain().'/'.$file_path;
+//        $base64_image ="data:image/jpeg;base64,".base64_encode( $code);
+        return self::json($f_path);
     }
 
 
