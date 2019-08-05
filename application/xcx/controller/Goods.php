@@ -201,7 +201,7 @@ class Goods extends Father
         $path = $request->get('path','pages/login/login');
         $code = new getCord(WXAPPID,WXAPPSECRET,$id,100,$path,$uid);
         /*删除指定日期前的文件*/
-        $dir = 'goods/';
+        $dir = 'goods';
         if (!is_dir($dir)) { //判断目录是否存在 不存在就创建
             mkdir($dir, 0777, true);
         }
