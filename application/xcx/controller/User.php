@@ -5,6 +5,7 @@ use think\Controller;
 use think\Db;
 use think\Request;
 use think\cache\driver\Redis;
+use wechat\getCord;
 use wechat\WXBizDataCrypt;
 
 class User extends Father
@@ -155,6 +156,10 @@ class User extends Father
         }else{
             unset($data['id']);
             if($id=Db::table('user')->insertGetId($data)){
+
+
+
+
                 $uinfo=Db::table('user')->find($id);
                 return self::json($uinfo);
             }else{
@@ -217,6 +222,23 @@ class User extends Father
             unset($data['pic']);
         }
         $data['vip'] = 1;
+        //            获取二维码
+        $id = $data['id'];
+        $uid = $data['id'];
+        $path = "pages/goods/goodsh/index";
+        $code = new getCord(WXAPPID,WXAPPSECRET,$id,100,$path,$uid);
+        /*删除指定日期前的文件*/
+        $dir = 'goods';
+        if (!is_dir($dir)) { //判断目录是否存在 不存在就创建
+            mkdir($dir, 0777, true);
+        }
+        if(is_file($dir.'/user_'.$id.'.png')){
+            unlink($dir.'/user_'.$id.'.png');
+        }
+        $file_path = $dir.'/user_'.$id.'.png';
+        file_put_contents($file_path, $code->get_qrcode());//保存二维码
+        $data['er_code'] = $request->domain().'/'.$file_path;
+
         if(Db::table('user')->update($data)){
             $uinfo=model('User')->find($data['id']);
             return self::json($uinfo);
