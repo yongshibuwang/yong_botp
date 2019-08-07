@@ -85,15 +85,18 @@ class User extends Father
                 ;
             }
         }
-        if(!Db::table('user')->where('id',$_GET['id'])->value('fid')){
+        if(Db::table('user')->where('id',$_GET['id'])->value('fid')){
+            return self::json('');
+        }else{
+            $up['id']=$_GET['id'];
+            $up['fid']=$_GET['fid'];
 
-            if(Db::table('user')->update($_GET)){
+            if(Db::table('user')->update($up)){
                 return self::json('');
             }else{
                 return self::json('',199);
             }
-        }else{
-            return self::json('');
+
         }
     }
     /**
