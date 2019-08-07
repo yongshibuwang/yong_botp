@@ -72,15 +72,21 @@ class User extends Father
                 ->where('aid',$_GET['id'])
                 ->where($beginToday.' <= read_time <='.$endToday)->field('id')->find();
             if($accid){
-                Db::table('xcxaccess')->where('id',$accid)->setInc('num');
+                if(@Db::table('xcxaccess')->where('id',$accid['id'])->setInc('num')){
+                    Db::table('user')->where('id',$_GET['fid'])->setInc('access');
+                };
             }else{
                 $acc['uid']=$_GET['fid'];
                 $acc['aid']=$_GET['id'];
                 $acc['read_time']=time();
-                Db::table('xcxaccess')->insert($acc);
+                if(@Db::table('xcxaccess')->insert($acc)){
+                    Db::table('user')->where('id',$_GET['fid'])->setInc('access');
+                }
+                ;
             }
         }
         if(!Db::table('user')->where('id',$_GET['id'])->value('fid')){
+
             if(Db::table('user')->update($_GET)){
                 return self::json('');
             }else{
@@ -233,7 +239,7 @@ class User extends Father
             mkdir($dir, 0777, true);
         }
         if(is_file($dir.'/user_'.$id.'.png')){
-            unlink($dir.'/user_'.$id.'.png');
+            @unlink($dir.'/user_'.$id.'.png');
         }
         $file_path = $dir.'/user_'.$id.'.png';
         file_put_contents($file_path, $code->get_qrcode());//保存二维码
