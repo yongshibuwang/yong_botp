@@ -43,7 +43,7 @@ class User extends Father
     {
         if(!$request->isGet()) return self::json([],403);
         //个人信息
-        $uinfo=Db::table('user')->field('name,head_img,money,access') ->find($_GET['uid']);
+        $uinfo=Db::table('user')->field('id,name,head_img,money,access') ->find($_GET['uid']);
         $uinfo['wei'] = Db::table('user')->where('fid',$_GET['uid'])
             ->where('vip',0)
             ->count();
@@ -286,5 +286,24 @@ class User extends Father
             return self::json('删除失败',199);
         }
     }
-
+    /*
+     * 访问记录
+     * */
+    public function AccEss(Request $request){
+        if(!$request->isGet()) return self::json([],403);
+        $id = $_GET['id'];
+        $data = Db::table('xcxaccess')->alias('x')
+            ->join('user u','u.id=x.uid')
+            ->field('x.read_time,x.gid,x.num,u.name,u.phone,u.vip,u.color')
+            ->where('uid',$id)
+            ->order('read_time desc')
+            ->select();
+        foreach ($data as &$val){
+            $val['read_time'] = date('Y-m-d H:i',$val['read_time']);
+            if($val['vip'] !=2){
+                $val['phone'] = substr_replace($val['phone'], '****', 3, 4);
+            }
+        }
+        return self::json($data);
+    }
 }
