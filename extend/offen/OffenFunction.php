@@ -11,19 +11,12 @@ namespace offen;
 use think\Db;
 class OffenFunction
 {
-    /**
-     * 构造函数
-     * @access public
-     */
-    public function __construct($options = []){
-
-    }
     /*
      * 删除指定数据表中的图片
      * 图片保存以‘，’隔开,
      * $table     表名
      * $id        id名
-     * $field     存储图片的字段名+
+     * $field     存储图片的字段名
      * $img       图片名
      * */
     public function delImg($table,$id,$field,$img){
@@ -46,6 +39,28 @@ class OffenFunction
             }else{
                 return 0;
             }
+        }else{
+            return 0;
+        }
+    }
+    /*
+     * 删除指定数据表中该字段的所有图片，商品删除等
+     * 图片保存以‘，’隔开,
+     * $table     表名
+     * $id        id名
+     * $field     存储图片的字段名
+     * */
+    public function delAllImg($table,$id,$field){
+        if($table){
+            $data['id']=$id;
+            $pic=Db::table($table)->where('id',$id)->value($field);
+            $arr_pic=explode(',',$pic);
+            foreach ($arr_pic as $ark=>$arv){
+                if($arv){
+                    @unlink($arv);
+                }
+            }
+            return 1;
         }else{
             return 0;
         }

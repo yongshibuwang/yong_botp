@@ -63,7 +63,6 @@ class User extends Father
     /*更新上级fid*/
     public function upfid(Request $request){
         if(!$request->isGet()) return self::json([],403);
-        $gid = $request->get('gid','0');
         /*更新及添加访问量*/
         if($_GET['id'] != $_GET['fid']){
             $beginToday=mktime(0,0,0,date('m'),date('d'),date('Y'));
@@ -71,7 +70,6 @@ class User extends Father
             $accid = Db::table('xcxaccess')
                 ->where('uid',$_GET['fid'])
                 ->where('aid',$_GET['id'])
-                ->where('gid',$gid)
                 ->where($beginToday.' <= read_time <='.$endToday)->field('id')->find();
             if($accid){
                 if(@Db::table('xcxaccess')->where('id',$accid['id'])->setInc('num')){
@@ -80,7 +78,6 @@ class User extends Father
             }else{
                 $acc['uid']=$_GET['fid'];
                 $acc['aid']=$_GET['id'];
-                $acc['gid']=$gid;
                 $acc['read_time']=time();
                 if(@Db::table('xcxaccess')->insert($acc)){
                     Db::table('user')->where('id',$_GET['fid'])->setInc('access');
@@ -88,18 +85,12 @@ class User extends Father
                 ;
             }
         }
-<<<<<<< HEAD
-        if(!Db::table('user')->where('id',$_GET['id'])->value('fid')){
-            if(Db::table('user')->update($_GET)){
-=======
         if(Db::table('user')->where('id',$_GET['id'])->value('fid')){
             return self::json('');
         }else{
             $up['id']=$_GET['id'];
             $up['fid']=$_GET['fid'];
-
             if(Db::table('user')->update($up)){
->>>>>>> 68d94d687e173091b8986f60da4237550026fbf0
                 return self::json('');
             }else{
                 return self::json('',199);
@@ -131,6 +122,7 @@ class User extends Father
         }else{
             $data['session_key']=$str['session_key'];
             $data['openid']=$str['openid'];
+            $data['add_time']=time();
             $id=Db::table('user')->insertGetId($data);
             $uinfo=model('User')->find($id);
             return self::json($uinfo,199);
@@ -172,10 +164,8 @@ class User extends Father
             }
         }else{
             unset($data['id']);
+            $data['add_time']=time();
             if($id=Db::table('user')->insertGetId($data)){
-
-
-
 
                 $uinfo=Db::table('user')->find($id);
                 return self::json($uinfo);
@@ -304,7 +294,7 @@ class User extends Father
         if(!$request->isGet()) return self::json([],403);
         $id = $_GET['id'];
         $data = Db::table('xcxaccess')->alias('x')
-            ->join('user u','u.id=x.uid')
+            ->join('user u','u.id=x.aid')
             ->field('x.read_time,x.gid,x.num,u.name,u.phone,u.vip,u.color')
             ->where('uid',$id)
             ->order('read_time desc')
@@ -317,4 +307,51 @@ class User extends Father
         }
         return self::json($data);
     }
+
+    /*
+     * 用户金额
+     * */
+    public function uMoney(Request $request){
+        if(!$request->isGet()) return self::json([],403);
+        $id = $_GET['id'];
+        $data = Db::table('user_money')->alias('x')
+            ->join('user u','u.id=x.uid')
+            ->field('x.*,u.color,u.vip')
+            ->where('uid',$id)
+            ->order('add_time desc')
+            ->select();
+        foreach ($data as &$val){
+            $val['add_time'] = date('Y-m-d H:i',$val['add_time']);
+            if($val['vip'] !=2){
+                $val['wechat'] = "******";
+            }
+        }
+        return self::json($data);
+    }
+    /*
+     * 用户发展的小程序
+     * */
+    public function develop(Request $request){
+        if(!$request->isGet()) return self::json([],403);
+        $data['fid'] = $_GET['id'];
+        $data['vip'] = $_GET['vip'];
+        $father=Db::table('user')->field('vip,color')->find($data['fid']);
+        $data = Db::table('user')
+            ->field('name,phone,wechat,add_time')
+            ->where($data)
+            ->order('id desc')
+            ->select();
+        foreach ($data as &$val){
+            $val['add_time'] = date('Y-m-d H:i',$val['add_time']);
+            if($father['vip'] !=2){
+                $val['wechat'] = "******";
+                $val['phone'] = substr_replace($val['phone'], '****', 3, 4);
+            }
+            $val['color']=$father['color'];
+            $val['vip']=$father['vip'];
+        }
+        return self::json($data);
+    }
+
+
 }

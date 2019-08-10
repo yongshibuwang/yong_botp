@@ -141,6 +141,10 @@ class Goods extends Father
     public function DelGoods(Request $request){
         if(!$request->isPost()) return self::json([],403);
         $data=$_POST;
+        /*获取商品图片*/
+        $del=new OffenFunction();
+        $del->delAllImg('goods',$data['id'],'pic');
+        $del->delAllImg('goods',$data['id'],'imgs');
         if(Db::table('goods')->delete($data['id'])){
             $ginfo=Db::table('goods')->where('status=1')
                 ->where('uid',$data['uid'])->field('title,id,price,other,pic,uid')->select();
@@ -153,7 +157,7 @@ class Goods extends Father
         }
     }
     /**
-     * 编辑商品信息
+     * 获取商品信息
      *@author 勇☆贳&卟☆莣
      * @return \think\Response
      */
@@ -164,7 +168,7 @@ class Goods extends Father
         return self::json($ginfo);
     }
     /**
-     * 获取商品信息
+     * 通过分享点击获取商品信息
      *@author 勇☆贳&卟☆莣
      * @return \think\Response
      */
@@ -175,7 +179,6 @@ class Goods extends Father
         $aid = $_GET['aid'];
         if($aid != $uid){
 //            添加访问记录
-
             $beginToday=mktime(0,0,0,date('m'),date('d'),date('Y'));
             $endToday=mktime(0,0,0,date('m'),date('d')+1,date('Y'))-1;
             $accid = Db::table('xcxaccess')
@@ -185,7 +188,7 @@ class Goods extends Father
                 ->where($beginToday.' <= read_time <='.$endToday)->field('id')->find();
             if($accid){
                 if(@Db::table('xcxaccess')->where('id',$accid['id'])->setInc('num')){
-
+                    Db::table('user')->where('id',$uid)->setInc('access');
                 }
             }else{
                 $access['gid']=$gid;
@@ -194,14 +197,10 @@ class Goods extends Father
                 $access['read_time']=time();
                 if(@Db::table('xcxaccess')->insert($access)){
                     Db::table('user')->where('id',$uid)->setInc('access');
-                }
-                ;
+                };
             }
-
         }
         if($ginfo=model('goods')->where('id',$gid)->where('uid',$uid)->find()){
-
-
             $ginfo['simg']=$ginfo->pic[0];
             $u = Db::table('user')->field('color,x_name,id,wechat,link_phone')->find($uid);
             if($u){
