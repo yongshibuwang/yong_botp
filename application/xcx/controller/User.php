@@ -300,15 +300,18 @@ class User extends Father
         $id = $_GET['id'];
         $data = Db::table('xcxaccess')->alias('x')
             ->join('user u','u.id=x.aid')
-            ->field('x.read_time,x.gid,x.num,u.name,u.phone,u.vip,u.color')
+            ->field('x.read_time,x.gid,x.num,u.name,u.phone')
             ->where('uid',$id)
             ->order('read_time desc')
             ->select();
+        $father=Db::table('user')->field('vip,color')->find($id);
         foreach ($data as &$val){
             $val['read_time'] = date('Y-m-d H:i',$val['read_time']);
-            if($val['vip'] !=2){
+            if($father['vip'] !=2){
                 $val['phone'] = substr_replace($val['phone'], '****', 3, 4);
             }
+            $val['color']=$father['color'];
+            $val['vip']=$father['vip'];
         }
         return self::json($data);
     }
