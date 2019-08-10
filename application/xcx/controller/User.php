@@ -63,6 +63,7 @@ class User extends Father
     /*更新上级fid*/
     public function upfid(Request $request){
         if(!$request->isGet()) return self::json([],403);
+        $gid = $request->get('gid','0');
         /*更新及添加访问量*/
         if($_GET['id'] != $_GET['fid']){
             $beginToday=mktime(0,0,0,date('m'),date('d'),date('Y'));
@@ -70,6 +71,7 @@ class User extends Father
             $accid = Db::table('xcxaccess')
                 ->where('uid',$_GET['fid'])
                 ->where('aid',$_GET['id'])
+                ->where('gid',$gid)
                 ->where($beginToday.' <= read_time <='.$endToday)->field('id')->find();
             if($accid){
                 if(@Db::table('xcxaccess')->where('id',$accid['id'])->setInc('num')){
@@ -78,6 +80,7 @@ class User extends Father
             }else{
                 $acc['uid']=$_GET['fid'];
                 $acc['aid']=$_GET['id'];
+                $acc['gid']=$gid;
                 $acc['read_time']=time();
                 if(@Db::table('xcxaccess')->insert($acc)){
                     Db::table('user')->where('id',$_GET['fid'])->setInc('access');

@@ -177,29 +177,6 @@ class Goods extends Father
         $gid = $_GET['gid'];
         $uid = $_GET['uid'];
         $aid = $_GET['aid'];
-        if($aid != $uid){
-//            添加访问记录
-            $beginToday=mktime(0,0,0,date('m'),date('d'),date('Y'));
-            $endToday=mktime(0,0,0,date('m'),date('d')+1,date('Y'))-1;
-            $accid = Db::table('xcxaccess')
-                ->where('uid',$uid)
-                ->where('aid',$aid)
-                ->where('gid',$gid)
-                ->where($beginToday.' <= read_time <='.$endToday)->field('id')->find();
-            if($accid){
-                if(@Db::table('xcxaccess')->where('id',$accid['id'])->setInc('num')){
-                    Db::table('user')->where('id',$uid)->setInc('access');
-                }
-            }else{
-                $access['gid']=$gid;
-                $access['uid']=$uid;
-                $access['aid']=$aid;
-                $access['read_time']=time();
-                if(@Db::table('xcxaccess')->insert($access)){
-                    Db::table('user')->where('id',$uid)->setInc('access');
-                };
-            }
-        }
         if($ginfo=model('goods')->where('id',$gid)->where('uid',$uid)->find()){
             $ginfo['simg']=$ginfo->pic[0];
             $u = Db::table('user')->field('color,x_name,id,wechat,link_phone')->find($uid);
