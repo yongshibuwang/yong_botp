@@ -345,7 +345,7 @@ class User extends Father
         $data['vip'] = $_GET['vip'];
         $father=Db::table('user')->field('vip,color')->find($data['fid']);
         $data = Db::table('user')
-            ->field('name,phone,wechat,add_time')
+            ->field('link_people,phone,wechat,add_time')
             ->where($data)
             ->order('id desc')
             ->select();
