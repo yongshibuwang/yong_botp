@@ -43,7 +43,7 @@ class User extends Father
     {
         if(!$request->isGet()) return self::json([],403);
         //个人信息
-        $uinfo=Db::table('user')->field('id,name,head_img,money,access') ->find($_GET['uid']);
+        $uinfo=Db::table('user')->field('id,link_people,head_img,money,access') ->find($_GET['uid']);
         $uinfo['wei'] = Db::table('user')->where('fid',$_GET['uid'])
             ->where('vip',0)
             ->count();
