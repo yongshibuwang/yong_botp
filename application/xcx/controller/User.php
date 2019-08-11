@@ -233,7 +233,7 @@ class User extends Father
         if(!$data['pic']){
             unset($data['pic']);
         }
-        $data['vip'] = 1;
+
         //            获取二维码
         $id = $data['id'];
         $uid = $data['id'];
@@ -253,6 +253,11 @@ class User extends Father
 
         if(Db::table('user')->update($data)){
             $uinfo=model('User')->find($data['id']);
+            if($uinfo['vip']!==2){
+                $vip['vip']= 1;
+                $vip['id']= $data['id'];
+                Db::table('user')->update($vip);
+            }
             return self::json($uinfo);
         }else{
             return self::json($data);
