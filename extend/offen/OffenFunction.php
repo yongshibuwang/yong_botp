@@ -27,8 +27,7 @@ class OffenFunction
             foreach ($arr_pic as $ark=>$arv){
                 if($arv){
                     if(strstr($img,$arv)!=false){
-                        $path = str_replace(request()->domain()."/","",$arr_pic[$ark]);
-                        @unlink($path);
+                        unlink($arv);
                         unset($arr_pic[$ark]);
                     }
                 }
