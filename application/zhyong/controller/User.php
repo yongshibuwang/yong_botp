@@ -13,24 +13,124 @@ class User extends Father
         $this->assign('gl', 3);//顶部菜单高亮判断标志
     }
     /**
-     * 显示后端文章列表
+     * 显示用户列表
      * @author 勇☆贳&卟☆莣
      * @return \think\Response
      */
-    public function index()
+    public function userlist()
     {
+        $name=$this->request->get('name','');
+        $type=$this->request->get('type','');
+        $where=[];
+        if($name){
+            if(is_numeric($name)){
+                $where['link_phone']=$name;
+            }else{
+                $where['wechat']=['like',$name.'%'];
+            }
+        }
+        if($type){
+            $where['vip']=$type;
+        }elseif ($type == '0'){
+            $where['vip']=0;
+        }
         $list=Db::table('user')
-            ->where('is_black=0')
+            ->where($where)
+            ->order('vip asc')
             ->order('add_time desc')
             ->paginate(10);
         $page = $list->render();
         $this->assign('page',$page);
         $this->assign('list',$list);
-
-        
+        $this->assign('name',$name);
         return $this->fetch();
     }
+    /*
+     * 成为VIP
+     * */
+    public function returnVip(){
+        $id = $_POST['id'];
+        // 启动事务
+        Db::startTrans();
+        try{
+            //该用户变成vip
+            $uinfo = Db::table('user')->where('id',$id)->field('name,fid,wechat')->find();
+            $up_user=Db::table('user')->where('id',$id)->update(['vip'=>2]);
+            if($up_user){
+                //该用户上级在金额变化表增加记录
+                $money=3;
+                $uid=$uinfo['fid'];
+                $data['remark']=$uinfo['name'].'注册成为会员';
+                $data['type']=1;/*加钱1减钱2*/
+                $data['add_time']=time();
+                $data['wechat']=$uinfo['wechat'];
+                $data['money']='+'.$money;
+                $data['uid']=$uid;//该用户的父id
+//                $data['aid']=$uid;//该用户的父id
+                $res=Db::table('user_money')->insert($data);
+                if(!$res){
+                    throw new \Exception('添加失败');
+                }else{
+                    /*该用户的上级增加金额*/
+                    $inc=Db::table('user')->where('id',$uid)->setInc('money',$money);
+                    if(!$inc){
+                        throw new \Exception('上级增加金额失败');
+                    }
+                }
+            }else{
+                throw new \Exception('更新vip失败');
+            }
+            // 提交事务
+            Db::commit();
+        } catch (\Exception $e) {
+            // 回滚事务
+            Db::rollback();
+            $this->error($e->getMessage());
+            //注意：我们做了回滚处理，所以id为1039的数据还在
+        }
+        $this->success();
 
+    }
+    /*
+     * 提现，已经在微信端发放红包
+     * */
+    public function withdraw($id){
+        // 启动事务
+        if(\request()->isAjax()){
+            Db::startTrans();
+            try{
+                //该用户在金额变化表增加记录
+                $money=10;
+                $data['remark']='每月1-10号自动发放';
+                $data['type']=2;/*加钱1减钱2*/
+                $data['add_time']=time();
+                $data['wechat']="lihai";
+                $data['money']='-'.$money;
+                $data['uid']=$id;//该用户的父id
+                $res=Db::table('user_money')->insert($data);
+                if(!$res){
+                    throw new \Exception('添加失败');
+                }else{
+                    /*该用户的上级增加金额*/
+                    $inc=Db::table('user')->where('id',$uid)->setInc('money',$money);
+                    if(!$inc){
+                        throw new \Exception('上级增加金额失败');
+                    }
+                }
+                // 提交事务
+                Db::commit();
+            } catch (\Exception $e) {
+                // 回滚事务
+                Db::rollback();
+                $this->error($e->getMessage());
+                //注意：我们做了回滚处理，所以id为1039的数据还在
+            }
+        }
+        $list=Db::table('user')->field('id,wechat')->find($id);
+        $this->assign('list',$list);
+        return $this->fetch();
+
+    }
     /**
      * 保存新建的资源
      *@author 勇☆贳&卟☆莣
