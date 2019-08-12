@@ -52,12 +52,14 @@
                                             <th>联系电话</th>
                                             <th>用户状态</th>
                                             <th>成为VIP</th>
-                                            <th>时间</th>
+                                            <th>账户余额</th>
+                                            <th>累计提现</th>
+                                            <th>注册时间</th>
                                             <th>操作</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                    {volist name="$list" id="vo"}
+                                    {volist name="$data" id="vo"}
                                         <tr class="gradeX">
                                             <td>{$vo.name}</td>
                                             <td>{$vo.wechat}</td>
@@ -72,15 +74,17 @@
                                                 <span class="vip o_vip">已是VIP</span>
                                                 {/if}
                                             </td>
+                                            <td>￥{$vo.money}</td>
+                                            <td>{$vo.total_money}</td>
                                             <td><?php echo date('Y-m-d',$vo['add_time'])?></td>
                                             <td>
                                                 <div class="tpl-table-black-operation">
                                                     <a href="{:url('User/withdraw',['id'=>$vo.id])}">
                                                         <i class="am-icon-pencil"></i> 提现
                                                     </a>
-                                                    <a href="javascript:;"  class="tpl-table-black-operation-del" onclick="del_article({$vo['id']})">
-                                                        <i class="am-icon-trash"></i> 删除
-                                                    </a>
+                                                    <!--<a href="javascript:;"  class="tpl-table-black-operation-del" onclick="del_article({$vo['id']})">-->
+                                                        <!--<i class="am-icon-trash"></i> 删除-->
+                                                    <!--</a>-->
                                                 </div>
                                             </td>
                                         </tr>
@@ -102,18 +106,19 @@
             </div>
         </div>
 <script>
-    function t_type(id){
-        $('[name=type]').val(id);
-        document.getElementById('tijiao').click();
-    }
+    var tijiao=0;
     function returnVip(id){
         layer.confirm('请确认该用户已充值！！！', function () {
+            if(tijiao){layer.msg('请勿重复提交',{time:800});return false;}
+            tijiao=1;
             $.post("{:url('User/returnVip')}",{id:id},function(data){
                 if(data.code){
+                    tijiao=1;
                     layer.msg('更新成功',{time:800},function(){
                         location=location;
                     })
                 }else{
+                    tijiao=0;
                     layer.msg('网络错误',{time:800})
                 }
             });

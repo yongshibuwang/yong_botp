@@ -20,98 +20,27 @@
                             <div class="widget-body am-fr">
                                 <form class="am-form tpl-form-border-form tpl-form-border-br" id="form1">
                                     <div class="am-form-group">
-                                        <label for="user-name" class="am-u-sm-3 am-form-label">微信号 <span class="tpl-form-line-small-title">Title</span></label>
+                                        <label for="name" class="am-u-sm-3 am-form-label">微信名 <span class="tpl-form-line-small-title">name</span></label>
                                         <div class="am-u-sm-9">
-                                            <input type="text" name="title" style="width: 90%;" class="tpl-form-input" id="" value="{$article_edit.title}">
+                                            <input type="text" name="name" readonly  id="name" style="width: 50%;" class="tpl-form-input" value="{$list.name}">
                                         </div>
                                     </div>
                                     <div class="am-form-group">
-                                        <label for="describe" class="am-u-sm-3 am-form-label">描述 <span class="tpl-form-line-small-title">Title</span></label>
+                                        <label for="wechat" class="am-u-sm-3 am-form-label">微信号 <span class="tpl-form-line-small-title">wechat</span></label>
                                         <div class="am-u-sm-9">
-                                            <textarea name="describe" id="describe" style="width: 90%;" class="tpl-form-input" cols="10" rows="3" placeholder="请输入描述">{$article_edit.describe}</textarea>
+                                            <input type="text" name="wechat" readonly  id="wechat" style="width: 50%;" class="tpl-form-input" value="{$list.wechat}">
                                         </div>
                                     </div>
                                     <div class="am-form-group">
-                                        <label for="user-email" class="am-u-sm-3 am-form-label">发布时间 <span class="tpl-form-line-small-title">Time</span></label>
+                                        <label for="money" class="am-u-sm-3 am-form-label">提现金额 <span class="tpl-form-line-small-title">withdraw</span></label>
                                         <div class="am-u-sm-9">
-                                            <input type="text" name="add_time" style="width: 90%;" class="am-form-field tpl-form-no-bg" value="<?php echo date('Y-m-d',$article_edit['add_time'])?>" placeholder="发布时间" data-am-datepicker="" readonly="">
-                                        </div>
-                                    </div>
-
-                                    <div class="am-form-group">
-                                        <label for="user-phone" class="am-u-sm-3 am-form-label">作者 <span class="tpl-form-line-small-title">Author</span></label>
-                                        <div class="am-u-sm-9">
-                                            <input type="text" name="author" style="width: 90%;" class="tpl-form-input" id="user-name" value="{$article_edit.author}" placeholder="请输入作者">
+                                            <input type="number" name="money" id="money" style="width: 50%;" class="tpl-form-input" value="" placeholder="最大可提取￥{$list.money}元">
                                         </div>
                                     </div>
                                     <div class="am-form-group">
-                                        <label for="pid" class="am-u-sm-3 am-form-label">所属分类 <span class="tpl-form-line-small-title">Author</span></label>
-                                        <div class="am-u-sm-9">
-                                            <select name="pid" id="pid">
-                                                {volist name="label" id="lao"}
-                                                    <option value="{$lao.id}"  style="background-color:#36c6d3;color:#fff" {$lao.id==$article_edit.pid?'selected':''}>{$lao.name}</option>
-                                                {/volist}
-                                            </select>
-                                            <!--<input type="text" name="author" style="width: 90%;" class="tpl-form-input" id="user-name" value="{$article_edit.author}" placeholder="请输入作者">-->
-                                        </div>
-                                    </div>
-
-                                    <!--<div class="am-form-group">
-                                        <label class="am-u-sm-3 am-form-label">SEO关键字 <span class="tpl-form-line-small-title">SEO</span></label>
-                                        <div class="am-u-sm-9">
-                                            <input type="text" style="width: 90%;" placeholder="输入SEO关键字">
-                                        </div>
-                                    </div>-->
-                                    <div class="am-form-group" >
-                                        <label class="am-u-sm-3 am-form-label">封面图 <span class="tpl-form-line-small-title">Images</span></label>
-                                        <div class="am-u-sm-9" style="height:100px;">
-                                            <div class="am-form-group am-form-file list_pic" style="height: 120px;width: 120px;">
-                                                <label class="up_pic" for="doc-form-file">
-                                                    <div id="look_toux"  class="pic tpl-form-file-img" style="background-image: url('{$article_edit.img}');"></div>
-                                                </label>
-                                                <input id="doc-form-file" name="file" type="file" multiple="" onchange="javascript:setImagePreviews(this);">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--<div class="am-form-group">
-                                        <label for="user-weibo" class="am-u-sm-3 am-form-label">添加分类 <span class="tpl-form-line-small-title">Type</span></label>
-                                        <div class="am-u-sm-9">
-                                            <input type="text"  style="width: 90%;" id="user-weibo" placeholder="请添加分类用点号隔开">
-                                            <div>
-                                            </div>
-                                        </div>
-                                    </div>-->
-                                    <div class="am-form-group">
-                                        <label for="user-intro" class="am-u-sm-3 am-form-label">是否推荐</label>
-                                        <div class="am-u-sm-9">
-                                            <div class="tpl-switch">
-                                                <input type="checkbox" id="user-intro" name="status" class="ios-switch bigswitch tpl-switch-btn" checked="">
-                                                <div class="tpl-switch-btn-view">
-                                                    <div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="am-form-group">
-                                        <label for="editor_id" class="am-u-sm-3 am-form-label">文章内容</label>
-                                        <div class="am-u-sm-9" id="">
-                                            <textarea class="" name="content" rows="10" style="width: 90%;"  id="editor" placeholder="请输入文章内容">{$article_edit.content}</textarea>
-                                        </div>
-                                    </div>
-                                    <div class="am-form-group">
-                                        {if condition="$article_edit.type eq 1"}
-                                        <div class="am-u-sm-9 am-u-sm-push-3">
-                                            <button type="button" class="am-btn am-btn-primary tpl-btn-bg-color-success" onclick="t_pass(2)">通过</button>
-                                            <button type="button" class="am-btn am-btn-primary tpl-btn-bg-color-success" onclick="t_pass(3)">不通过</button>
-                                        </div>
-                                        {else /}
                                         <div class="am-u-sm-9 am-u-sm-push-3">
                                             <button type="button" class="am-btn am-btn-primary tpl-btn-bg-color-success submit_up">提交</button>
                                         </div>
-                                        {/if}
-
                                     </div>
                                 </form>
                             </div>
@@ -121,81 +50,37 @@
             </div>
         </div>
 <script>
-    //图片转化为base64
-    var picArr = "";
-    $('.list_pic input:file').localResizeIMG({
-        width:600,
-        quality: 0.7,
-        success: function (result) {
-            var img = new Image();
-            img.src = result.base64;
-            $(".list_pic").css("background-image","url("+result.base64+")");
-            picArr= result.base64;
-            // picArr[_i] = _i;
-//            console.log(picArr)
-        }
-    });
     //提交
-    function t_pass($type){
-        editor.sync();
-        if(!$('[name=title]').val()){layer.msg('请输入标题',{time:800});$('[name=title]').focus();return false;};
-        if(!$('#describe').val()){layer.msg('请输入描述',{time:800});$('#describe').focus();return false;};
-        if(!$('#editor').val()){layer.msg('请输入文章内容',{time:800});$('#editor').focus();return false;};
-        var status_id=2;
-        if($('[name=status]:checked').val()){
-            status_id=1;
-        }
-        var a = {
-                'title':$('[name=title]').val(),
-                'author':$('[name=author]').val(),
-                'content':$('#editor').val(),
-                'describe':$('#describe').val(),
-                'pid':$('[name=pid] option:selected').val(),
-                'is_hot':status_id,
-                'type':$type,
-                'id':"{$article_edit.id}",
-                'img':picArr
-        };
-        $.post("{:url('Tables/edit',['id'=>$article_edit.id])}",{data:a},function(data){
-            console.log(data);
-            if(data.code){
-                layer.msg(data.msg,{time:800},function(){
-                    self.location=document.referrer;
-                })
-            }else{
-                layer.msg(data.msg);
-            }
-        });
-    };
-    //提交
+    var tijiao=0;
     $('.submit_up').click(function(){
-        editor.sync();
-        if(!$('[name=title]').val()){layer.msg('请输入标题',{time:800});$('[name=title]').focus();return false}
-        if(!$('#editor').val()){layer.msg('请输入文章内容',{time:800});$('#editor').focus();return false}
-        var status_id=2;
-        if($('[name=status]:checked').val()){
-            status_id=1;
+        if(!$('[name=money]').val()){layer.msg('请输入提现金额',{time:800});$('[name=money]').focus();return false}
+        if(($('[name=money]').val()*1) >('{$list.money}'*1) || ($('[name=money]').val()*1) <= 0){
+            layer.msg('请输入正确提现金额',{time:800});$('[name=money]').focus();return false;
         }
-        var a = {
-            'title':$('[name=title]').val(),
-            'author':$('[name=author]').val(),
-            'content':$('#editor').val(),
-            'describe':$('#describe').val(),
-            'pid':$('[name=pid] option:selected').val(),
-            'is_hot':status_id,
-            'id':"{$article_edit.id}",
-            'img':picArr
-        };
-        $.post("{:url('Tables/edit',['id'=>$article_edit.id])}",{data:a},function(data){
-            console.log(data);
-            if(data.code){
-                layer.msg(data.msg,{time:800},function(){
-                    self.location=document.referrer;
-                })
-            }else{
-                layer.msg(data.msg);
-            }
-        });
+        layer.confirm('请确定已给该用户发过微信红包！！！', function () {
+            if(tijiao){layer.msg('请勿重复提交',{time:800});return false;}
+            tijiao=1;
+            var a = {
+                'id':"{$list.id}",
+                'wechat':"{$list.wechat}",
+                'name':"{$list.name}",
+                'money':$('[name=money]').val()
+            };
+
+            $.post("{:url('User/withdraw',['id'=>$list.id])}",{data:a},function(data){
+                console.log(data);
+                if(data.code){
+                    tijiao=1;
+                    layer.msg("提现成功",{time:800},function(){
+                        self.location=document.referrer;
+                    })
+                }else{
+                    tijiao=0;
+                    layer.msg(data.msg);
+                }
+            });
+        })
+
     });
 </script>
 {/block}

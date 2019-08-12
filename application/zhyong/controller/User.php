@@ -36,13 +36,19 @@ class User extends Father
         }
         $list=Db::table('user')
             ->where($where)
-            ->order('vip asc')
+            ->order('money desc')
             ->order('add_time desc')
             ->paginate(10);
+        $arr=$list->toArray();
+        $data=$arr['data'];
+        foreach ($data as $dkey=>$dval){
+            $data[$dkey]['total_money']=Db::table('user_money')->where('uid',$dval['id'])->where('type=2')->sum('money');
+        }
         $page = $list->render();
         $this->assign('page',$page);
         $this->assign('list',$list);
         $this->assign('name',$name);
+        $this->assign('data',$data);
         return $this->fetch();
     }
     /*
@@ -56,6 +62,9 @@ class User extends Father
             //该用户变成vip
             $uinfo = Db::table('user')->where('id',$id)->field('name,fid,wechat')->find();
             $up_user=Db::table('user')->where('id',$id)->update(['vip'=>2]);
+            /*上级用户余额*/
+            $umoney = Db::table('user')->where('id',$uinfo['fid'])->value('money');
+
             if($up_user){
                 //该用户上级在金额变化表增加记录
                 $money=3;
@@ -64,6 +73,7 @@ class User extends Father
                 $data['type']=1;/*加钱1减钱2*/
                 $data['add_time']=time();
                 $data['wechat']=$uinfo['wechat'];
+                $data['total_money']=$umoney*1+$money;
                 $data['money']='+'.$money;
                 $data['uid']=$uid;//该用户的父id
 //                $data['aid']=$uid;//该用户的父id
@@ -86,7 +96,6 @@ class User extends Father
             // 回滚事务
             Db::rollback();
             $this->error($e->getMessage());
-            //注意：我们做了回滚处理，所以id为1039的数据还在
         }
         $this->success();
 
@@ -97,24 +106,30 @@ class User extends Father
     public function withdraw($id){
         // 启动事务
         if(\request()->isAjax()){
+//            dump($_POST);die;
+            $info=$_POST['data'];
             Db::startTrans();
             try{
+                //该用户金额
+                $umoney = Db::table('user')->where('id',$id)->value('money');
+
                 //该用户在金额变化表增加记录
-                $money=10;
-                $data['remark']='每月1-10号自动发放';
+                $money=$info['money'];
+                $data['remark']='每月1-10号余额自动提现（红包发放1元起发）';
                 $data['type']=2;/*加钱1减钱2*/
                 $data['add_time']=time();
-                $data['wechat']="lihai";
-                $data['money']='-'.$money;
-                $data['uid']=$id;//该用户的父id
+                $data['wechat']=$info['wechat'];
+                $data['total_money']=($umoney*1)-$info['money'];
+                $data['money']='-'.$info['money'];
+                $data['uid']=$info['id'];//该用户id
                 $res=Db::table('user_money')->insert($data);
                 if(!$res){
                     throw new \Exception('添加失败');
                 }else{
-                    /*该用户的上级增加金额*/
-                    $inc=Db::table('user')->where('id',$uid)->setInc('money',$money);
+                    /*该用户减去提现金额*/
+                    $inc=Db::table('user')->where('id',$info['id'])->setDec('money',$money);
                     if(!$inc){
-                        throw new \Exception('上级增加金额失败');
+                        throw new \Exception('上级减去金额失败');
                     }
                 }
                 // 提交事务
@@ -123,13 +138,12 @@ class User extends Father
                 // 回滚事务
                 Db::rollback();
                 $this->error($e->getMessage());
-                //注意：我们做了回滚处理，所以id为1039的数据还在
             }
+            $this->success();
         }
-        $list=Db::table('user')->field('id,wechat')->find($id);
+        $list=Db::table('user')->field('id,name,wechat,money')->find($id);
         $this->assign('list',$list);
         return $this->fetch();
-
     }
     /**
      * 保存新建的资源
