@@ -168,19 +168,17 @@ class Goods extends Father
      */
     public function GetGoodsList(Request $request){
         if(!$request->isGet()) return self::json([],403);
-        /*Db::table('goods')->where('status=0')->delete();
-        $ginfo=Db::table('goods')->where('status=1')
-            ->where('uid',$_GET['uid'])->field('title,id,price,other,pic,uid')->select();
-        foreach ($ginfo as $gkey=>$gval){
-            $ginfo[$gkey]['pic'] = firstPic($gval['pic']);
-        }
-        Cache::store('redis')->set('goodslist',$ginfo);*/
-        $data=Cache::store('redis')->get('goodslist');
-        if(!$data){
-            $data=[];
+        $ginfo=Cache::store('redis')->get('goodslist');
+        if(!$ginfo){
+            Db::table('goods')->where('status=0')->delete();
+            $ginfo=Db::table('goods')->where('status=1')
+                ->where('uid',$_GET['uid'])->field('title,id,price,other,pic,uid')->select();
+            foreach ($ginfo as $gkey=>$gval){
+                $ginfo[$gkey]['pic'] = firstPic($gval['pic']);
+            }
         }
 
-        return self::json($data);
+        return self::json($ginfo);
     }
     /**
      * 删除商品
