@@ -2,6 +2,7 @@
 
 namespace app\zhyong\controller;
 
+use think\Cache;
 use think\Controller;
 use think\Db;
 use think\Request;
@@ -19,6 +20,7 @@ class User extends Father
      */
     public function userlist()
     {
+        /*使用radis缓存*/
         $name=$this->request->get('name','');
         $type=$this->request->get('type','');
         $where=[];

@@ -1,6 +1,7 @@
 <?php
 namespace app\xcx\controller;
 use offen\OffenFunction;
+use think\Cache;
 use think\Controller;
 use think\Db;
 use think\Request;
@@ -22,11 +23,12 @@ class User extends Father
     {
         if(!$request->isGet()) return self::json([],403);
         //产品
-        $ginfo=Db::table('goods')->where('status=1')
+        /*$ginfo=Db::table('goods')->where('status=1')
             ->where('uid',$_GET['uid'])->field('title,id,price,other,pic,uid')->select();
         foreach ($ginfo as $gkey=>$gval){
             $ginfo[$gkey]['pic'] = firstPic($gval['pic']);
-        }
+        }*/
+        $ginfo=Cache::store('redis')->get('goodslist');
         //个人信息
         $uinfo=Db::table('user')->find($_GET['uid']);
         $uinfo['img'] = firstPic($uinfo['pic']);
@@ -258,6 +260,7 @@ class User extends Father
                 $vip['id']= $data['id'];
                 Db::table('user')->update($vip);
             }
+
             return self::json($uinfo);
         }else{
             return self::json($data);

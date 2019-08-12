@@ -1,6 +1,7 @@
 <?php
 namespace app\xcx\controller;
 use offen\OffenFunction;
+use think\Cache;
 use think\Controller;
 use think\Db;
 use think\Request;
@@ -98,21 +99,63 @@ class Goods extends Father
     public function GetGoodsSub(Request $request){
         if(!$request->isPost()) return self::json([],403);
         $data=$_POST;
+//        dump($data);die;
         $data['status'] = 1;
         unset($data['pic']);
         if($data['id']){
             if(Db::table('goods')->update($data)){
+                /*获取该用户的全部商品并缓存*/
+                $uid = Db::table('goods')->where('id',$data['id'])->value('uid');
+                Db::table('goods')->where('status=0')->delete();
+                $ginfo=Db::table('goods')->where('status=1')
+                    ->where('uid',$uid)->field('title,id,price,other,pic,uid')->select();
+                foreach ($ginfo as $gkey=>$gval){
+                    $ginfo[$gkey]['pic'] = firstPic($gval['pic']);
+                }
+                Cache::store('redis')->set('goodslist',$ginfo);
+
+
                 $uinfo=Db::table('goods')->find($data['id']);
                 return self::json($uinfo);
             }else{
+                /*获取该用户的全部商品并缓存*/
+                $uid = Db::table('goods')->where('id',$data['id'])->value('uid');
+                Db::table('goods')->where('status=0')->delete();
+                $ginfo=Db::table('goods')->where('status=1')
+                    ->where('uid',$uid)->field('title,id,price,other,pic,uid')->select();
+                foreach ($ginfo as $gkey=>$gval){
+                    $ginfo[$gkey]['pic'] = firstPic($gval['pic']);
+                }
+                Cache::store('redis')->set('goodslist',$ginfo);
                 return self::json($data);
             }
         }else{
             unset($data['id']);
             if($id=Db::table('goods')->insertGetId($data)){
+                /*获取该用户的全部商品并缓存*/
+                $uid = Db::table('goods')->where('id',$id)->value('uid');
+                Db::table('goods')->where('status=0')->delete();
+                $ginfo=Db::table('goods')->where('status=1')
+                    ->where('uid',$uid)->field('title,id,price,other,pic,uid')->select();
+                foreach ($ginfo as $gkey=>$gval){
+                    $ginfo[$gkey]['pic'] = firstPic($gval['pic']);
+                }
+                Cache::store('redis')->set('goodslist',$ginfo);
+
+
                 $uinfo=Db::table('goods')->find($id);
                 return self::json($uinfo);
             }else{
+                /*获取该用户的全部商品并缓存*/
+                $uid = Db::table('goods')->where('id',$data['id'])->value('uid');
+                Db::table('goods')->where('status=0')->delete();
+                $ginfo=Db::table('goods')->where('status=1')
+                    ->where('uid',$uid)->field('title,id,price,other,pic,uid')->select();
+                foreach ($ginfo as $gkey=>$gval){
+                    $ginfo[$gkey]['pic'] = firstPic($gval['pic']);
+                }
+                Cache::store('redis')->set('goodslist',$ginfo);
+
                 return self::json($data);
             }
         }
@@ -125,13 +168,19 @@ class Goods extends Father
      */
     public function GetGoodsList(Request $request){
         if(!$request->isGet()) return self::json([],403);
-        Db::table('goods')->where('status=0')->delete();
+        /*Db::table('goods')->where('status=0')->delete();
         $ginfo=Db::table('goods')->where('status=1')
             ->where('uid',$_GET['uid'])->field('title,id,price,other,pic,uid')->select();
         foreach ($ginfo as $gkey=>$gval){
             $ginfo[$gkey]['pic'] = firstPic($gval['pic']);
         }
-        return self::json($ginfo);
+        Cache::store('redis')->set('goodslist',$ginfo);*/
+        $data=Cache::store('redis')->get('goodslist');
+        if(!$data){
+            $data=[];
+        }
+
+        return self::json($data);
     }
     /**
      * 删除商品

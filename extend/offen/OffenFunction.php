@@ -28,7 +28,7 @@ class OffenFunction
                 if($arv){
                     if(strstr($img,$arv)!=false){
                         $path = str_replace(request()->domain()."/","",$arr_pic[$ark]);
-                        unlink($path);
+                        @unlink($path);
                         unset($arr_pic[$ark]);
                     }
                 }
@@ -58,7 +58,7 @@ class OffenFunction
             foreach ($arr_pic as $ark=>$arv){
                 if($arv){
                     $path = str_replace(request()->domain()."/","",$arv);
-                    unlink($path);
+                    @unlink($path);
                 }
             }
             return 1;
