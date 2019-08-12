@@ -82,6 +82,11 @@ class User extends Father
                     throw new \Exception('添加失败');
                 }else{
                     /*该用户的上级增加金额*/
+                    $u_vip['vip_end_time']=strtotime("+1 year");
+                    $up=Db::table('user')->where('id',$id)->update($u_vip);
+                    if(!$up){
+                        throw new \Exception('vip结束时间');
+                    }
                     $inc=Db::table('user')->where('id',$uid)->setInc('money',$money);
                     if(!$inc){
                         throw new \Exception('上级增加金额失败');

@@ -51,10 +51,12 @@
                                             <th>联系人</th>
                                             <th>联系电话</th>
                                             <th>用户状态</th>
-                                            <th>成为VIP</th>
+
                                             <th>账户余额</th>
                                             <th>累计提现</th>
+                                            <th>VIP到期时间</th>
                                             <th>注册时间</th>
+                                            <th>成为VIP</th>
                                             <th>操作</th>
                                         </tr>
                                     </thead>
@@ -67,6 +69,17 @@
                                             <td>{$vo.link_people}</td>
                                             <td>{$vo.link_phone}</td>
                                             <td>{$vo.vip==2?'VIP':($vo.vip==1?'会员':'未完善')}</td>
+
+                                            <td>￥{$vo.money}</td>
+                                            <td>{$vo.total_money}</td>
+                                            {if condition="$vo['vip_end_time']"}
+                                            <td><?php echo date('Y-m-d',$vo['vip_end_time'])?></td>
+                                            {else /}
+                                            <td></td>
+                                            {/if}
+
+
+                                            <td><?php echo date('Y-m-d',$vo['add_time'])?></td>
                                             <td style="padding-top: 10px;">
                                                 {if condition="$vo['vip'] neq 2"}
                                                 <span class="vip"  onclick="returnVip({$vo['id']})">成为VIP</span>
@@ -74,9 +87,6 @@
                                                 <span class="vip o_vip">已是VIP</span>
                                                 {/if}
                                             </td>
-                                            <td>￥{$vo.money}</td>
-                                            <td>{$vo.total_money}</td>
-                                            <td><?php echo date('Y-m-d',$vo['add_time'])?></td>
                                             <td>
                                                 <div class="tpl-table-black-operation">
                                                     <a href="{:url('User/withdraw',['id'=>$vo.id])}">
