@@ -195,11 +195,17 @@ class Goods extends Father
         $del->delAllImg('goods',$data['id'],'pic');
         $del->delAllImg('goods',$data['id'],'imgs');
         if(Db::table('goods')->delete($data['id'])){
+            /*获取该用户的全部商品并缓存*/
+            Db::table('goods')->where('status=0')->delete();
             $ginfo=Db::table('goods')->where('status=1')
                 ->where('uid',$data['uid'])->field('title,id,price,other,pic,uid')->select();
             foreach ($ginfo as $gkey=>$gval){
                 $ginfo[$gkey]['pic'] = firstPic($gval['pic']);
             }
+            Cache::store('redis')->set('goodslist',$ginfo);
+
+
+
             return self::json($ginfo);
         }else{
             return self::json('删除失败！',199);
