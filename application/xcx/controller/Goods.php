@@ -2,12 +2,9 @@
 namespace app\xcx\controller;
 use offen\OffenFunction;
 use think\Cache;
-use think\Controller;
 use think\Db;
 use think\Request;
-use think\cache\driver\Redis;
 use wechat\getCord;
-use wechat\WXBizDataCrypt;
 
 class Goods extends Father
 {
@@ -112,7 +109,7 @@ class Goods extends Father
                 foreach ($ginfo as $gkey=>$gval){
                     $ginfo[$gkey]['pic'] = firstPic($gval['pic']);
                 }
-                Cache::store('redis')->set('goodslist',$ginfo);
+                Cache::store('redis')->set('goodslist'.$uid,$ginfo);
 
 
                 $uinfo=Db::table('goods')->find($data['id']);
@@ -126,7 +123,7 @@ class Goods extends Father
                 foreach ($ginfo as $gkey=>$gval){
                     $ginfo[$gkey]['pic'] = firstPic($gval['pic']);
                 }
-                Cache::store('redis')->set('goodslist',$ginfo);
+                Cache::store('redis')->set('goodslist'.$uid,$ginfo);
                 return self::json($data);
             }
         }else{
@@ -140,7 +137,7 @@ class Goods extends Father
                 foreach ($ginfo as $gkey=>$gval){
                     $ginfo[$gkey]['pic'] = firstPic($gval['pic']);
                 }
-                Cache::store('redis')->set('goodslist',$ginfo);
+                Cache::store('redis')->set('goodslist'.$uid,$ginfo);
 
 
                 $uinfo=Db::table('goods')->find($id);
@@ -154,7 +151,7 @@ class Goods extends Father
                 foreach ($ginfo as $gkey=>$gval){
                     $ginfo[$gkey]['pic'] = firstPic($gval['pic']);
                 }
-                Cache::store('redis')->set('goodslist',$ginfo);
+                Cache::store('redis')->set('goodslist'.$uid,$ginfo);
 
                 return self::json($data);
             }
@@ -168,7 +165,7 @@ class Goods extends Father
      */
     public function GetGoodsList(Request $request){
         if(!$request->isGet()) return self::json([],403);
-        $ginfo=Cache::store('redis')->get('goodslist');
+        $ginfo=Cache::store('redis')->get('goodslist'.$_GET['uid']);
         if(!$ginfo){
             Db::table('goods')->where('status=0')->delete();
             $ginfo=Db::table('goods')->where('status=1')
@@ -177,7 +174,6 @@ class Goods extends Father
                 $ginfo[$gkey]['pic'] = firstPic($gval['pic']);
             }
         }
-
         return self::json($ginfo);
     }
     /**
@@ -200,7 +196,7 @@ class Goods extends Father
             foreach ($ginfo as $gkey=>$gval){
                 $ginfo[$gkey]['pic'] = firstPic($gval['pic']);
             }
-            Cache::store('redis')->set('goodslist',$ginfo);
+            Cache::store('redis')->set('goodslist'.$data['uid'],$ginfo);
 
 
 

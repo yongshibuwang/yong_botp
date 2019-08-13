@@ -23,7 +23,7 @@ class User extends Father
     {
         if(!$request->isGet()) return self::json([],403);
         //产品
-        $ginfo=Cache::store('redis')->get('goodslist');
+        $ginfo=Cache::store('redis')->get('goodslist'.$_GET['uid']);
         if(!$ginfo){
             $ginfo=Db::table('goods')->where('status=1')
                 ->where('uid',$_GET['uid'])->field('title,id,price,other,pic,uid')->select();
@@ -32,7 +32,7 @@ class User extends Father
             }
         }
         //个人信息
-        $uinfo=Cache::store('redis')->get('userInfo');
+        $uinfo=Cache::store('redis')->get('userInfo'.$_GET['uid']);
         if(!$uinfo){
             $uinfo=Db::table('user')->find($_GET['uid']);
             $uinfo['img'] = firstPic($uinfo['pic']);
@@ -267,9 +267,11 @@ class User extends Father
             /*写入缓存*/
             //个人信息
             $userinfo=Db::table('user')->find($data['id']);
-            $userinfo['img'] = firstPic($uinfo['pic']);
-            $userinfo['pic']=explode(',',$uinfo['pic']);
-            Cache::store('redis')->set('userInfo',$userinfo);
+            if($userinfo['pic']){
+                $userinfo['img'] = firstPic($userinfo['pic']);
+                $userinfo['pic']=explode(',',$userinfo['pic']);
+            }
+            Cache::store('redis')->set('userInfo'.$data['id'],$userinfo);
             return self::json($uinfo);
         }else{
             return self::json($data);

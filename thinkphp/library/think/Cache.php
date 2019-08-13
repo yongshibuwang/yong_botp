@@ -102,7 +102,6 @@ class Cache
         if ('' !== $name && 'complex' == Config::get('cache.type')) {
             return self::connect(Config::get('cache.' . $name), strtolower($name));
         }
-
         return self::init();
     }
 
