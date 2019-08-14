@@ -53,7 +53,7 @@ class User extends Father
             ->field('id,pic,x_name,head_img,er_code,city,county,link_people,link_phone,wechat,remark')
             ->find($_GET['uid']);
         if($uinfo){
-            $uinfo['pic']=\request()->domain().'/'.firstPic($uinfo['pic']);
+            $uinfo['pic']=firstPic($uinfo['pic']);
         }else{
             $uinfo['pic']=$uinfo['head_img'];
         }
