@@ -216,6 +216,31 @@ class Goods extends Father
         $ginfo=model('goods')->find($gid);
         return self::json($ginfo);
     }
+    /*微信生成商品分享图片*/
+    public function share_info(Request $request)
+    {
+        if(!$request->isGet()) return self::json([],403);
+        //个人信息
+        $gid=$_GET['gid'];
+        $uinfo=Db::table('goods')->alias('g')
+            ->join('user u','g.uid=u.id')
+            ->field('g.id,g.pic,g.title,g.detail,g.er_code,g.price,g.other,u.head_img')
+            ->where('g.id',$gid)
+            ->find();
+        if($uinfo){
+            if(!$uinfo['price']){
+                $uinfo['price'] = $uinfo['other'];
+            }
+            $uinfo['pic']=firstPic($uinfo['pic']);
+        }else{
+            $uinfo['pic']=$uinfo['head_img'];
+        }
+        if($uinfo){
+            return self::json($uinfo);
+        }else{
+            return self::json('',199);
+        }
+    }
     /**
      * 通过分享点击获取商品信息
      *@author 勇☆贳&卟☆莣
