@@ -44,6 +44,25 @@ class User extends Father
             return self::json('',199);
         }
     }
+    /*微信生成分享图片*/
+    public function share_info(Request $request)
+    {
+        if(!$request->isGet()) return self::json([],403);
+        //个人信息
+        $uinfo=Db::table('user')
+            ->field('id,pic,x_name,head_img,er_code,city,county,link_people,link_phone,wechat,remark')
+            ->find($_GET['uid']);
+        if($uinfo){
+            $uinfo['pic']=\request()->domain().'/'.firstPic($uinfo['pic']);
+        }else{
+            $uinfo['pic']=$uinfo['head_img'];
+        }
+        if($uinfo){
+            return self::json($uinfo);
+        }else{
+            return self::json('',199);
+        }
+    }
     /*获取用户及下级*/
     public function u_finfo(Request $request)
     {
