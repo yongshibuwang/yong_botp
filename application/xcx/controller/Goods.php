@@ -100,6 +100,23 @@ class Goods extends Father
         $data['status'] = 1;
         unset($data['pic']);
         if($data['id']){
+            /*生成二维码*/
+            $id = $data['id'];
+            $uid = $data['uid'];
+            $path = "pages/goods/goodsi/info";
+            $code = new getCord(WXAPPID,WXAPPSECRET,$id,100,$path,$uid);
+            /*删除指定日期前的文件*/
+            $dir = 'goods';
+            if (!is_dir($dir)) { //判断目录是否存在 不存在就创建
+                mkdir($dir, 0777, true);
+            }
+            if(is_file($dir.'/goods_'.$id.'.png')){
+                @unlink($dir.'/goods_'.$id.'.png');
+            }
+            $file_path = $dir.'/goods_'.$id.'.png';
+            file_put_contents($file_path, $code->get_qrcode());//保存二维码
+            $data['er_code'] = $request->domain().'/'.$file_path;
+
             if(Db::table('goods')->update($data)){
                 /*获取该用户的全部商品并缓存*/
                 $uid = Db::table('goods')->where('id',$data['id'])->value('uid');
@@ -129,6 +146,24 @@ class Goods extends Father
         }else{
             unset($data['id']);
             if($id=Db::table('goods')->insertGetId($data)){
+                $uid = $data['uid'];
+                $path = "pages/goods/goodsi/info";
+                $code = new getCord(WXAPPID,WXAPPSECRET,$id,100,$path,$uid);
+                /*删除指定日期前的文件*/
+                $dir = 'goods';
+                if (!is_dir($dir)) { //判断目录是否存在 不存在就创建
+                    mkdir($dir, 0777, true);
+                }
+                if(is_file($dir.'/goods_'.$id.'.png')){
+                    @unlink($dir.'/goods_'.$id.'.png');
+                }
+                $file_path = $dir.'/goods_'.$id.'.png';
+                file_put_contents($file_path, $code->get_qrcode());//保存二维码
+                $ginfo['er_code'] = $request->domain().'/'.$file_path;
+                $ginfo['id'] = $id;
+                Db::table('goods')->update($ginfo);
+
+
                 /*获取该用户的全部商品并缓存*/
                 $uid = Db::table('goods')->where('id',$id)->value('uid');
                 Db::table('goods')->where('status=0')->delete();
@@ -276,7 +311,7 @@ class Goods extends Father
         if(!$request->isGet()) return self::json([],403);
         $id = $request->get('id',1);
         $uid = $request->get('uid',1);
-        $path = $request->get('path','pages/login/login');
+        $path = $request->get('pages/goods/goodsi/info','pages/login/login');
         $code = new getCord(WXAPPID,WXAPPSECRET,$id,100,$path,$uid);
         /*删除指定日期前的文件*/
         $dir = 'goods';
