@@ -277,7 +277,9 @@ class User extends Father
         if(!$data['pic']){
             unset($data['pic']);
         }
-
+        if(!$data['color']){
+            unset($data['color']);
+        }
         //            获取二维码
         $id = $data['id'];
         $uid = $data['id'];
