@@ -303,7 +303,7 @@ class Goods extends Father
     }
 
     /**
-     * 获取商品二维码
+     * 获取商品二维码 停用
      *@author 勇☆贳&卟☆莣
      * @return \think\Response
      */
