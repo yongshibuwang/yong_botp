@@ -98,6 +98,9 @@ class Goods extends Father
         $data=$_POST;
 //        dump($data);die;
         $data['status'] = 1;
+        if(!$data['but']){
+            unset($data['but']);
+        }
         unset($data['pic']);
         if($data['id']){
             /*生成二维码*/
@@ -223,6 +226,7 @@ class Goods extends Father
         $del=new OffenFunction();
         $del->delAllImg('goods',$data['id'],'pic');
         $del->delAllImg('goods',$data['id'],'imgs');
+        $del->delAllImg('goods',$data['id'],'er_code');
         if(Db::table('goods')->delete($data['id'])){
             /*获取该用户的全部商品并缓存*/
             Db::table('goods')->where('status=0')->delete();

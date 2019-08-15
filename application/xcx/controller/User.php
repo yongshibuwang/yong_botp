@@ -153,6 +153,7 @@ class User extends Father
             $data['session_key']=$str['session_key'];
             $data['openid']=$str['openid'];
             $data['add_time']=time();
+            $data['head_img']=\request()->domain().'/goods/goods_mo.png';
             $id=Db::table('user')->insertGetId($data);
             $uinfo=model('User')->find($id);
             return self::json($uinfo,199);
@@ -187,16 +188,34 @@ class User extends Father
         if($data['id']){
             if(Db::table('user')->update($data)){
                 $uinfo=Db::table('user')->find($data['id']);
+                /*写入缓存*/
+                if($uinfo['pic']){
+                    $uinfo['img'] = firstPic($uinfo['pic']);
+                    $uinfo['pic']=explode(',',$uinfo['pic']);
+                }
+                Cache::store('redis')->set('userInfo'.$data['id'],$uinfo);
                 return self::json($uinfo);
             }else{
                 $uinfo=Db::table('user')->find($data['id']);
+                /*写入缓存*/
+                if($uinfo['pic']){
+                    $uinfo['img'] = firstPic($uinfo['pic']);
+                    $uinfo['pic']=explode(',',$uinfo['pic']);
+                }
+                Cache::store('redis')->set('userInfo'.$data['id'],$uinfo);
                 return self::json($uinfo);
             }
         }else{
             unset($data['id']);
             $data['add_time']=time();
             if($id=Db::table('user')->insertGetId($data)){
-
+                /*写入缓存*/
+                $uinfo=Db::table('user')->find($id);
+                if($uinfo['pic']){
+                    $uinfo['img'] = firstPic($uinfo['pic']);
+                    $uinfo['pic']=explode(',',$uinfo['pic']);
+                }
+                Cache::store('redis')->set('userInfo'.$data['id'],$uinfo);
                 $uinfo=Db::table('user')->find($id);
                 return self::json($uinfo);
             }else{
