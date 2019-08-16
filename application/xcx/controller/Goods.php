@@ -263,7 +263,7 @@ class Goods extends Father
         $gid=$_GET['gid'];
         $uinfo=Db::table('goods')->alias('g')
             ->join('user u','g.uid=u.id')
-            ->field('g.id,g.pic,g.title,g.detail,g.er_code,g.price,g.other,u.head_img,u.color')
+            ->field('g.id,g.pic,g.title,g.detail,u.er_code,g.price,g.other,u.head_img,u.color')
             ->where('g.id',$gid)
             ->find();
         if($uinfo){
