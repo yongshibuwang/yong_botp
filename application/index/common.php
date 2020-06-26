@@ -34,13 +34,20 @@ use QL\QueryList;
     }
     function wangzherongyaonews(){
     /**************************抓取文章***************************/
-        // 采集王者荣耀文章列表中所有[文章]的超链接和超链接文本内容
-        $data = QueryList::get('https://pvp.qq.com/webplat/info/news_version3/15592/24091/24092/m20041/list_1.shtml')
+        // // 采集王者荣耀文章列表中所有[文章]的超链接和超链接文本内容
+        // $data = QueryList::get('https://pvp.qq.com/webplat/info/news_version3/15592/24091/24092/m20041/list_1.shtml')
+        //     ->rules([
+        //         'link' =>  ['a.art_word','href','',function($cont){ return 'https://pvp.qq.com'.$cont;}],
+        //         'title' => ['a.art_word','text'],
+        //         'time' =>  ['span.art_day','text'],
+        //     ])->range('.art_l_list .art_lists li')->encoding('UTF-8','GBK')->query()->getData();
+
+        $data = QueryList::get('https://it.ithome.com/')
             ->rules([
-                'link' =>  ['a.art_word','href','',function($cont){ return 'https://pvp.qq.com'.$cont;}],
-                'title' => ['a.art_word','text'],
-                'time' =>  ['span.art_day','text'],
-            ])->range('.art_l_list .art_lists li')->encoding('UTF-8','GBK')->query()->getData();
+                'link' =>  ['.title a','href'],
+                'title' => ['.title a','text'],
+                'time' =>  ['span.date','text'],
+            ])->range('.new-list-1 li')->query()->getData();
 
         $data=$data->all();
         foreach ($data as $key=>$val){
@@ -51,8 +58,8 @@ use QL\QueryList;
             $info['describe']=$val['title'];
             $info['link']=$val['link'];
             $info['type']=2;
-            $info['author']='腾讯官网';
-            $info['kind']=4;
+            $info['author']='IT之家';
+            $info['kind']=5;
             if(Db::table('copy_web')->where('title',$info['title'])->count()){
                 continue;
             }else{

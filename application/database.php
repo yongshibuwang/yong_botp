@@ -21,7 +21,7 @@ return [
     'username'        => 'root',
 //    'username'        => 'boke',
     // 密码
-    'password'        => 'root',
+    'password'        => 'root123',
 //    'password'        => 'boke123',
     // 端口
     'hostport'        => '3306',

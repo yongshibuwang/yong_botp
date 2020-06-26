@@ -175,7 +175,7 @@ class Article extends Father
             ->where($where)
             ->page($page,$limit)
             ->select();
-        $array=['','后端','前端','随笔','游戏'];
+        $array=['','后端','前端','随笔','游戏','资讯'];
         foreach($list as &$val){
             $val['kind']=$array[$val['kind']];
             if(strstr($val['img'],'http')==false){
