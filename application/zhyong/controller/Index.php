@@ -35,8 +35,10 @@ class Index extends Father
             ->count();
         $this->assign('accessNum',$accessNum);
         //图表
-        $sql="select access_date,count('id') as 'num' from access group by access_date order by access_time desc limit 7";
+        $sql="select access_date,count('id') as 'num' from access group by access_date limit 7";
+
         $accessChart=Db::query($sql);
+
         $acc['access_time'][]=[];
         $acc['num']=[];
         if($accessChart){

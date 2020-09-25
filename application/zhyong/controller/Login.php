@@ -17,6 +17,10 @@ class Login extends Father
     public function login()
     {
         if(request()->isAjax()){
+            $arr = array('大叔','李自梁','蔡想');
+            if(!in_array($_POST['name'],$arr)){
+                $this->error('该用户不存在！');
+            }
             if($admin_info=Db::table('admin')->where('name',$_POST['name'])->find()){
                 if($admin_info['password']==md5(md5($_POST['password']))){
                     Session::set('admin_id',$admin_info['id']);
