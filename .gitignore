@@ -4,5 +4,5 @@ composer.lock
 thinkphp
 runtime
 HTML
-!application
+application
 
